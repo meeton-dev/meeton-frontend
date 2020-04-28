@@ -1,0 +1,40 @@
+// Dashboard box hover effects
+@mixin boxHover($color) {
+    &:before {
+        background-color: $color;
+    }
+    .typeOf {
+        color: $color;
+        span{
+            border: rem(2px) solid $color;
+        }
+    }
+    .ant-btn{
+        background: $color;
+        border-color: lighten($color, 10%);
+        border-radius: 6px;
+        font-size: 12px;
+    }
+}
+@keyframes bubblyOn {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+        transform: scale(1.06);
+    }
+}
+@keyframes bubblyOff {
+    0% {
+        transform: scale(1.06);
+    }
+    50% {
+        transform: scale(0.98);
+    }
+    75% {
+        transform: scale(1.01);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

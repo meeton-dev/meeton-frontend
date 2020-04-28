@@ -1,0 +1,37 @@
+.chat{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: rem(10px);
+    bottom: rem(10px);
+    background: #fff;
+    border-radius: rem(3px);
+    box-shadow: 0 rem(5px) rem(11px) rgba(0,0,0,0.1);
+    min-height: rem(160px);
+    max-width: rem(290px);
+    max-height: rem(350px);
+    z-index: 999;
+    overflow-x: scroll;
+    .message-wrapper{
+        max-height: rem(310px);
+        min-height: rem(310px);
+        overflow: scroll;
+        .chat-message{
+            margin: rem(5px);
+            .name{
+                font-size: rem(10px);
+                margin-bottom: rem(2px);
+                color: #838383;
+            }
+            .bubble{
+                display: inline-block;
+                border-radius: rem(3px);
+                background-color: #ff0037;
+                color: #fff;
+                font-size: rem(12px);
+                padding: rem(5px);
+                word-break: break-all;
+            }
+        }
+    }
+}

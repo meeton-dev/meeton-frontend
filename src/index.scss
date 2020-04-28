@@ -1,0 +1,20 @@
+// import variables first for @mixins
+// variables.scss containing themeDark.scss and themeLight.scss
+@import './Styles/variables';
+@import './Styles/mixins.scss';
+
+@import './Styles/rem';
+
+/* ICONS */
+@import './assets/icons/icons.scss';
+
+// common.scss containing commonly used classes and mixins
+@import './Styles/common';
+@import "./Styles/ieBrowser";
+
+@import "./Pages/meetingCall/meetingCall";
+@import "./Pages/Main/Main";
+
+@import "./Components/meetingCall/meetingCallUserList/meetingCallUserList";
+@import "./Components/meetingCall/meetingCallBoard/meetingCallBoard";
+@import "./Components/Chat/Chat";

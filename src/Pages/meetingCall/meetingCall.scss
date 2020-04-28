@@ -1,0 +1,29 @@
+.meetingCall{
+    background-color: #00b460;
+    display: flex;
+    height: 100vh;
+    > div {
+        width: 100%;
+    }
+
+    .content-left{
+        max-width: rem(190px);
+        background-color: #00b460;
+    }
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        position: relative;
+        overflow: hidden;
+        border-radius: 0 15px 15px 0 ;
+        background: #f4f4f4;
+        .wrapper{
+            display: flex;
+            overflow: hidden;
+        }
+    }
+    
+}

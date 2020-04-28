@@ -1,0 +1,161 @@
+
+.meeting-box{
+    display: flex;
+    flex-direction: column;
+    font-size: rem(12px);
+    height: rem(300px);
+    border-radius: rem(10px);
+    background: #fff;
+    box-shadow: 0 rem(3px) rem(6px) #dadada;
+    animation: bubblyOff .4s 1 ease-out;
+    transform: scale(1);
+    &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 100%;
+        width: 100%;
+        background: black;
+        border-radius: rem(10px);
+        z-index: -1;
+        left: 0;
+        opacity: 0;
+        transition: ease-in-out .3s all;
+    }
+    &:hover{
+        cursor: pointer;
+        animation: bubblyOn .3s 1 ease-out;
+        transform: scale(1.06);
+        &:before {
+            transition: ease-in-out .3s all;
+            left: -4px;
+            opacity: 1;
+        }
+    }
+    .top, .mid, .bottom {
+        background: #fff;
+    }
+    &.Ad-hoc{
+        @include boxHover(#ffc400);
+    }
+    &.Scheduled{
+        @include boxHover(#fc6161);
+    }
+    &.timed{
+        @include boxHover(#8847f8);
+    }
+    .top{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: rem(10px);
+        border-radius: rem(10px) rem(10px) 0 0;
+        .typeOf {
+            span{
+                display: inline-block;
+                width: rem(10px);
+                height: rem(10px);
+                border: rem(2px) solid;
+                margin-right: rem(5px);
+                border-radius: rem(10px);
+            }
+        }
+        time{
+            font-size: rem(10px);
+            margin-left: rem(10px);
+            color: #b8b8b8;
+        }
+        i {
+            font-size: rem(18px);
+            color: #dbdbdb;
+            cursor: pointer;
+            transition: ease-in-out .2s all;
+            &:hover{
+                color: #ffd000;
+                transition: ease-in-out .2s all;
+            }
+        }
+    }
+    .mid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        padding: rem(5px) rem(15px);
+        position: relative;
+        > div {
+            width: 100%;
+            height: 100%;
+
+            &:nth-child(1) {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                .lead{
+                    color: #8f8f8f;
+                    margin: 15px 0px;
+                    .title {
+                        font-weight: bold;
+                    }
+                    .description {
+                        font-style: italic;
+                    }
+                }
+            }
+            &.extra-info {
+                display: flex;
+                position: relative;
+                max-height: 15px;
+                div{
+                    position: relative;
+                    height: 15px;
+                    border-right: 1px solid #ebebeb;
+                    padding-right: 7px;
+                    margin-right: 7px;
+                    display: flex;
+                    align-content: center;
+                    align-items: center;
+                    &:nth-child(4){
+                        border-right: 0!important;
+                    }
+                    span{
+                        font-size: rem(11px);
+                        color: #cecece;
+                    }
+                    .icon {
+                        color: #cecece;
+                        font-size: rem(13px);
+                        margin-right: 3px;
+                    }
+                }
+            }
+        }
+    }
+    .bottom{
+        display: flex;
+        padding: rem(5px) rem(10px);
+        justify-content: space-between;
+        border-radius: 0 0 rem(10px) rem(10px);
+        .in-meeting{
+            display: inline-flex;
+            flex-direction: row-reverse;
+            padding-left:10px;
+            opacity: 0.2;
+            transition: ease-in-out .2s all;
+            &:hover{
+                transition: ease-in-out .2s all;
+                opacity: 1;
+            }
+            .user{
+                margin-left: -11px;
+                position: relative;
+                border:2px solid #fff;
+                border-radius: 50%;
+                overflow:hidden;
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+.ieBrowser {
+    #root {
+        height: 100%;
+        header.appHeader {
+            flex: none;
+        }
+        .appContent {
+            flex: 1 0 auto;
+        }
+        .appContentLogged {
+            flex: 1 0 auto;
+            .assetViewContent {
+                overflow-y: scroll;
+            }
+        }
+    }
+    .ui.modal {
+        position: static;
+    }
+}
