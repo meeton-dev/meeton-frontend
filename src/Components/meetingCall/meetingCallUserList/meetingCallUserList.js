@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Moment from 'react-moment';
 import { Avatar } from '../../Common/avatar';
 import { User } from './parts/user';
-import AudioAnalyser from './AudioAnalyser';
+import AudioAnalyser from './microphone/AudioAnalyser';
+import Camera from './camera/camera';
 
 
 class MeetingCallUserList extends Component {
@@ -21,7 +22,6 @@ class MeetingCallUserList extends Component {
       audio: true,
       video: false
     });
-    console.log(audio);
     this.setState({ audio });
   }
 
@@ -50,26 +50,33 @@ class MeetingCallUserList extends Component {
 
   render() {
 
-    const {clients} = this.state;
+    const {clients, fullscreen} = this.state;
     let date = new Date()
     return (
       <div className="meetingBar">
         {/* schedule part, infos etc. */}
         <div className="timer">
           00:13
+
         </div>
-        <div className="in-call">
-          {[...Array(15)].map((e,i) => {
+        
+        <div className={`in-call ${fullscreen ? 'fullscreen' : 'compact'}`}>
+          <button onClick={() => this.setState({fullscreen: fullscreen === false ? true : false})}>{fullscreen ? 'Go back to board' : 'Go fullscreen'}</button>
+          <div className="user">
+            <Camera />
+          </div>
+          {/* {[...Array(15)].map((e,i) => {
             return <div key={i} className="user">
                 <User />
             </div>
-          })}
+          })} */}
         </div>
         <div className="controls">
           <button onClick={this.toggleMicrophone}>
             {this.state.audio ? 'Stop microphone' : 'Get microphone input'}
           </button>
         </div>
+
         {this.state.audio ? <AudioAnalyser audio={this.state.audio} /> : ''}
       </div>
   )}

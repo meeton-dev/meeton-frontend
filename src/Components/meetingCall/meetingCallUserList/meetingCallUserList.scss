@@ -15,5 +15,27 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-row-gap: 20px;
+        transition: ease-in-out .3s all;
+        &.fullscreen{
+            transition: ease-in-out .3s all;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: rgb(52, 38, 87);
+            right: 0;
+            bottom: 0;
+            z-index: 11111;
+            margin: 0;
+            padding: 30px;
+            .user{
+                .userBox{
+                    width: 260px;
+                    height: 260px;
+                    border-radius: 100%;
+                    border-width: 6px;
+                }
+            }
+        }
     }
 }

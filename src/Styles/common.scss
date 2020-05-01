@@ -52,3 +52,35 @@ body.noScroll{
 //     // -ms-user-select: none; /* Internet Explorer/Edge */
 //     // user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 // }
+
+@mixin pageColor($color, $size) {
+  background-color: $color;
+      .content-left{
+          max-width: rem($size);
+          background-color: $color;
+      }
+}
+
+.main{
+  display: flex;
+  height: 100vh;
+  &.dashboard{ @include pageColor(#ff4747, 110px); }
+  &.lobby{ @include pageColor(#591de4, 170px); }
+  > div {
+      width: 100%;
+  }
+  .content{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px 0 0 15px;
+      background: #f4f4f4;
+      .wrapper{
+          display: flex;
+          overflow: hidden;
+      }
+  }
+}

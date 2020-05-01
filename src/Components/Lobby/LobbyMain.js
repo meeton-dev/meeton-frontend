@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
 import LobbyFiles from './LobbyFiles';
 import { Button } from 'antd';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import setupSocketHandlers, { socket } from "../../services/socketHandlers";
 
 class LobbyMain extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+        }
+    }
+
     render() {
+        const { code } = this.props.match.params;
+        console.log(this.props.match.params);
         return (
             <div className="lobby-main">
                 <Button type="primary" size='small'>
-                    <Link to='/meeting'>
+                    <Link to={`/meeting/${code}`}>
                         Enter meeting 
                     </Link>
                 </Button>

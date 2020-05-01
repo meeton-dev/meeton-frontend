@@ -1,20 +1,22 @@
 import React from 'react';
-import {Route, BrowserRouter as Router, Switch} from 'react-router-dom';
-import MeetingCall from './Pages/meetingCall/meetingCall';
-import Main from './Pages/Main/Main';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { configureStore } from './store';
+import DynamicRouter from './DynamicRouter';
 import 'antd/dist/antd.css';
+
+const store = configureStore();
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Switch>
-            <Route component={Main} exact path="/" />
-            <Route component={Main} path="/lobby" />
-            <Route component={MeetingCall} path="/meeting" />
-        </Switch>
-      </Router>
+      <Provider store={store}>
+        <BrowserRouter>
+          <DynamicRouter  />
+        </BrowserRouter>
+      </Provider>
     </div>
+
   );
 }
 

@@ -6,11 +6,11 @@ import { AudioOutlined } from '@ant-design/icons';
 
 const { Search } = Input;
 
-class DashboardTop extends Component {
+class TopNav extends Component {
 
     render() {
         return (
-            <div className="main-top">
+            <div className="top-nav">
                 <div className="search">
                     <Search placeholder="Search..." onSearch={value => console.log(value)} enterButton />
                 </div>
@@ -50,4 +50,4 @@ class DashboardTop extends Component {
 }
 
 
-export default DashboardTop;
+export default TopNav;

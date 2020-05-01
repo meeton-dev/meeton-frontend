@@ -1,4 +1,6 @@
 import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
+
 import MeetingCallBoard from '../../Components/meetingCall/meetingCallBoard/meetingCallBoard';
 import MeetingCallUserList from '../../Components/meetingCall/meetingCallUserList/meetingCallUserList';
 import ChatComponent from '../../Components/Chat/ChatComponent';
@@ -14,7 +16,6 @@ class MeetingCall extends Component {
   render() {
       return (
         <section className="meetingCall">
-            {/* <DashboardTop /> */}
             <div className="content">
               <MeetingCallBoard />
             </div>
@@ -28,4 +29,6 @@ class MeetingCall extends Component {
 }
 
 
-export default MeetingCall;
+function mapStateToProps({ }) { return {} }
+
+export default connect(mapStateToProps, {})(MeetingCall);
