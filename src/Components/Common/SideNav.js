@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { Popover } from 'antd';
+import { connect } from 'react-redux';
 import logo from '../../assets/logos/logo-white.png';
-import { navItems } from './helpers/nav-items';
+import { navItems } from '../Dashboard/helpers/nav-items';
+import {Link} from 'react-router-dom'
 
-class DashboardNav extends Component {
+class SideNav extends Component {
     render() {
         return (
-            <nav className="general-nav">
+            <nav className="side-nav">
                 <Popover placement="right" title={'This is meeton. '} content={'meeton. is a fucking good webapp.... will be... hopefully'} trigger="hover" overlayClassName='main-nav-item-help'>
                     <div className="logo">
                         <div className="logo-thumb" ><img src={logo} alt="meeton logo" /></div>
@@ -17,10 +19,10 @@ class DashboardNav extends Component {
                         return (
                             <Popover key={i} placement="right" title={item.title} content={item.description} trigger="hover" overlayClassName='main-nav-item-help'>
                                 <li>
-                                    <span>
+                                    <Link to={item.url ? item.url : '/'}>
                                         <i className={item.icon + ` ico-2x`} />
                                         {item.badge !== null && <span className="badge">{item.badge}</span>}
-                                    </span>
+                                    </Link>
                                 </li>
                             </Popover>
                         )
@@ -30,4 +32,7 @@ class DashboardNav extends Component {
     )}
 }
 
-export default DashboardNav;
+
+function mapStateToProps({ }) { return {} }
+
+export default connect(mapStateToProps, {})(SideNav);

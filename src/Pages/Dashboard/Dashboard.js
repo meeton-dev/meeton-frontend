@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import TopNav from '../../Components/TopNav/TopNav';
-import DashboardNav from '../../Components/Dashboard/DashboardNav';
+import SideNav from '../../Components/Common/SideNav';
 import DashboardMain from '../../Components/Dashboard/DashboardMain';
 import DashboardExtra from '../../Components/Dashboard/DashboardExtra';
 
@@ -17,7 +17,7 @@ class Dashboard extends Component {
         return (
             <section className='main dashboard'>
                 <div className="content-left">
-                    <DashboardNav />
+                    <SideNav />
                 </div>
                 <div className="content">
                     <TopNav />

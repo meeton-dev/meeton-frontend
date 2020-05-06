@@ -14,9 +14,9 @@
 
 @import "./Pages/meetingCall/meetingCall";
 
+@import './Components/Common/SideNav';
 @import './Components/TopNav/TopNav';
 @import './Components/Dashboard/DashboardMain';
-@import './Components/Dashboard/DashboardNav';
 @import './Components/Dashboard/DashboardExtra';
 @import './Components/Dashboard/Parts/DashboardFilter';
 @import './Components/Dashboard/Parts/DashboardMeetingBox';

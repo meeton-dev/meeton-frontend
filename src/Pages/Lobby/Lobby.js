@@ -4,16 +4,17 @@ import { connect } from 'react-redux';
 import TopNav from '../../Components/TopNav/TopNav';
 import LobbyMain from '../../Components/Lobby/LobbyMain';
 import LobbyNav from '../../Components/Lobby/LobbyNav';
-import Moment from 'react-moment';
 
 class Lobby extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
-        }
+        };
+
     }
 
     render() {
+
         return (
             <section className='main lobby'>
                 <div className="content-left">

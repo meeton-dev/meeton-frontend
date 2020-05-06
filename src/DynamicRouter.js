@@ -4,11 +4,13 @@ import { Switch, Route } from 'react-router-dom';
 import MeetingCall from './Pages/meetingCall/meetingCall';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Lobby from './Pages/Lobby/Lobby';
+import CalendarPage from './Pages/Calendar/Calendar';
 
 const routes = [
     { path: '/', component: Dashboard, },
     { path: '/lobby/:code', component: Lobby },
     { path: '/meeting/:code', component: MeetingCall },
+    { path: '/calendar', component: CalendarPage },
 
     // { path: '/account', component: AccountPage, permission: 'ACCOUNT_ADMINISTER' },
     // { path: '/test', component: TestPage },

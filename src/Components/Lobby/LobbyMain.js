@@ -21,7 +21,7 @@ class LobbyMain extends Component {
                         Enter meeting 
                     </Link>
                 </Button>
-                <LobbyFiles />
+                {/* <LobbyFiles /> */}
             </div>
     )}
 }

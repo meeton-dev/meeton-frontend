@@ -1,16 +1,18 @@
 
 export const navItems = [
     {
-        title: 'Scheduled meetings',
+        title: 'Dashboard',
         description: 'I can find upcoming and archived scheduled meetings here.',
         icon: 'ico-clock-time',
-        badge: 3
+        badge: 3,
+        url: '/'
     },
     {
-        title: 'My meetings',
-        description: 'Every meetings I created or attended!',
+        title: 'Calendar',
+        description: 'Every meetings I created or attended in a calendar!',
         icon: 'ico-ui-calendar',
-        badge: null
+        badge: null,
+        url: 'calendar'
     },
     {
         title: 'Latest',
