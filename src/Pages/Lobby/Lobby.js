@@ -1,35 +1,35 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
+import TopNav from "../../Components/TopNav/TopNav";
+// import LobbyMain from "../../Components/Lobby/LobbyMain";
+import LobbyNav from "../../Components/Lobby/LobbyNav";
+import actions from "../../actions";
 
-import TopNav from '../../Components/TopNav/TopNav';
-import LobbyMain from '../../Components/Lobby/LobbyMain';
-import LobbyNav from '../../Components/Lobby/LobbyNav';
+const { meetingActions } = actions;
 
-class Lobby extends Component {
-    constructor() {
-        super();
-        this.state = {
-        };
+const Lobby = () => {
+  const dispatch = useDispatch();
+  const { code } = useParams();
 
-    }
+  useEffect(() => {
+    dispatch(meetingActions.joinMeeting(code));
+  }, [code, dispatch]);
 
-    render() {
+  return (
+    <section className="main lobby">
+      <div className="content-left">
+        <LobbyNav />
+      </div>
+      <div className="content">
+        <TopNav />
+        <div className="wrapper">
+          {/* <LobbyMain {...this.props} /> */}
+          {/* WE DONT NEED THIS ATM */}
+        </div>
+      </div>
+    </section>
+  );
+};
 
-        return (
-            <section className='main lobby'>
-                <div className="content-left">
-                    <LobbyNav />
-                </div>
-                <div className="content">
-                    <TopNav />
-                    <div className="wrapper">
-                        <LobbyMain {...this.props} />
-                    </div>
-                </div>
-            </section>
-    )}
-}
-
-function mapStateToProps({ }) { return {} }
-
-export default connect(mapStateToProps, {})(Lobby);
+export default Lobby;

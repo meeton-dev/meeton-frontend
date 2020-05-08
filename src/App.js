@@ -1,9 +1,9 @@
-import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { configureStore } from './store';
-import DynamicRouter from './DynamicRouter';
-import 'antd/dist/antd.css';
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import { configureStore } from "./store";
+import DynamicRouter from "./DynamicRouter";
+import "antd/dist/antd.css";
 
 const store = configureStore();
 
@@ -12,11 +12,10 @@ function App() {
     <div className="App">
       <Provider store={store}>
         <BrowserRouter>
-          <DynamicRouter  />
+          <DynamicRouter />
         </BrowserRouter>
       </Provider>
     </div>
-
   );
 }
 
