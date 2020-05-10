@@ -1,11 +1,9 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import { configureStore } from "./store";
+import store from "./store";
 import DynamicRouter from "./DynamicRouter";
 import "antd/dist/antd.css";
-
-const store = configureStore();
 
 function App() {
   return (

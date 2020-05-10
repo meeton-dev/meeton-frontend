@@ -1,4 +1,4 @@
+import reduceReducers from "reduce-reducers";
 import meetingReducers from "./meetingReducers";
-import { combineReducers } from "redux";
 
-export default combineReducers(meetingReducers);
+export default reduceReducers(meetingReducers);

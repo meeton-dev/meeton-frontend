@@ -9,7 +9,8 @@ const initialState = {
 
 const meetingReducers = handleActions(
   {
-    CREATE_MEETING_SUCCESS: produce((action, state) => {
+    CREATE_MEETING_SUCCESS: produce((state, action) => {
+      console.log(state);
       state.meeting = action.payload.meeting;
     }),
   },

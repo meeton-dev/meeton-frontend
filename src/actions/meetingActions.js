@@ -24,7 +24,8 @@ const createMeeting = (code) => async (dispatch) => {
   try {
     dispatch(createMeetingRequest());
     const response = await axios.post("http://localhost:3001/meetings");
-    dispatch(createMeetingSuccess(response.meeting));
+    console.log(response.data);
+    dispatch(createMeetingSuccess(response.data));
   } catch (err) {
     console.error(err);
     dispatch(createMeetingFailure());
