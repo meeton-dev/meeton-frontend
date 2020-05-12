@@ -13,7 +13,7 @@ const Lobby = () => {
   const { code } = useParams();
 
   useEffect(() => {
-    dispatch(meetingActions.joinMeeting(code));
+    // dispatch(meetingActions.joinMeeting(code));
   }, [code, dispatch]);
 
   return (
