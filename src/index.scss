@@ -1,12 +1,14 @@
 // import variables first for @mixins
 // variables.scss containing themeDark.scss and themeLight.scss
 @import './Styles/variables';
-@import './Styles/mixins.scss';
+@import './Styles/mixins';
+@import './Styles/modals';
+@import './Styles/buttons';
 
 @import './Styles/rem';
 
 /* ICONS */
-@import './assets/icons/icons.scss';
+@import './assets/icons/icons';
 
 // common.scss containing commonly used classes and mixins
 @import './Styles/common';

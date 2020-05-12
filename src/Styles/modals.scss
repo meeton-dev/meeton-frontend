@@ -1,0 +1,65 @@
+.mtnModal-mask{
+
+}
+.mtnModal {
+    &.onSide{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 999;
+        width: auto;
+        left: 0;
+        border-radius: 15px 0 0 15px;
+        transform: translate(100%);
+        animation: slideOut .3s 1 ease-out;
+        &.visible{
+            animation: slideIn .4s 1 ease-out;
+            transform: translate(0%);
+        }
+    }
+    &-mask{
+        background-color: rgba(0,0,0,0.2);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        &.transparent{
+            background-color: transparent;
+        }
+    }
+    &-wrapper{
+        position: relative;
+        border-radius: 15px 0 0 15px;
+        background-color: #ffffff;
+        height: 100%;
+        left: 100px;
+        box-shadow: 0 0px 14px rgba(0,0,0,0.2);
+        overflow: hidden;
+        
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        .create-infos{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            background: #fce07b; /* Old browsers */
+            background: -moz-linear-gradient(45deg, #fce07b 1%, #f2cf88 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(45deg, #fce07b 1%,#f2cf88 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(45deg, #fce07b 1%,#f2cf88 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fce07b', endColorstr='#f2cf88',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+            .illustration{
+                background-image: url('../assets/placeholder_create_test.png');
+                width: auto;
+                height: 330px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                margin: 30px;
+            }
+        }
+        .create-content{
+
+        }
+    }
+}

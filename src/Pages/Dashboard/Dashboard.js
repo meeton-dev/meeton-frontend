@@ -23,7 +23,7 @@ class Dashboard extends Component {
                     <TopNav />
                     <div className="wrapper">
                         <DashboardMain {...this.props} />
-                        <DashboardExtra />
+                        {/* <DashboardExtra /> */}
                     </div>
                 </div>
             </section>

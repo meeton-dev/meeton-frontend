@@ -24,6 +24,7 @@
         transform: scale(1.06);
     }
 }
+
 @keyframes bubblyOff {
     0% {
         transform: scale(1.06);
@@ -36,5 +37,33 @@
     }
     100% {
         transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translate(100%);
+        
+    }
+    70% {
+        transform: translate(0%);
+    }
+    80% {
+        transform: translate(-1%);
+    }
+    90% {
+        transform: translate(1%);
+    }
+    100% {
+        transform: translate(0%);
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translate(0%);
+    }
+    100% {
+        transform: translate(100%);
     }
 }
