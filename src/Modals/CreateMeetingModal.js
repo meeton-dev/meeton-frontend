@@ -1,33 +1,62 @@
-import React, { useRef, useEffect, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import ModalWrapper from './ModalWrapper';
 import actions from "../actions";
-import { Button } from "antd";
 import { hideModal } from "../Modals";
+import { Form, Input, Radio, Button } from 'antd';
+import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
+
 const { meetingActions, modalActions } = actions;
 
 const validations = [
-    { title: "Add a title", validated: false },
-    { title: "Add a short description.", validated: false },
-    { title: "Choose a meeting type.", validated: false },
-    { title: "If you want, you can add a some goal or topic you have to discuss!", validated: false },
-    { title: "Set a date and time when this meeting will start", validated: false },
-    { title: "Invite people - at least one", validated: false },
-  ];
-  
+    { 
+        title: "Add a title",
+        name: 'Title',
+        validated: false 
+    },
+    { 
+        title: "Add a short description.",
+        label: 'Description',
+        validated: false 
+    },
+    { 
+        title: "Choose a meeting type.", 
+        name: 'Title', 
+        validated: false 
+    },
+    { 
+        title: "If you want, you can add a some goal or topic you have to discuss!", 
+        name: 'Title', 
+        validated: false 
+    },
+    { 
+        title: "Set a date and time when this meeting will start", 
+        name: 'Title', 
+        validated: false 
+    },
+    { 
+        title: "Invite people - at least one", 
+        name: 'Title', 
+        validated: false 
+    },
+];
+
 const CreateMeetingModal = () => {
 
     const history = useHistory();
     const dispatch = useDispatch();
-  
+    const [form] = Form.useForm();
+    const [, forceUpdate] = useState();
     const meetingCode = useSelector((state) => state.meeting?.code);
   
     useEffect(() => {
-      if (meetingCode) {
-        // Check its not null
-        history.push(`/room/${meetingCode}`);
-      }
+        forceUpdate({});
+
+        if (meetingCode) {
+            // Check its not null
+            history.push(`/room/${meetingCode}`);
+        }
     }, [history, meetingCode]);
   
     return (
@@ -68,13 +97,112 @@ const CreateMeetingModal = () => {
             </div>
             </div>
             <div className="create-content">
-            <Button
-                type="primary"
-                size="small"
-                onClick={() => dispatch(meetingActions.createMeeting())}
-            >
-                Create meeting
-            </Button>
+                <Form 
+                    form={form} 
+                    name="create_meeting" 
+                    hideRequiredMark={true}
+                    onFinish={() => dispatch(meetingActions.createMeeting())}>
+                    <Form.Item
+                        name="title"
+                        rules={[{ required: true, message: ' '  }]}
+                    >
+                        <div className="label">Title</div>
+                        <Input placeholder="Title" />
+                    </Form.Item>
+                    <Form.Item
+                        name="description"
+                        rules={[{ required: true, message: ' ' }]}
+                    >
+                        <div className="label">Description</div>
+                        <Input.TextArea
+                            placeholder="Description"
+                        />
+                    </Form.Item>
+                    <Form.Item
+                        rules={[{ required: true, message: ' ' }]}
+                    >
+                        <div className="label">Meeting type</div>
+                        <Radio.Group>
+                            <Radio.Button value="scheduled">Scheduled</Radio.Button>
+                            <Radio.Button value="scheduled-timed">Scheduled timed</Radio.Button>
+                            <Radio.Button value="ad-hoc">Ad-hoc</Radio.Button>
+                        </Radio.Group>
+                    </Form.Item>
+
+                    <Form.List name="names">
+                        {(fields, { add, remove }) => {
+                        return (
+                            <div>
+                                <div className="label">Topics / Goals</div>
+                                {fields.map((field, index) => (
+                                    <Form.Item
+                                        required={false}
+                                        key={field.key}
+                                    >
+                                    <Form.Item
+                                        {...field}
+                                        validateTrigger={['onChange', 'onBlur']}
+                                        rules={[
+                                        {
+                                            required: true,
+                                            whitespace: true,
+                                            message: "You have to add a title or delete this field.",
+                                        },
+                                        ]}
+                                        noStyle
+                                    >
+                                        <Input placeholder="Topic name" style={{ width: '60%' }} />
+                                    </Form.Item>
+                                        {fields.length > 0 ? (
+                                            <MinusCircleOutlined
+                                            className="dynamic-delete-button"
+                                            style={{ margin: '0 8px' }}
+                                            onClick={() => {
+                                                remove(field.name);
+                                            }}
+                                            />
+                                        ) : null}
+                                    </Form.Item>
+                                ))}
+                                <Form.Item>
+                                    <Button
+                                    type="dashed"
+                                    onClick={() => {
+                                        add();
+                                    }}
+                                    style={{ width: '60%' }}
+                                    >
+                                    <PlusOutlined /> Add new topic
+                                    </Button>
+                                </Form.Item>
+                            </div>
+                        );
+                        }}
+                    </Form.List>
+
+                    <Form.Item shouldUpdate={true}>
+                        {() => (
+                        <Button
+                            type="primary"
+                            htmlType="submit"
+                            disabled={
+                            !form.isFieldsTouched(true) ||
+                            form.getFieldsError().filter(({ errors }) => errors.length).length
+                            }
+                        >
+                            Create meeting
+                        </Button>
+                        )}
+                    </Form.Item>
+                </Form>
+                
+                    {/* <Button
+                        type="primary"
+                        size="small"
+                        onClick={() => dispatch(meetingActions.createMeeting())}
+                    >
+                        Create meeting
+                    </Button> */}
             </div>
         </ModalWrapper>
     );
