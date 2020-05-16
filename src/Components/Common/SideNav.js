@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Popover } from 'antd';
 import { connect } from 'react-redux';
 import logo from '../../assets/logos/logo-white.png';
-import { navItems } from '../Dashboard/helpers/nav-items';
+import { navItems } from './SideNav-items';
 import {Link} from 'react-router-dom'
 
 class SideNav extends Component {

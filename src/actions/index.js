@@ -1,3 +1,4 @@
 import meetingActions from "./meetingActions";
+import modalActions from "./modalActions";
 
-export default { meetingActions };
+export default { meetingActions, modalActions };

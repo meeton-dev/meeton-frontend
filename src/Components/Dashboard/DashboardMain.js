@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
-import DashboardFilter from "./Parts/DashboardFilter";
-import DashboardMeetingBox from "./Parts/DashboardMeetingBox";
-
+import DashboardFilter from "./DashboardFilter/DashboardFilter";
+import DashboardMeetingBox from "./DashboardMeetingBox/DashboardMeetingBox";
 const typeArr = ["Scheduled", "Ad-hoc", "Scheduled timed"];
+
 
 const DashboardMain = () => {
   return (

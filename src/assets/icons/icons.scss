@@ -2,7 +2,7 @@
 * @package IcoFont 
 * @version 1.0.1 
 * @author IcoFont https://icofont.com 
-* @copyright Copyright (c) 2015 - 2019 IcoFont 
+* @copyright Copyright (c) 2015 - 2020 IcoFont 
 * @license - https://icofont.com/license/
 */
 
@@ -91,6 +91,16 @@ url("./icons.woff") format("woff");
 .ico-users-alt-5:before
 {
   content: "\ed0a";
+}
+
+.ico-exclamation-tringle:before
+{
+  content: "\ef1b";
+}
+
+.ico-tick-mark:before
+{
+  content: "\f00e";
 }
 
 .ico-xs
@@ -182,7 +192,7 @@ url("./icons.woff") format("woff");
   line-height: 2em;
 }
 
-.ico-ul > li .icofont
+.ico-ul > li .ico
 {
   display: inline-block;
   vertical-align: middle;
@@ -205,12 +215,12 @@ url("./icons.woff") format("woff");
   float: right;
 }
 
-.icofont.ico-pull-left
+.ico.ico-pull-left
 {
   margin-right: .3em;
 }
 
-.icofont.ico-pull-right
+.ico.ico-pull-right
 {
   margin-left: .3em;
 }
