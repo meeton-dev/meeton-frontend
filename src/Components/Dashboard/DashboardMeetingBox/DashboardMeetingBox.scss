@@ -9,17 +9,19 @@
     box-shadow: 0 rem(3px) rem(6px) #dadada;
     animation: bubblyOff .4s 1 ease-out;
     transform: scale(1);
+    overflow: hidden;
     &:before {
         content: '';
         position: absolute;
         display: block;
-        height: 100%;
-        width: 100%;
+        height: 120px;
+        width: 120px;
         background: black;
-        border-radius: rem(10px);
-        z-index: -1;
-        left: 0;
-        opacity: 0;
+        border-radius: 50%;
+        z-index: 1;
+        right: -30%;
+        top: -20%;
+        opacity: 1;
         transition: ease-in-out .3s all;
     }
     &:hover{
@@ -28,21 +30,61 @@
         transform: scale(1.06);
         &:before {
             transition: ease-in-out .3s all;
-            left: -4px;
-            opacity: 1;
+            height: 420px;
+            width: 420px;
+            // left: -4px;
+            // opacity: 1;
+        }
+    }
+    &:hover{
+        .top, .mid, .bottom, * {
+            transition: ease-in-out .3s all;
+            color: #fff!important;
         }
     }
     .top, .mid, .bottom {
-        background: #fff;
+        // background: #fff;
+        transition: ease-in-out .3s all;
+
+        position: relative;
+        z-index: 1;
+
     }
     &.Ad-hoc{
         @include boxHover(#ffc400);
+        &:hover{
+            .bottom{
+                .in-meeting{
+                    .user{
+                        border-color: #ffc400;
+                    }
+                }
+            }
+        }
     }
     &.Scheduled{
         @include boxHover(#fc6161);
+        &:hover{
+            .bottom{
+                .in-meeting{
+                    .user{
+                        border-color: #fc6161;
+                    }
+                }
+            }
+        }
     }
     &.timed{
         @include boxHover(#8847f8);
+        &:hover{
+            .bottom{
+                .in-meeting{
+                    .user{
+                        border-color: #8847f8;
+                    }
+                }
+            }
+        }
     }
     .top{
         display: flex;
@@ -152,7 +194,7 @@
             .user{
                 margin-left: -11px;
                 position: relative;
-                border:2px solid #fff;
+                border: 2px solid #fff;
                 border-radius: 50%;
                 overflow:hidden;
             }
