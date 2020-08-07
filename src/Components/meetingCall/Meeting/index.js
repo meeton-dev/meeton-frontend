@@ -36,10 +36,10 @@ const Room = (props) => {
         userVideo.current.srcObject = stream;
 
         // Join to room by ID
-        socketRef.current.emit("JOIN_ROOM", roomID);
+        socketRef.current.emit("join room", roomID);
 
         // Get all users
-        socketRef.current.on("ALL_USERS", (users) => {
+        socketRef.current.on("all users", (users) => {
           const peers = [];
           console.log('users: ', users);
           users.forEach((userID) => {
@@ -55,7 +55,7 @@ const Room = (props) => {
           setPeers(peers);
         });
 
-        socketRef.current.on("USER_JOINED", (payload) => {
+        socketRef.current.on("user joined", (payload) => {
           const peer = addPeer(payload.signal, payload.callerID, stream);
           peersRef.current.push({
             peerID: payload.callerID,
@@ -65,7 +65,7 @@ const Room = (props) => {
           setPeers((users) => [...users, peer]);
         });
 
-        socketRef.current.on("RECEIVING_RETURNED_SIGNAL", (payload) => {
+        socketRef.current.on("receiving returned signal", (payload) => {
           const item = peersRef.current.find((p) => p.peerID === payload.id);
           item.peer.signal(payload.signal);
         });
@@ -80,7 +80,7 @@ const Room = (props) => {
     });
     console.log('sending signal');
     peer.on("signal", (signal) => {
-      socketRef.current.emit("SENDING_SIGNAL", {
+      socketRef.current.emit("sending signal", {
         userToSignal,
         callerID,
         signal,
@@ -98,7 +98,7 @@ const Room = (props) => {
     });
 
     peer.on("signal", (signal) => {
-      socketRef.current.emit("RETURNING_SIGNAL", { signal, callerID });
+      socketRef.current.emit("returning signal", { signal, callerID });
     });
 
     peer.signal(incomingSignal);

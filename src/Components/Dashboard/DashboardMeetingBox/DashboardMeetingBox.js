@@ -15,13 +15,14 @@ class DashboardMeetingBox extends Component {
       }
     render() {
         const { data } = this.props;
-        const randomNumberUser = Math.floor(Math.random() * 25) + 2;
+        const {type, users, date,date_extended, visible } = data;
+        // console.log(data);
         return (
-            <div className={`meeting-box ${data}`}>
+            <div className={`meeting-box ${type}`}>
                 <div className="top">
-                    <div className={`typeOf ${data}`}>
+                    <div className={`typeOf ${type}`}>
                         <span />
-                        {data}
+                        {type}                        
                     </div>
                     <div>
                         <i className="ico-star" />
@@ -29,24 +30,27 @@ class DashboardMeetingBox extends Component {
                 </div>
                 <div className="mid">
                     <div>
-                        <Avatar />
+                        {/* <Avatar /> */}
                         <div className="lead">
+                            <Moment date={date_extended} format={'YYYY-MM-DD - HH:mm'} />
                             <div className="title">Weekly meeting with Business Team</div>
                             <div className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis nisi neque.</div>
                         </div>
                     </div>
-                    <div className="actions">
-                        <Button type="primary" size='small' to={'/lobby'}>
-                            <Link to='/lobby'>
+                    {visible === 1 &&
+                        <div className="actions">
+                            <Button type="primary" size='small' to={'/lobby'}>
+                                <Link to='/lobby'>
 
-                            Go to Lobby
-                            </Link>
-                        </Button>
-                    </div>
+                                Go to Lobby
+                                </Link>
+                            </Button>
+                        </div>
+                    }
                     <div className="extra-info">
                         <div>
                             <i className="icon ico-users-alt-5" />
-                            <span>{randomNumberUser}</span>
+                            <span>{users}</span>
                         </div>
                         <div>
                             <i className="icon ico-clock-time" />
@@ -65,7 +69,7 @@ class DashboardMeetingBox extends Component {
                 <div className="bottom">
                     <Popover placement="top" title={'Users in meeting'} content={'user list'} trigger="hover">
                         <div className="in-meeting">
-                            {[...Array(randomNumberUser)].map((e,i) => {
+                            {[...Array(users)].map((e,i) => {
                                 return (
                                     i < 10 && <div key={i} className="user">
                                     <Avatar micro/>

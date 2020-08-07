@@ -1,3 +1,10 @@
+@keyframes wave {
+    from {
+        background-position: 0px 0px;
+    } to {
+        background-position: 3000px 0px;
+    }
+}
 
 .meeting-box{
     display: flex;
@@ -19,10 +26,15 @@
         background: black;
         border-radius: 50%;
         z-index: 1;
-        right: -30%;
-        top: -20%;
+        right: -70px;
+        top: -70px;
         opacity: 1;
         transition: ease-in-out .3s all;
+    }
+    &:after{
+        opacity: 0;
+        display: none;
+        animation: none;
     }
     &:hover{
         cursor: pointer;
@@ -30,60 +42,85 @@
         transform: scale(1.06);
         &:before {
             transition: ease-in-out .3s all;
-            height: 420px;
-            width: 420px;
+            height: 700px;
+            width: 700px;
             // left: -4px;
             // opacity: 1;
         }
-    }
-    &:hover{
+        &:after{
+            content: '';
+            opacity: 1;
+            position: absolute;
+            background-image: url('../../../assets/wave.png');
+            height: 40px;
+            width: 100%;
+            bottom: 0;
+            background-size: 70%;
+            display: block;
+            z-index: 1;
+            background-repeat: repeat-x;
+            background-position: top;
+            animation: wave 60s linear infinite;
+        }
         .top, .mid, .bottom, * {
-            transition: ease-in-out .3s all;
-            color: #fff!important;
+            transition: ease-in-out .1s all;
+            .lead, .extra-info {
+                color: #fff!important;
+                span{
+                    color: #fff!important;
+                }
+                .icon {
+                    color: #fff!important;
+                }
+            }
+            .in-meeting{
+                opacity: 1;
+            }
         }
     }
-    .top, .mid, .bottom {
+    .top, .mid, .bottom, * {
         // background: #fff;
-        transition: ease-in-out .3s all;
-
+        transition: ease-in-out .1s all;
         position: relative;
-        z-index: 1;
-
+        z-index: 2;
     }
     &.Ad-hoc{
         @include boxHover(#ffc400);
         &:hover{
-            .bottom{
-                .in-meeting{
-                    .user{
-                        border-color: #ffc400;
-                    }
-                }
-            }
+            @include boxHoverOn(#ffc400);
+            // .bottom{
+            //     .in-meeting{
+            //         .user{
+            //             border-color: #ffc400;
+            //         }
+            //     }
+            // }
         }
     }
     &.Scheduled{
         @include boxHover(#fc6161);
         &:hover{
-            .bottom{
-                .in-meeting{
-                    .user{
-                        border-color: #fc6161;
-                    }
-                }
-            }
+            @include boxHoverOn(#fc6161);
+            // .bottom{
+            //     .in-meeting{
+            //         .user{
+            //             border-color: #fc6161;
+            //         }
+            //     }
+            // }
         }
     }
     &.timed{
         @include boxHover(#8847f8);
         &:hover{
-            .bottom{
-                .in-meeting{
-                    .user{
-                        border-color: #8847f8;
-                    }
-                }
-            }
+            @include boxHoverOn(#8847f8);
+            // .bottom{
+            //     .in-meeting{
+            //         .user{
+            //             border-color: #8847f8;
+            //         }
+            //     }
+            // }
         }
     }
     .top{
@@ -110,7 +147,7 @@
         }
         i {
             font-size: rem(18px);
-            color: #dbdbdb;
+            color: #ececec;
             cursor: pointer;
             transition: ease-in-out .2s all;
             &:hover{
@@ -185,12 +222,8 @@
             display: inline-flex;
             flex-direction: row-reverse;
             padding-left:10px;
-            opacity: 0.2;
+            opacity: 0.1;
             transition: ease-in-out .2s all;
-            &:hover{
-                transition: ease-in-out .2s all;
-                opacity: 1;
-            }
             .user{
                 margin-left: -11px;
                 position: relative;

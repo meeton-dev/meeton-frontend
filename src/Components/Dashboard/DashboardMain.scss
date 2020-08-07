@@ -7,11 +7,23 @@
         width: 100%;
         padding: rem(25px);
         .meetings-list-scroll {
-            display: grid;
-            grid-column-gap: rem(25px);
-            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-            grid-row-gap: rem(25px);
-            margin-bottom: rem(60px);
+            h1{
+                font-size: rem(35px);
+                font-weight: 100;
+                position: sticky;
+                color: #525252;
+                text-align: right;
+                top: 0;
+                background: #f4f4f4;
+                z-index: 3;
+            }
+            .meetings-list-section {
+                display: grid;
+                grid-column-gap: rem(25px);
+                grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+                grid-row-gap: rem(25px);
+                margin-bottom: rem(60px);
+            }
         }
     }
 }

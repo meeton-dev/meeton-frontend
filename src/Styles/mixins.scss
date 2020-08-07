@@ -16,6 +16,23 @@
         font-size: 12px;
     }
 }
+@mixin boxHoverOn($color) {
+    .typeOf {
+        color: #fff;
+        span{
+            border-color: #fff;
+        }
+    }
+    .ant-btn{
+        background: #fff;
+        border-color: lighten($color, 10%);
+        border-radius: 6px;
+        font-size: 12px;
+        a{
+            color: $color!important;
+        }
+    }
+}
 @keyframes bubblyOn {
     0% {
       transform: scale(1);
