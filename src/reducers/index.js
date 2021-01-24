@@ -1,8 +1,14 @@
-import reduceReducers from "reduce-reducers";
-import meetingReducers from "./meetingReducers";
-import modalReducers from "./modalReducers";
+const appReducers = (state, action) => {
+    const { type, obj } = action;
 
-export default reduceReducers(
-    meetingReducers,
-    modalReducers
-);
+    switch (type) {
+    case 'SET_MODAL_VISIBLE': {
+        return { ...state, advancedSearch: obj };
+    }
+    default: {
+        return {};
+    }
+    }
+};
+
+export default appReducers;

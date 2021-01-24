@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import SideNav from "../../Components/Common/SideNav";
@@ -64,8 +63,4 @@ class CalendarPage extends Component {
   }
 }
 
-function mapStateToProps({}) {
-  return {};
-}
-
-export default connect(mapStateToProps, {})(CalendarPage);
+export default CalendarPage;

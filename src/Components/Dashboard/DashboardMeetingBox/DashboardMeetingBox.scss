@@ -1,11 +1,3 @@
-@keyframes wave {
-    from {
-        background-position: 0px 0px;
-    } to {
-        background-position: 3000px 0px;
-    }
-}
-
 .meeting-box{
     display: flex;
     flex-direction: column;
@@ -29,7 +21,7 @@
         right: -70px;
         top: -70px;
         opacity: 1;
-        transition: ease-in-out .3s all;
+        transition: ease-in-out .5s all;
     }
     &:after{
         opacity: 0;
@@ -38,29 +30,12 @@
     }
     &:hover{
         cursor: pointer;
-        animation: bubblyOn .3s 1 ease-out;
+        animation: bubblyOn .5s 1 ease-out;
         transform: scale(1.06);
         &:before {
-            transition: ease-in-out .3s all;
+            transition: ease-in-out .5s all;
             height: 700px;
             width: 700px;
-            // left: -4px;
-            // opacity: 1;
-        }
-        &:after{
-            content: '';
-            opacity: 1;
-            position: absolute;
-            background-image: url('../../../assets/wave.png');
-            height: 40px;
-            width: 100%;
-            bottom: 0;
-            background-size: 70%;
-            display: block;
-            z-index: 1;
-            background-repeat: repeat-x;
-            background-position: top;
-            animation: wave 60s linear infinite;
         }
         .top, .mid, .bottom, * {
             transition: ease-in-out .1s all;
@@ -79,48 +54,26 @@
         }
     }
     .top, .mid, .bottom, * {
-        // background: #fff;
         transition: ease-in-out .1s all;
         position: relative;
         z-index: 2;
     }
     &.Ad-hoc{
-        @include boxHover(#ffc400);
+        @include boxHover(#80fcb4, #fff389);
         &:hover{
-            @include boxHoverOn(#ffc400);
-            // .bottom{
-            //     .in-meeting{
-            //         .user{
-            //             border-color: #ffc400;
-            //         }
-            //     }
-            // }
+            @include boxHoverOn(#fff389);
         }
     }
     &.Scheduled{
-        @include boxHover(#fc6161);
+        @include boxHover(#fc6161, #fcac61);
         &:hover{
-            @include boxHoverOn(#fc6161);
-            // .bottom{
-            //     .in-meeting{
-            //         .user{
-            //             border-color: #fc6161;
-            //         }
-            //     }
-            // }
+            @include boxHoverOn(#fcac61);
         }
     }
     &.timed{
-        @include boxHover(#8847f8);
+        @include boxHover(#6913ff, #61a4fc);
         &:hover{
-            @include boxHoverOn(#8847f8);
-            // .bottom{
-            //     .in-meeting{
-            //         .user{
-            //             border-color: #8847f8;
-            //         }
-            //     }
-            // }
+            @include boxHoverOn(#61a4fc);
         }
     }
     .top{

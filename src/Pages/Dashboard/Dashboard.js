@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import { useSelector } from 'react-redux';
 import TopNav from '../../Components/TopNav/TopNav';
 import SideNav from '../../Components/Common/SideNav';
 import DashboardMain from '../../Components/Dashboard/DashboardMain';
 import DashboardExtra from '../../Components/Dashboard/DashboardExtra';
 
 const Dashboard = () => {
-    const mask = useSelector((state) => state.modal?.mask);
-
+// modalVisible
     return (
-        <section className={`main dashboard ${mask ? 'modalVisible' : ''}`}>
+        <section className={`main dashboard `}>
             <div className="content-left">
                 <SideNav />
             </div>

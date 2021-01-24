@@ -1,22 +1,21 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import { Provider } from "react-redux";
-import store from "./store";
 import DynamicRouter from "./DynamicRouter";
 import UniModal from "./Modals";
 import "antd/dist/antd.css";
+import { MainContext } from "./context/context";
 
 function App() {
   return (
     <div className="App">
-      <Provider store={store}>
+      <MainContext>
         <BrowserRouter>
           {/* Router */}
           <DynamicRouter />
           {/* MODALS */}
           <UniModal />
         </BrowserRouter>
-      </Provider>
+      </MainContext>
     </div>
   );
 }

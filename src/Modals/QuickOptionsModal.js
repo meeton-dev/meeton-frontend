@@ -1,19 +1,16 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import ModalWrapper from './ModalWrapper';
-import actions from "../actions";
 import { Button } from "antd";
-import { hideModal } from ".";
-const { meetingActions, modalActions } = actions;
+// import { hideModal } from ".";
 
 const QuickOptionsModal = () => {
     return (
 
         <ModalWrapper
-            visible={modalActions}
+            visible={false}
             mask={false}
-            onOk={() => hideModal}
+            onOk={() => {}}
             clss={'quick-options'}
             right
             // onCancel={modalActions}

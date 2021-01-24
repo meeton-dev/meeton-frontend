@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import logo2 from '../../assets/logos/logo.svg';
 import { Avatar } from '../Common/avatar';
 import { Input } from 'antd';
-import { showModal } from "../../Modals";
 
 const { Search } = Input;
 
@@ -18,19 +17,19 @@ const TopNav = () => {
             <div className="control">
                 <nav className="user-nav">
                     <ul>
-                        <li onClick={() => showModal('SUPPORT', true)}>
+                        <li onClick={() => {}}>
                             <i className="ico-2x ico-question-circle" />
                             <span>
                                 Support
                             </span>
                             </li>
-                        <li onClick={() => showModal('QUICK_OPTIONS', false)}>
+                        <li onClick={() => {}}>
                             <i className="ico-2x ico-notification" />
                             <span>
                                 Notification
                             </span>
                         </li>
-                        <li onClick={() => showModal('QUICK_OPTIONS', false)}>
+                        <li onClick={() => {}}>
                             <span className="menu-dots">
                                 <span />
                                 <span />

@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import ModalWrapper from './ModalWrapper';
-import actions from "../actions";
-import { hideModal } from "../Modals";
 import { Form, Input, Radio, Button } from 'antd';
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
-
-const { meetingActions, modalActions } = actions;
 
 const validations = [
     { 
@@ -45,32 +40,31 @@ const validations = [
 const CreateMeetingModal = () => {
 
     const history = useHistory();
-    const dispatch = useDispatch();
     const [form] = Form.useForm();
     const [, forceUpdate] = useState();
-    const meetingCode = useSelector((state) => state.meeting?.code);
+    // const meetingCode = useSelector((state) => state.meeting?.code);
   
-    useEffect(() => {
-        forceUpdate({});
+    // useEffect(() => {
+    //     forceUpdate({});
 
-        if (meetingCode) {
-            // Check its not null
-            history.push(`/room/${meetingCode}`);
-        }
-    }, [history, meetingCode]);
+    //     if (meetingCode) {
+    //         // Check its not null
+    //         history.push(`/room/${meetingCode}`);
+    //     }
+    // }, [history, meetingCode]);
   
     return (
 
         <ModalWrapper
-            visible={modalActions}
+            visible={false}
             mask={false}
-            onOk={() => hideModal}
+            onOk={() => {}}
             clss={'create-meeting'}
             right
         >
             <div className="create-infos">
             <div className="close-button">
-                <span onClick={hideModal}>Close</span>
+                <span >Close</span>
             </div>
             <div className="head">
                 <h2>It's time to create a new meeting!</h2>
@@ -101,7 +95,7 @@ const CreateMeetingModal = () => {
                     form={form} 
                     name="create_meeting" 
                     hideRequiredMark={true}
-                    onFinish={() => dispatch(meetingActions.createMeeting())}>
+                    onFinish={() => {}}>
                     <Form.Item
                         name="title"
                         rules={[{ required: true, message: ' '  }]}

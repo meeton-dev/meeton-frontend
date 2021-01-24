@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Popover } from 'antd';
-import { connect } from 'react-redux';
 import logo from '../../assets/logos/logo-white.png';
 import { navItems } from './SideNav-items';
 import {Link} from 'react-router-dom'
@@ -32,7 +31,4 @@ class SideNav extends Component {
     )}
 }
 
-
-function mapStateToProps({ }) { return {} }
-
-export default connect(mapStateToProps, {})(SideNav);
+export default SideNav;

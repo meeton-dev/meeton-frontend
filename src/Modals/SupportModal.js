@@ -1,11 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import ModalWrapper from './ModalWrapper';
-import actions from "../actions";
 import { Button } from "antd";
-import { hideModal } from ".";
-const { meetingActions, modalActions } = actions;
 
 const validations = [
     { title: "Add a title", validated: false },
@@ -19,23 +15,23 @@ const validations = [
 const SupportModal = () => {
 
     const history = useHistory();
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
   
-    const meetingCode = useSelector((state) => state.meeting?.code);
+    // const meetingCode = useSelector((state) => state.meeting?.code);
   
-    useEffect(() => {
-      if (meetingCode) {
-        // Check its not null
-        history.push(`/room/${meetingCode}`);
-      }
-    }, [history, meetingCode]);
+    // useEffect(() => {
+    //   if (meetingCode) {
+    //     // Check its not null
+    //     history.push(`/room/${meetingCode}`);
+    //   }
+    // }, [history, meetingCode]);
   
     return (
 
         <ModalWrapper
-            visible={modalActions}
+            visible={false}
             mask={false}
-            onOk={() => hideModal}
+            // onOk={() => hideModal}
             clss={'support'}
             bottom
         >

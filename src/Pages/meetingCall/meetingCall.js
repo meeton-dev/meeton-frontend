@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import { connect } from 'react-redux';
 
 import MeetingCallBoard from '../../Components/meetingCall/meetingCallBoard/meetingCallBoard';
 import MeetingCallUserList from '../../Components/meetingCall/meetingCallUserList/meetingCallUserList';
@@ -28,7 +27,4 @@ class MeetingCall extends Component {
     )}
 }
 
-
-function mapStateToProps({ }) { return {} }
-
-export default connect(mapStateToProps, {})(MeetingCall);
+export default MeetingCall;
