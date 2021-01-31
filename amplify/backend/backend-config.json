@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "meetonfrontendec05f590": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

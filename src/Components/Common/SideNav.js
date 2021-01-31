@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Popover } from 'antd';
-import logo from '../../assets/logos/logo-white.png';
 import { navItems } from './SideNav-items';
 import {Link} from 'react-router-dom'
 
@@ -10,7 +9,6 @@ class SideNav extends Component {
             <nav className="side-nav">
                 <Popover placement="right" title={'This is meeton. '} content={'meeton. is a fucking good webapp.... will be... hopefully'} trigger="hover" overlayClassName='main-nav-item-help'>
                     <div className="logo">
-                        <div className="logo-thumb" ><img src={logo} alt="meeton logo" /></div>
                     </div>
                 </Popover>
                 <ul>

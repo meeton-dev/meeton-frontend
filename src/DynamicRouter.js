@@ -13,12 +13,6 @@ const routes = [
   { path: "/meeting/:code", component: MeetingCall },
   { path: "/room/:roomID", component: Meeting },
   { path: "/calendar", component: CalendarPage },
-
-  // { path: '/account', component: AccountPage, permission: 'ACCOUNT_ADMINISTER' },
-  // { path: '/test', component: TestPage },
-  // { path: '/no-access', component: NoAccessPage },
-  // { path: '/404', component: NotFoundPage },
-  // { component: NotFoundPage, }
 ];
 
 class DynamicRouter extends Component {

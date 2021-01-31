@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import AppWithAuth from './Authentication/AppWithAuth';
 
 ReactDOM.render(
-    <App />,
+    <AppWithAuth />,
   document.getElementById('root')
 );
 

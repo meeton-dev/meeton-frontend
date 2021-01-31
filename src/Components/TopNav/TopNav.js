@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo2 from '../../assets/logos/logo.svg';
 import { Avatar } from '../Common/avatar';
 import { Input } from 'antd';
 
@@ -12,7 +11,6 @@ const TopNav = () => {
                 <Search placeholder="Search..." onSearch={value => console.log(value)} enterButton />
             </div>
             <div className="logo">
-                <img src={logo2} alt="meeton" />
             </div>
             <div className="control">
                 <nav className="user-nav">

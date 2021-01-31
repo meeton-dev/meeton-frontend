@@ -1,6 +1,7 @@
 // import variables first for @mixins
 // variables.scss containing themeDark.scss and themeLight.scss
 @import './Styles/variables';
+// Meeton logo as icons
 @import './Styles/mixins';
 @import './Styles/modals';
 @import './Styles/buttons';
@@ -8,6 +9,7 @@
 @import './Styles/rem';
 
 /* ICONS */
+@import './assets/logos/style';
 @import './assets/icons/icons';
 
 // common.scss containing commonly used classes and mixins

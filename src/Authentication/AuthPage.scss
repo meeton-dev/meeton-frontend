@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+.meetonAuth{
+    display: flex;
+    background: #222222;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    p{
+        margin: 0;
+    }
+    .btn-as-link{
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        transition: all .4s ease-in-out;
+        &:hover{
+            transition: all .4s ease-in-out;
+            cursor: pointer;
+            color: #ffeebc;
+        }
+    }
+    
+    .btn{
+        background-color: transparent;
+        border: none;
+        top: 0;
+        color: #ffeebc;
+        border: 1px solid #ffeebc;
+        transition: all .4s ease-in-out;
+        padding: .7rem 1.5rem;
+        border-radius: 12px;
+        position: relative;
+        font-weight: bold;
+        &:hover{
+            top: -2px;
+            transition: all .4s ease-in-out;
+            cursor: pointer;
+            color: #222222;
+            background: rgb(255,213,137); /* Old browsers */
+            background: -moz-linear-gradient(-45deg,  rgba(255,213,137,1) 0%, rgba(255,238,188,1) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(-45deg,  rgba(255,213,137,1) 0%,rgba(255,238,188,1) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(135deg,  rgba(255,213,137,1) 0%,rgba(255,238,188,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+            box-shadow: 0 10px 10px -10px #ffeebc;
+        }
+    }
+
+    .auth-wrapper{
+        position: relative;
+        z-index: 2;
+        flex-direction: row;
+        display: flex;
+        height: 100vh;
+        max-width: 950px;
+        width: 100vw;
+        max-height: 600px;
+        margin: 0;
+        background: transparent;
+        .actions{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 1rem;
+
+            p{
+                color: #6e6e6e;
+                font-size: 13px;
+                display: inline-block;
+            }
+        }
+        .mainAction{
+            padding: 1rem;
+            text-align: right;
+        }
+        .auth-left, .auth-right{
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            width: 100%;
+        }
+        .auth-right{
+            flex-direction: column;
+
+            .icon-logo-text{
+                font-size: 3rem;
+                margin-top: 1rem;
+                color: #a29170;
+            }
+            .icon-logo{
+                /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fffcdd+0,ffeebc+65,bfa08f+100 */
+                background: rgb(255,252,221); /* Old browsers */
+                background: -moz-linear-gradient(-45deg,  rgba(255,252,221,1) 0%, rgba(255,238,188,1) 65%, rgba(191,160,143,1) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(-45deg,  rgba(255,252,221,1) 0%,#ffeebc 65%,rgba(191,160,143,1) 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(135deg,  rgba(255,252,221,1) 0%,rgba(255,238,188,1) 65%,rgba(191,160,143,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffcdd', endColorstr='#bfa08f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                background-clip: text;
+                 -webkit-text-fill-color:transparent;
+                font-size: 9rem;
+            }
+        }
+        .auth-left{
+            border-radius: 16px;
+            max-width: 400px;
+            border: 1px solid #333;
+            box-shadow: 0 0 16px rgba(0, 0, 0, .1);
+            background: rgb(48,48,48); /* Old browsers */
+            background: -moz-linear-gradient(-45deg,  rgba(48,48,48,1) 0%, rgba(38,38,38,1) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(-45deg,  rgba(48,48,48,1) 0%,rgba(38,38,38,1) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(135deg,  rgba(48,48,48,1) 0%,rgba(38,38,38,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            position: relative;
+            h1{
+                font-family: 'Courgette', cursive;
+                position: absolute;
+                right: 0;
+                top: 0;
+                padding: 1rem;
+                margin: 0;
+                color: #ffeebc;
+            }
+            form{
+                display: flex;
+                flex-direction: column;
+                width: 70%;
+                input{
+                    transition: all .2s ease-in-out;
+                    padding: .5rem 1rem;
+                    border-radius: 0;
+                    border: 1px solid #3d3d3d;
+                    border-left: 1px solid transparent;
+                    border-top: 1px solid transparent;
+                    border-right: 1px solid transparent;
+                    background: transparent;
+                    margin-bottom: 1rem;
+                    position: relative;
+                    top: 0;
+                    &:hover{
+                        border-bottom: 1px solid #767677;
+                    }
+                    &:focus{
+                        border-radius: 6px;
+                        top:-3px;
+                        border-bottom: 1px solid #ffeebc;
+                        border-top: 1px solid #504f4a;
+                        box-shadow: 0 10px 15px -10px #ffeebc;
+                    }
+                }
+            }
+        }
+    }
+}
