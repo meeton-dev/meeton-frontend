@@ -4,6 +4,7 @@ import { Input, Button, message } from 'antd';
 import queryString from 'query-string';
 import './AuthPage.scss';
 import { Auth } from 'aws-amplify';
+import { AuthFooter } from './AuthFooter';
 
 class ForgotPass extends ForgotPassword {
   constructor(props) {
@@ -59,40 +60,43 @@ class ForgotPass extends ForgotPassword {
     const { username, code, password, authData = {} } = this.state;
 
     return (
-      <div className="auth-wrapper">
-        <div className='auth-left'>
-          <div className="my-2 w-100">
-          <a href="/"
-              className="text-indigo cursor-pointer hover:text-indigo-darker"
-              onClick={() => { super.changeState("signIn") }}
-            >
-              <span className='icon icon_chevron' />Back to Login
-            </a>
-          </div>
-          <form onSubmit={this.forgotPasswordSubmit} action="" >
-            <div>
-              <p className="mb-1 font-bold">Reset Your Password</p>
-              <Input
-                className="my-1"
-                placeholder='New Password'
-                type="password"
-                key="password"
-                name="password"
-                value={password}
-                onChange={this.handleInputPasswordChange}
-              />
-              <div className="my-1">
-                <Button type="primary" shape="round" htmlType="submit" >Submit</Button>
-              </div>
+      <div className="meetonAuth">
+        <div className="auth-wrapper">
+          <div className='auth-left'>
+            <div className="my-2 w-100">
+            <a href="/"
+                className="text-indigo cursor-pointer hover:text-indigo-darker"
+                onClick={() => { super.changeState("signIn") }}
+              >
+                <span className='icon icon_chevron' />Back to Login
+              </a>
             </div>
-          </form>
-          <div className="appBtns">
-            <p className="mb-2 font-bold">Download our app</p>
+            <form onSubmit={this.forgotPasswordSubmit} action="" >
+              <div>
+                <p className="mb-1 font-bold">Reset Your Password</p>
+                <Input
+                  className="my-1"
+                  placeholder='New Password'
+                  type="password"
+                  key="password"
+                  name="password"
+                  value={password}
+                  onChange={this.handleInputPasswordChange}
+                />
+                <div className="my-1">
+                  <Button type="primary" shape="round" htmlType="submit" >Submit</Button>
+                </div>
+              </div>
+            </form>
+            <div className="appBtns">
+              <p className="mb-2 font-bold">Download our app</p>
+            </div>
+          </div>
+          <div className='auth-right'>
+              <span className="icon-logo"></span>
           </div>
         </div>
-        <div className='auth-right'>
-            <span className="icon-logo"></span>
-        </div>
+        <AuthFooter />
       </div>
     );
   }

@@ -9,6 +9,18 @@
     p{
         margin: 0;
     }
+    .authFooter{
+        text-align: center;
+        font-size: 13px;
+        padding: 2rem;
+        max-width: 800px;
+        position: absolute;
+        bottom: 0;
+        color: #616161;
+        p:first-child{
+            margin-bottom: 1rem;
+        }
+    }
     .btn-as-link{
         padding: 0;
         background-color: transparent;
@@ -63,7 +75,6 @@
             bottom: 0;
             left: 0;
             padding: 1rem;
-
             p{
                 color: #6e6e6e;
                 font-size: 13px;
@@ -126,6 +137,51 @@
                 display: flex;
                 flex-direction: column;
                 width: 70%;
+                // ACTIVATION KEYPAD STYLE
+                .meetonActivationKey{
+                    margin-bottom: 2rem;
+                    input{
+                        position: absolute;
+                        z-index: 0;
+                        height: 0;
+                        width: 0;
+                        overflow: hidden;
+                        padding: 0;
+                        margin: 0;
+                    }
+                    --ReactInputVerificationCode-itemWidth: 2rem;
+                    --ReactInputVerificationCode-itemHeight: 3.5rem;
+                      
+                    .ReactInputVerificationCode__item {
+                        position: relative;
+                        color: #ffeebc;
+                        text-shadow: 0 0 16px #ffeebc;
+                        font-weight: 500;
+                    }
+                      
+                    .ReactInputVerificationCode__item,
+                    .ReactInputVerificationCode__item.is-active {
+                        box-shadow: none;
+                    }
+                      
+                    .ReactInputVerificationCode__item:after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        height: 2px;
+                        background-color: #4e4e4e;
+                        transition: background-color 0.2s ease-out;
+                    }
+                    
+                    .ReactInputVerificationCode__item.is-active:after {
+                        background-color: #ffeebc;
+                        border-radius: 6px;
+                        box-shadow: 0 0 15px #ffeebc;
+                    }
+                }
                 input{
                     transition: all .2s ease-in-out;
                     padding: .5rem 1rem;
@@ -145,8 +201,7 @@
                         border-radius: 6px;
                         top:-3px;
                         border-bottom: 1px solid #ffeebc;
-                        border-top: 1px solid #504f4a;
-                        box-shadow: 0 10px 15px -10px #ffeebc;
+                        box-shadow: 0 13px 15px -13px #ffeebc;
                     }
                 }
             }

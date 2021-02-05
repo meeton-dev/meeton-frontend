@@ -23,27 +23,48 @@ body.noScroll{
     outline: none;
 }
 
-.avatar {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  background: #dd0433;
-  color: #ffffff;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  border-radius: 50px;
-  &.mini {
-    width: 30px;
-    height: 30px;
-  }
-  &.micro {
-    font-size: 9px;
-    width: 20px;
-    height: 20px;
+#appWrapper{
+  background: #222222;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 65px 1fr;
+  .appMain{
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    .appContent{
+      overflow: hidden scroll;
+    }
   }
 }
+
+.box{
+  border-radius: 16px;
+  background-color: #292929;
+  border: 1px solid #383838;
+  color: #8b8b8b;
+  padding: 1rem;
+}
+// .avatar {
+//   width: 40px;
+//   height: 40px;
+//   display: flex;
+//   background: #dd0433;
+//   color: #ffffff;
+//   align-content: center;
+//   align-items: center;
+//   justify-content: center;
+//   font-size: 10px;
+//   border-radius: 50px;
+//   &.mini {
+//     width: 30px;
+//     height: 30px;
+//   }
+//   &.micro {
+//     font-size: 9px;
+//     width: 20px;
+//     height: 20px;
+//   }
+// }
 
 // *:not(.noselect){
 //     // -webkit-touch-callout: none; /* iOS Safari */
@@ -54,40 +75,40 @@ body.noScroll{
 //     // user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 // }
 
-@mixin pageColor($color, $size) {
-  background-color: $color;
-      .content-left{
-          max-width: rem($size);
-          background-color: $color;
-      }
-}
+// @mixin pageColor($color, $size) {
+//   background-color: $color;
+//       .content-left{
+//           max-width: rem($size);
+//           background-color: $color;
+//       }
+// }
 
-.main{
-  display: flex;
-  height: 100vh;
-  transition: ease-in-out .2s all;
-  filter: blur(0);
-  &.modalVisible {
-    transition: ease-in-out .2s all;
-    filter: blur(1px);
-  }
-  &.dashboard{ @include pageColor(#ff4747, 110px); }
-  &.lobby{ @include pageColor(#591de4, 170px); }
-  > div {
-      width: 100%;
-  }
-  .content{
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      position: relative;
-      overflow: hidden;
-      border-radius: 15px 0 0 15px;
-      background: #f4f4f4;
-      .wrapper{
-          display: flex;
-          overflow: hidden;
-      }
-  }
-}
+// .main{
+//   display: flex;
+//   height: 100vh;
+//   transition: ease-in-out .2s all;
+//   filter: blur(0);
+//   &.modalVisible {
+//     transition: ease-in-out .2s all;
+//     filter: blur(1px);
+//   }
+//   &.dashboard{ @include pageColor(#ff4747, 110px); }
+//   &.lobby{ @include pageColor(#591de4, 170px); }
+//   > div {
+//       width: 100%;
+//   }
+//   .content{
+//       display: flex;
+//       flex-direction: column;
+//       width: 100%;
+//       box-shadow: 0 0 10px rgba(0,0,0,0.2);
+//       position: relative;
+//       overflow: hidden;
+//       border-radius: 15px 0 0 15px;
+//       background: #f4f4f4;
+//       .wrapper{
+//           display: flex;
+//           overflow: hidden;
+//       }
+//   }
+// }

@@ -3,6 +3,8 @@ import { BrowserRouter } from "react-router-dom";
 import DynamicRouter from "./DynamicRouter";
 import UniModal from "./Modals";
 import { MainContext } from "./context/context";
+import AppTop from "./Components/AppTop";
+import AppNav from "./Components/AppNav";
 // import { Auth } from "aws-amplify";
 
 class App extends React.Component {
@@ -21,16 +23,22 @@ class App extends React.Component {
   // }
 
   render() {
-      console.log(this.props.authState);
+      console.log('authState in app: ', this.props.authState);
 
-      if (this.props.authState === "signedIn") {
+      if (this.props.authState === "signedIn" || this.props.authState === "verifyContact") {
           return (
-            <div className="App">
+            <div id="appWrapper">
               <MainContext>
-                <BrowserRouter>
-                  <DynamicRouter />
-                  <UniModal />
-                </BrowserRouter>
+                <AppTop />
+                <div className="appMain">
+                  <AppNav />
+                  <div className="appContent">
+                    <BrowserRouter>
+                      <DynamicRouter />
+                      {/* <UniModal /> */}
+                    </BrowserRouter>
+                  </div>
+                </div>
               </MainContext>
             </div>
           );

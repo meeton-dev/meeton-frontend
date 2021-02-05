@@ -1,0 +1,25 @@
+.dashboardTop{
+    height: 65px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .welcomeUser{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 2rem;
+        color: #ffeebc;
+        span{
+            &:nth-child(1){
+                font-weight: bold;
+            }
+            // &:nth-child(2){
+            //     font-weight: thin;
+            // }
+        }
+    }
+    .dashboardAction{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}

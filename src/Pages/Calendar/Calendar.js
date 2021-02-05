@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import SideNav from "../../Components/Common/SideNav";
-import TopNav from "../../Components/TopNav/TopNav";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 const localizer = momentLocalizer(moment);
 const events = [
@@ -50,7 +49,6 @@ class CalendarPage extends Component {
           <SideNav />
         </div>
         <div className="content">
-          <TopNav />
           <Calendar
             localizer={localizer}
             events={events}

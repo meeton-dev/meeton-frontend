@@ -10,12 +10,13 @@ import ForgotPassword from "./ForgotPassword";
 import ForgotPasswordPassed from "./ForgotPasswordPassed";
 import App from "../App";
 import MeetonConfirmSignUp from "./ConfirmSignUp";
+import { AuthFooter } from "./AuthFooter";
 
 class AppWithAuth extends React.Component {
   render() {
     return (
-      <div className="meetonAuth">
-        <Authenticator hideDefault={true} amplifyConfig={config}>
+      <div className="meetonApp">
+        <Authenticator /* authState="confirmSignUp" */ hideDefault={true} amplifyConfig={config}>
           <MeetonLogIn />
           <MeetonFirstLogin />
           <MeetonSignUp />

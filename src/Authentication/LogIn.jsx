@@ -4,6 +4,7 @@ import { Auth } from 'aws-amplify';
 import { message, Spin } from 'antd';
 import { Input, Button } from 'antd';
 import './AuthPage.scss';
+import { AuthFooter } from './AuthFooter';
 
 class MeetonLogIn extends SignIn {
   constructor(props) {
@@ -54,71 +55,73 @@ class MeetonLogIn extends SignIn {
   showComponent() {
 
     return (
-      <div className="auth-wrapper">
-        <div className='auth-left'>
-          <h1>login</h1>
-          <form onSubmit={this.handleSubmit} autoComplete="off" >
-            <Input
-              className="my-1"
-              id="username"
-              key="username"
-              name="username"
-              onChange={this.updateState}
-              type="text"
-              placeholder="Type email"
-            />
-            <Input
-              className="my-1"
-              id="password"
-              key="password"
-              name="password"
-              onChange={this.updateState}
-              type="password"
-              placeholder="Password"
-            />
-            <div className="mainAction">
-              <Button
-                type="primary" shape="round"
-                htmlType="submit"
-                className="btn"
-              >
-                Log In
-              </Button>
-              <Spin spinning={this.state.loading} />
-            </div>
-            <div className="actions">
-              <div>
-                <p>
-                  Don't remember your password? {' '}
-                </p>
-                <button
-                  className="btn-as-link"
-                  onClick={() => super.changeState("forgotPassword")}
-                  type="button"
+      <div className="meetonAuth">
+        <div className="auth-wrapper">
+          <div className='auth-left'>
+            <h1>login</h1>
+            <form onSubmit={this.handleSubmit} autoComplete="off" >
+              <Input
+                id="username"
+                key="username"
+                name="username"
+                onChange={this.updateState}
+                type="text"
+                placeholder="Type email"
+              />
+              <Input
+                id="password"
+                key="password"
+                name="password"
+                onChange={this.updateState}
+                type="password"
+                placeholder="Password"
+              />
+
+              <div className="mainAction">
+                <Button
+                  type="primary" shape="round"
+                  htmlType="submit"
+                  className="btn"
                 >
-                  Reset my password
-                </button>
+                  Log In
+                </Button>
+                <Spin spinning={this.state.loading} />
               </div>
-              <div>
-                <p>
-                  Don't have an account yet? {' '}
-                </p>
-                <button
-                  className="btn-as-link"
-                  onClick={() => super.changeState("signUp")}
-                  type="button"
-                >
-                  Sign up now.
-                </button>
+              <div className="actions">
+                <div>
+                  <p>
+                    Don't remember your password? {' '}
+                  </p>
+                  <button
+                    className="btn-as-link"
+                    onClick={() => super.changeState("forgotPassword")}
+                    type="button"
+                  >
+                    Reset my password
+                  </button>
+                </div>
+                <div>
+                  <p>
+                    Don't have an account yet? {' '}
+                  </p>
+                  <button
+                    className="btn-as-link"
+                    onClick={() => super.changeState("signUp")}
+                    type="button"
+                  >
+                    Sign up now.
+                  </button>
+                </div>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
+          <div className='auth-right'>
+            <span className="icon-logo"></span>
+            <span className="icon-logo-text"></span>
+          </div>
         </div>
-        <div className='auth-right'>
-          <span className="icon-logo"></span>
-          <span className="icon-logo-text"></span>
-        </div>
-      </div >
+        <AuthFooter />
+      </div>
 
     );
   }

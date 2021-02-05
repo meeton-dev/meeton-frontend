@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 
 import MeetingCall from "./Pages/meetingCall/meetingCall";
 import Meeting from "./Components/meetingCall/Meeting";
-import Dashboard from "./Pages/Dashboard/Dashboard";
+import Dashboard from "./Pages/Dashboard";
 import Lobby from "./Pages/Lobby/Lobby";
 import CalendarPage from "./Pages/Calendar/Calendar";
 

@@ -16,14 +16,13 @@
 @import './Styles/common';
 @import "./Styles/ieBrowser";
 
+@import "./Pages/Dashboard/style";
 @import "./Pages/meetingCall/meetingCall";
 
 @import './Components/Common/SideNav';
-@import './Components/TopNav/TopNav';
-@import './Components/Dashboard/DashboardMain';
-@import './Components/Dashboard/DashboardExtra';
-@import './Components/Dashboard/DashboardFilter/DashboardFilter';
-@import './Components/Dashboard/DashboardMeetingBox/DashboardMeetingBox';
+@import './Components/AppNav/style';
+@import './Components/AppTop/style';
+@import './Components/Dashboard/style';
 @import "./Components/meetingCall/meetingCallUserList/meetingCallUserList";
 @import "./Components/meetingCall/meetingCallBoard/meetingCallBoard";
 @import "./Components/Chat/Chat";
