@@ -3,7 +3,6 @@ import { ForgotPassword } from "aws-amplify-react";
 import { Input, Button } from 'antd';
 // const queryString = require('query-string');
 import queryString from 'query-string';
-import './AuthPage.scss';
 import { Auth } from 'aws-amplify';
 import { Link } from 'react-router-dom';
 import { AuthFooter } from './AuthFooter';
@@ -26,8 +25,6 @@ class ForgotPass extends ForgotPassword {
           name="code"
           autoComplete="off"
           id="code"
-          // value={this.state.code}
-          // onChange={this.handleInputCodeChange}
           onChange={this.handleInputChange}
         />
         <Input
@@ -50,21 +47,19 @@ class ForgotPass extends ForgotPassword {
       <div className="meetonAuth">
         <div className="auth-wrapper">
           <div className='auth-left'>
-            <div className="my-2 w-100">
+            <div className="authBack">
               <button 
-                className="text-indigo cursor-pointer hover:text-indigo-darker"
+                className="btn-off"
                 onClick={() => { super.changeState("signIn") }}
                 type="button"
               >
-                <span className='icon icon_chevron' />Back to Login
+                <span className='icon icon_chevron' />Back
               </button>
             </div>
+            <h1>{this.state.delivery || authData.username ?
+                  'reset password' : 'forgotten pasword'
+                }</h1>
             <form>
-              <p className="page-title">
-                {this.state.delivery || authData.username ?
-                  'Reset Your Password' : 'Forgotten your Pasword?'
-                }
-              </p>
               {this.state.delivery || authData.username ?
                 this.submitNewCodeView()
                 :
@@ -83,16 +78,17 @@ class ForgotPass extends ForgotPassword {
                   <a href='#' onClick={this.send} >Resend Code</a> : ''
                 }
               </div>
-              <div>
+              <div className="mainAction">
                 {this.state.delivery || authData.username ?
-                  <Button type="primary" shape="round" onClick={ () => this.submit()} >Submit</Button> :
-                  <Button type="primary" shape="round" onClick={() => { this.send() }} >Send</Button>
+                  <Button type="primary" className="btn" onClick={ () => this.submit()} >Submit</Button> :
+                  <Button type="primary" className="btn" onClick={() => { this.send() }} >Send</Button>
                 }
               </div>
             </form>
           </div>
           <div className='auth-right'>
-              <span className="icon-logo"></span>
+            <span className="icon-logo"></span>
+            <span className="icon-logo-text"></span>
           </div>
         </div>
         <AuthFooter />

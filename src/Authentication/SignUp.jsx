@@ -3,7 +3,6 @@ import { ForgotPassword } from "aws-amplify-react";
 import { Input, Button } from 'antd';
 // const queryString = require('query-string');
 import queryString from 'query-string';
-import './AuthPage.scss';
 import { Auth } from 'aws-amplify';
 import { Link } from 'react-router-dom';
 import { AuthFooter } from './AuthFooter';
@@ -44,7 +43,16 @@ class MeetonSignUp extends ForgotPassword {
       <div className="meetonAuth">
         <div className="auth-wrapper">
           <div className='auth-left'>
-            <h1>signUp</h1>
+            <div className="authBack">
+              <button 
+                className="btn-off"
+                onClick={() => { super.changeState("signIn") }}
+                type="button"
+              >
+                <span className='icon icon_chevron' />Back
+              </button>
+            </div>
+            <h1>sign up</h1>
             <form onSubmit={this.handleSubmit} autoComplete="off" >
               <Input
                 id="name"
@@ -90,7 +98,8 @@ class MeetonSignUp extends ForgotPassword {
             </form>
           </div>
           <div className='auth-right'>
-              <span className="icon-logo"></span>
+            <span className="icon-logo"></span>
+            <span className="icon-logo-text"></span>
           </div>
         </div>
         <AuthFooter />

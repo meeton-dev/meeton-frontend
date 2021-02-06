@@ -3,7 +3,6 @@ import { SignIn } from "aws-amplify-react";
 import { Auth } from 'aws-amplify';
 import { message, Spin } from 'antd';
 import { Input, Button } from 'antd';
-import './AuthPage.scss';
 import { AuthFooter } from './AuthFooter';
 
 class MeetonLogIn extends SignIn {
@@ -58,7 +57,7 @@ class MeetonLogIn extends SignIn {
       <div className="meetonAuth">
         <div className="auth-wrapper">
           <div className='auth-left'>
-            <h1>login</h1>
+            <h1>sign in</h1>
             <form onSubmit={this.handleSubmit} autoComplete="off" >
               <Input
                 id="username"
@@ -83,26 +82,26 @@ class MeetonLogIn extends SignIn {
                   htmlType="submit"
                   className="btn"
                 >
-                  Log In
+                  Sign In
                 </Button>
                 <Spin spinning={this.state.loading} />
               </div>
               <div className="actions">
                 <div>
                   <p>
-                    Don't remember your password? {' '}
+                    Forgot your password?
                   </p>
                   <button
                     className="btn-as-link"
                     onClick={() => super.changeState("forgotPassword")}
                     type="button"
                   >
-                    Reset my password
+                    Reset now!
                   </button>
                 </div>
                 <div>
                   <p>
-                    Don't have an account yet? {' '}
+                    Don't have an account?
                   </p>
                   <button
                     className="btn-as-link"

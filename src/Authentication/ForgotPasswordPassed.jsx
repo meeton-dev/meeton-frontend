@@ -2,7 +2,6 @@ import React from 'react';
 import { ForgotPassword } from "aws-amplify-react";
 import { Input, Button, message } from 'antd';
 import queryString from 'query-string';
-import './AuthPage.scss';
 import { Auth } from 'aws-amplify';
 import { AuthFooter } from './AuthFooter';
 

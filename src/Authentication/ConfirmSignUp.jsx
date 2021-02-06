@@ -3,7 +3,6 @@ import { ForgotPassword } from "aws-amplify-react";
 import { Input, Button } from 'antd';
 // const queryString = require('query-string');
 import ReactInputVerificationCode from 'react-input-verification-code';
-import './AuthPage.scss';
 import { Auth } from 'aws-amplify';
 import { Link } from 'react-router-dom';
 import { AuthFooter } from './AuthFooter';
@@ -55,7 +54,8 @@ class MeetonConfirmSignUp extends ForgotPassword {
             </form>
           </div>
           <div className='auth-right'>
-              <span className="icon-logo"></span>
+            <span className="icon-logo"></span>
+            <span className="icon-logo-text"></span>
           </div>
         </div>
         <AuthFooter />

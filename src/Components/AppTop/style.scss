@@ -1,7 +1,8 @@
 .appTop{
     display: flex;
     justify-content: flex-end;
-    border-bottom: 1px solid #303030;
+    border-bottom: 1px solid;
+    @include mtnTheme('border-color', 'main-4');
     .logout{
         
     }

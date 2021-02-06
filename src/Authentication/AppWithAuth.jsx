@@ -10,7 +10,6 @@ import ForgotPassword from "./ForgotPassword";
 import ForgotPasswordPassed from "./ForgotPasswordPassed";
 import App from "../App";
 import MeetonConfirmSignUp from "./ConfirmSignUp";
-import { AuthFooter } from "./AuthFooter";
 
 class AppWithAuth extends React.Component {
   render() {

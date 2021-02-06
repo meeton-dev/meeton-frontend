@@ -1,7 +1,6 @@
 import React from 'react';
 import { RequireNewPassword } from "aws-amplify-react";
 import { Input, Button } from 'antd';
-import './AuthPage.scss';
 import { Auth } from 'aws-amplify';
 import { AuthFooter } from './AuthFooter';
 
@@ -82,7 +81,8 @@ class MeetonFirstLogin extends RequireNewPassword {
             </form>
           </div>
           <div className='auth-right'>
-              <span className="icon-logo"></span>
+            <span className="icon-logo"></span>
+            <span className="icon-logo-text"></span>
           </div>
         </div>
         <AuthFooter />

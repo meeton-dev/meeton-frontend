@@ -1,0 +1,26 @@
+$themes: (
+    light: (
+        main-0: #e4e4e4,
+        main-1: #b9b9b9,
+        main-2: #dadada,
+        main-3: #dddddd,
+        main-4: #dadada,
+        main-5: #d6d6d6,
+    ),
+    dark: (
+        main-0: #222222,
+        main-1: #272727,
+        main-2: #2e2e2e,
+        main-3: #292929,
+        main-4: #303030,
+        main-5: #383838,
+    )
+);
+
+@mixin mtnTheme($key, $color) {
+    @each $theme-name, $theme-color in $themes {
+        .mtn-#{$theme-name} & {
+            #{$key}: map-get(map-get($themes, $theme-name), $color)
+        }
+    }
+}

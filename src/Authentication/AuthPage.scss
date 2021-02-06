@@ -9,6 +9,29 @@
     p{
         margin: 0;
     }
+    .authBack{
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        .btn-off{
+            background-color: transparent;
+            border: none;
+            top: 0;
+            color: #575757;
+            border: 1px solid #575757;
+            transition: all .4s ease-in-out;
+            padding: .7rem 1.5rem;
+            border-radius: 12px;
+            position: relative;
+            font-weight: bold;
+            &:hover{
+                transition: all .4s ease-in-out;
+                cursor: pointer;
+                color: #fff;
+                border-color: #fff;
+            }
+        }
+    }
     .authFooter{
         text-align: center;
         font-size: 13px;
@@ -71,19 +94,22 @@
         margin: 0;
         background: transparent;
         .actions{
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            padding: 1rem;
+            // position: absolute;
+            // bottom: 0;
+            // left: 0;
+            // padding: 1rem;
             p{
                 color: #6e6e6e;
                 font-size: 13px;
                 display: inline-block;
+                margin-right: 6px;
             }
         }
         .mainAction{
-            padding: 1rem;
             text-align: right;
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
         }
         .auth-left, .auth-right{
             align-items: center;

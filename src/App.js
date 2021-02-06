@@ -7,6 +7,8 @@ import AppTop from "./Components/AppTop";
 import AppNav from "./Components/AppNav";
 // import { Auth } from "aws-amplify";
 
+const themes = ["dark", "light"];
+
 class App extends React.Component {
   constructor(props, context) {
       super(props, context);
@@ -24,21 +26,20 @@ class App extends React.Component {
 
   render() {
       console.log('authState in app: ', this.props.authState);
-
       if (this.props.authState === "signedIn" || this.props.authState === "verifyContact") {
           return (
             <div id="appWrapper">
               <MainContext>
-                <AppTop />
-                <div className="appMain">
-                  <AppNav />
-                  <div className="appContent">
-                    <BrowserRouter>
-                      <DynamicRouter />
-                      {/* <UniModal /> */}
-                    </BrowserRouter>
-                  </div>
-                </div>
+                <BrowserRouter>
+                    <AppTop />
+                    <div className="appMain">
+                      <AppNav />
+                      <div className="appContent">
+                          <DynamicRouter />
+                          {/* <UniModal /> */}
+                      </div>
+                    </div>
+                </BrowserRouter>
               </MainContext>
             </div>
           );
