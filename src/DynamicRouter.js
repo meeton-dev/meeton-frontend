@@ -1,10 +1,7 @@
 import React, { Component} from "react";
 import { Switch, Route } from "react-router-dom";
 
-// import MeetingCall from "./Pages/meetingCall/meetingCall";
-// import Meeting from "./Components/meetingCall/Meeting";
 import Dashboard from "./Pages/Dashboard";
-// import Lobby from "./Pages/Lobby/Lobby";
 import Meetings from "./Pages/Meetings";
 import Calendar from "./Pages/Calendar";
 import Latest from "./Pages/Latest";
@@ -14,6 +11,9 @@ import Notes from "./Pages/Notes";
 import Files from "./Pages/Files";
 import MyGroup from "./Pages/MyGroup";
 import Settings from "./Pages/Settings";
+import MeetingCall from "./Pages/meetingCall/meetingCall";
+import Meeting from "./Components/meetingCall/Meeting";
+import Lobby from "./Pages/Lobby/Lobby";
 
 export const mtnRoutes = [
   { 
@@ -89,9 +89,9 @@ export const mtnOptionsRoutes = [
     id: 10,
     component: Settings
   },
-  // { path: "/lobby/:code", component: Lobby },
-  // { path: "/meeting/:code", component: MeetingCall },
-  // { path: "/room/:roomID", component: Meeting },
+  { path: "/lobby/:code", component: Lobby },
+  { path: "/meeting/:code", component: MeetingCall },
+  { path: "/room/:roomID", component: Meeting },
 ];
 class DynamicRouter extends Component {
   render() {

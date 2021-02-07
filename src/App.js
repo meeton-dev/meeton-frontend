@@ -7,8 +7,6 @@ import AppTop from "./Components/AppTop";
 import AppNav from "./Components/AppNav";
 // import { Auth } from "aws-amplify";
 
-const themes = ["dark", "light"];
-
 class App extends React.Component {
   constructor(props, context) {
       super(props, context);

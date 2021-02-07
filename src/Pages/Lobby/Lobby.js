@@ -9,16 +9,8 @@ const Lobby = () => {
 
 
   return (
-    <section className="main lobby">
-      <div className="content-left">
-        <LobbyNav />
-      </div>
-      <div className="content">
-        <div className="wrapper">
-          {/* <LobbyMain {...this.props} /> */}
-          {/* WE DONT NEED THIS ATM */}
-        </div>
-      </div>
+    <section className='Lobby'>
+      LOBBY page
     </section>
   );
 };
