@@ -2,8 +2,11 @@ import React, { useEffect } from 'react';
 import { useLocation } from "react-router-dom";
 import { mtnRoutes, mtnOptionsRoutes } from '../../DynamicRouter';
 import { Link } from 'react-router-dom';
+import {useTranslation} from "react-i18next";
 
 const AppNav = () => {
+    const {t} = useTranslation('mtnApp');
+
     const location = useLocation();
     const isActive = (path) => location.pathname === path;
 
@@ -13,7 +16,16 @@ const AppNav = () => {
                 MY STUFF
             </h3>
             <ul>
-                {mtnRoutes.map((item) => item.id && <li key={item.id} className={isActive(item.path) ? 'active' : ''}><Link to={item.path}>{item.title}</Link></li>)}
+                {mtnRoutes.map((item) => {
+                    return item.id && (
+                        <li key={item.id} className={isActive(item.path) ? 'active' : ''}>
+                            <Link to={item.path}>
+                                <span className={`icon-${item.icon}`} />
+                                <span>{t(item.title)}</span>
+                            </Link>
+                        </li>
+                    )
+                })}
             </ul>
             <h3>
                 OPTIONS

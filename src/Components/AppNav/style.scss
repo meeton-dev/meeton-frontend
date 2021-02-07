@@ -1,7 +1,7 @@
 .appNav{
     border-right: 1px solid ;
     @include mtnTheme('border-color', 'main-4');
-    padding: 0 1rem;
+    padding: 4rem 1rem 0 1rem;
 
     h3{
         text-transform: uppercase;

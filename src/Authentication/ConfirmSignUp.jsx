@@ -34,16 +34,6 @@ class MeetonConfirmSignUp extends ForgotPassword {
               <div className="meetonActivationKey">
                 <ReactInputVerificationCode placeholder="" length={6} onChange={console.log} />
               </div>
-              {/* <button
-                className="text-indigo cursor-pointer hover:text-indigo-darker"
-                onClick={() => Auth.confirmSignUp(userObj, [], null, (err, data) => {
-                  if (err) console.log(err);
-                  console.log(data);
-                })}
-                type="button"
-              >
-                Activate
-              </button> */}
               <Button
                   type="primary" shape="round"
                   htmlType="submit"
@@ -54,8 +44,8 @@ class MeetonConfirmSignUp extends ForgotPassword {
             </form>
           </div>
           <div className='auth-right'>
-            <span className="icon-logo"></span>
-            <span className="icon-logo-text"></span>
+            <span className="logo-logo"></span>
+            <span className="logo-logo-text"></span>
           </div>
         </div>
         <AuthFooter />

@@ -18,7 +18,7 @@ import Lobby from "./Pages/Lobby/Lobby";
 export const mtnRoutes = [
   { 
     title:'Dashboard',
-    icon:'',
+    icon:'dashboard',
     path: "/",
     id: 1,
     component: Dashboard
@@ -93,6 +93,7 @@ export const mtnOptionsRoutes = [
   { path: "/meeting/:code", component: MeetingCall },
   { path: "/room/:roomID", component: Meeting },
 ];
+
 class DynamicRouter extends Component {
   render() {
     // const { permissions } = this.props;

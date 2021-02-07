@@ -92,7 +92,8 @@ class ForgotPass extends ForgotPassword {
             </div>
           </div>
           <div className='auth-right'>
-              <span className="icon-logo"></span>
+            <span className="logo-logo"></span>
+            <span className="logo-logo-text"></span>
           </div>
         </div>
         <AuthFooter />

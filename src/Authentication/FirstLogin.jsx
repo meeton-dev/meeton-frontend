@@ -81,8 +81,8 @@ class MeetonFirstLogin extends RequireNewPassword {
             </form>
           </div>
           <div className='auth-right'>
-            <span className="icon-logo"></span>
-            <span className="icon-logo-text"></span>
+            <span className="logo-logo"></span>
+            <span className="logo-logo-text"></span>
           </div>
         </div>
         <AuthFooter />

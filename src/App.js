@@ -23,11 +23,11 @@ class App extends React.Component {
   // }
 
   render() {
-      console.log('authState in app: ', this.props.authState);
+      // console.log('authState in app: ', this.props);
       if (this.props.authState === "signedIn" || this.props.authState === "verifyContact") {
           return (
             <div id="appWrapper">
-              <MainContext>
+              <MainContext setUser={this.props.authData.attributes}>
                 <BrowserRouter>
                     <AppTop />
                     <div className="appMain">

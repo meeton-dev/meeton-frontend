@@ -1,18 +1,18 @@
 @font-face {
-  font-family: 'icomoon';
-  src:  url('./icomoon.eot?bnjj4z');
-  src:  url('./icomoon.eot?bnjj4z#iefix') format('embedded-opentype'),
-    url('./icomoon.ttf?bnjj4z') format('truetype'),
-    url('./icomoon.woff?bnjj4z') format('woff'),
-    url('./icomoon.svg?bnjj4z#icomoon') format('svg');
+  font-family: 'meeton-logos';
+  src:  url('./meeton-logos.eot?vp4vji');
+  src:  url('./meeton-logos.eot?vp4vji#iefix') format('embedded-opentype'),
+    url('./meeton-logos.ttf?vp4vji') format('truetype'),
+    url('./meeton-logos.woff?vp4vji') format('woff'),
+    url('./meeton-logos.svg?vp4vji#meeton-logos') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="logo-"], [class*=" logo-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  font-family: 'meeton-logos' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -25,12 +25,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-logo-text:before {
+.logo-logo-text:before {
   content: "\e900";
 }
-.icon-logo-with-text:before {
+.logo-logo-with-text:before {
   content: "\e901";
 }
-.icon-logo:before {
+.logo-logo:before {
   content: "\e902";
 }

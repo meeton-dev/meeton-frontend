@@ -15,13 +15,12 @@ const useAppDispatch = () => {
     return context;
 };
 
-const MainContext = ({ children }) => {
-    const [state, dispatch] = useReducer(appReducers, {});
-
+const MainContext = (props) => {
+    const [state, dispatch] = useReducer(appReducers, {user: props.setUser});
     return (
         <AppContext.Provider value={state}>
             <AppDispatchContext.Provider value={dispatch}>
-                {children}
+                {props.children}
             </AppDispatchContext.Provider>
         </AppContext.Provider>
     );

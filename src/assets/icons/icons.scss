@@ -1,352 +1,97 @@
-/*! 
-* @package IcoFont 
-* @version 1.0.1 
-* @author IcoFont https://icofont.com 
-* @copyright Copyright (c) 2015 - 2020 IcoFont 
-* @license - https://icofont.com/license/
-*/
-
-@font-face
-{
- 
-  font-family: "IcoFont";
-font-weight: normal;
-font-style: "Regular";
-src: url("./icons.woff2") format("woff2"),
-url("./icons.woff") format("woff");
-}
-
-[class^="ico-"], [class*=" ico-"]
-{
-  font-family: 'IcoFont' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  line-height: 1;
-/* Better Font Rendering =========== */
-  -webkit-font-feature-settings: "liga";
-  -webkit-font-smoothing: antialiased;
-}
-
-.ico-ui-calendar:before
-{
-  content: "\ec45";
-}
-
-.ico-clock-time:before
-{
-  content: "\eedc";
-}
-
-.ico-list:before
-{
-  content: "\ef72";
-}
-
-.ico-star:before
-{
-  content: "\f000";
-}
-
-.ico-exclamation:before
-{
-  content: "\ef1c";
-}
-
-.ico-notepad:before
-{
-  content: "\efab";
-}
-
-.ico-files-stack:before
-{
-  content: "\e96e";
-}
-
-.ico-support-faq:before
-{
-  content: "\f002";
-}
-
-.ico-info-circle:before
-{
-  content: "\ef4e";
-}
-
-.ico-question-circle:before
-{
-  content: "\efca";
-}
-
-.ico-notification:before
-{
-  content: "\efac";
-}
-
-.ico-users-alt-5:before
-{
-  content: "\ed0a";
-}
-
-.ico-exclamation-tringle:before
-{
-  content: "\ef1b";
-}
-
-.ico-tick-mark:before
-{
-  content: "\f00e";
-}
-
-.ico-xs
-{
-  font-size: .5em;
-}
-
-.ico-sm
-{
-  font-size: .75em;
-}
-
-.ico-md
-{
-  font-size: 1.25em;
-}
-
-.ico-lg
-{
-  font-size: 1.5em;
-}
-
-.ico-1x
-{
-  font-size: 1em;
-}
-
-.ico-2x
-{
-  font-size: 2em;
-}
-
-.ico-3x
-{
-  font-size: 3em;
-}
-
-.ico-4x
-{
-  font-size: 4em;
-}
-
-.ico-5x
-{
-  font-size: 5em;
-}
-
-.ico-6x
-{
-  font-size: 6em;
-}
-
-.ico-7x
-{
-  font-size: 7em;
-}
-
-.ico-8x
-{
-  font-size: 8em;
-}
-
-.ico-9x
-{
-  font-size: 9em;
-}
-
-.ico-10x
-{
-  font-size: 10em;
-}
-
-.ico-fw
-{
-  text-align: center;
-  width: 1.25em;
-}
-
-.ico-ul
-{
-  list-style-type: none;
-  padding-left: 0;
-  margin-left: 0;
-}
-
-.ico-ul > li
-{
-  position: relative;
-  line-height: 2em;
-}
-
-.ico-ul > li .ico
-{
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.ico-border
-{
-  border: solid 0.08em #f1f1f1;
-  border-radius: .1em;
-  padding: .2em .25em .15em;
-}
-
-.ico-pull-left
-{
-  float: left;
-}
-
-.ico-pull-right
-{
-  float: right;
-}
-
-.ico.ico-pull-left
-{
-  margin-right: .3em;
-}
-
-.ico.ico-pull-right
-{
-  margin-left: .3em;
-}
-
-.ico-spin
-{
-  -webkit-animation: icofont-spin 2s infinite linear;
-  animation: icofont-spin 2s infinite linear;
-  display: inline-block;
-}
-
-.ico-pulse
-{
-  -webkit-animation: icofont-spin 1s infinite steps(8);
-  animation: icofont-spin 1s infinite steps(8);
-  display: inline-block;
-}
-
-@-webkit-keyframes icofont-spin
-{
-  0%
-  {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+@font-face {
+    font-family: 'icomoon';
+    src:  url('./icomoon.eot?nxkful');
+    src:  url('./icomoon.eot?nxkful#iefix') format('embedded-opentype'),
+      url('./icomoon.ttf?nxkful') format('truetype'),
+      url('./icomoon.woff?nxkful') format('woff'),
+      url('./icomoon.svg?nxkful#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
   }
-
-  100%
-  {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-}
-
-@keyframes icofont-spin
-{
-  0%
-  {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+  
+  .icon-support-faq:before {
+    content: "\e900";
   }
-
-  100%
-  {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
+  .icon-tick-mark:before {
+    content: "\e90f";
   }
-}
-
-.ico-rotate-90
-{
-  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
-
-.ico-rotate-180
-{
-  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-
-.ico-rotate-270
-{
-  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
-  -webkit-transform: rotate(270deg);
-  transform: rotate(270deg);
-}
-
-.ico-flip-horizontal
-{
-  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
-  -webkit-transform: scale(-1, 1);
-  transform: scale(-1, 1);
-}
-
-.ico-flip-vertical
-{
-  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
-  -webkit-transform: scale(1, -1);
-  transform: scale(1, -1);
-}
-
-.ico-flip-horizontal.ico-flip-vertical
-{
-  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
-  -webkit-transform: scale(-1, -1);
-  transform: scale(-1, -1);
-}
-
-:root .ico-rotate-90,
-	:root .ico-rotate-180,
-	:root .ico-rotate-270,
-	:root .ico-flip-horizontal,
-	:root .ico-flip-vertical
-{
-  -webkit-filter: none;
-  filter: none;
-  display: inline-block;
-}
-
-.ico-inverse
-{
-  color: #fff;
-}
-
-.sr-only
-{
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-.sr-only-focusable:active,
-	.sr-only-focusable:focus
-{
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  width: auto;
-}
-	
+  .icon-exclamation-tringle:before {
+    content: "\e910";
+  }
+  .icon-question-circle:before {
+    content: "\e911";
+  }
+  .icon-info-circle:before {
+    content: "\e912";
+  }
+  .icon-files-stack:before {
+    content: "\e913";
+  }
+  .icon-list:before {
+    content: "\e914";
+  }
+  .icon-ui-calendar:before {
+    content: "\e915";
+  }
+  .icon-exclamation:before {
+    content: "\e916";
+  }
+  .icon-comments:before {
+    content: "\e901";
+  }
+  .icon-dashboard:before {
+    content: "\e902";
+  }
+  .icon-layers:before {
+    content: "\e903";
+  }
+  .icon-clock:before {
+    content: "\e904";
+  }
+  .icon-star:before {
+    content: "\e905";
+  }
+  .icon-file:before {
+    content: "\e906";
+  }
+  .icon-phone:before {
+    content: "\e907";
+  }
+  .icon-users:before {
+    content: "\e908";
+  }
+  .icon-minus:before {
+    content: "\e909";
+  }
+  .icon-plus:before {
+    content: "\e90a";
+  }
+  .icon-power:before {
+    content: "\e90b";
+  }
+  .icon-moon:before {
+    content: "\e90c";
+  }
+  .icon-sun:before {
+    content: "\e90d";
+  }
+  .icon-bell:before {
+    content: "\e90e";
+  }
+  

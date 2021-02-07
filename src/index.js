@@ -28,13 +28,13 @@ i18next.init({
   lng: checkLocalization(),
   resources: {
     en: {
-      common: en
+      mtnApp: en
     },
     de: {
-      common: de
+      mtnApp: de
     },
     hu: {
-      common: hu
+      mtnApp: hu
     },
   },
 });
