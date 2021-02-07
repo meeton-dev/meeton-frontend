@@ -1,10 +1,13 @@
 import React from 'react';
+import MeetingsList from '../../Components/Meetings'
+import MeetingsFilter from '../../Components/Meetings/MeetingsFilter';
 
 const Meetings = () => {
 // modalVisible
     return (
         <section className='meetings'>
-            Meetings page
+            <MeetingsFilter />
+            <MeetingsList />
         </section>
     );
 };

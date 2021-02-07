@@ -3,12 +3,10 @@
     flex-direction: column;
     font-size: rem(12px);
     height: rem(300px);
-    border-radius: rem(10px);
-    background: #fff;
-    box-shadow: 0 rem(3px) rem(6px) #dadada;
     animation: bubblyOff .4s 1 ease-out;
     transform: scale(1);
     overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
     &:before {
         content: '';
         position: absolute;
@@ -44,7 +42,7 @@
                 span{
                     color: #fff!important;
                 }
-                .icon {
+                .icon-star {
                     color: #fff!important;
                 }
             }
@@ -59,7 +57,7 @@
         z-index: 2;
     }
     &.Ad-hoc{
-        @include boxHover(#80fcb4, #fff389);
+        @include boxHover(#fce580, #ddb582);
         &:hover{
             @include boxHoverOn(#fff389);
         }
@@ -157,7 +155,7 @@
                         font-size: rem(11px);
                         color: #cecece;
                     }
-                    .icon {
+                    .icon-star {
                         color: #cecece;
                         font-size: rem(13px);
                         margin-right: 3px;

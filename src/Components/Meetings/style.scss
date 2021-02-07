@@ -1,0 +1,30 @@
+.meetings{
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 65px);
+        .meetings-store-wrapper {
+            overflow: scroll;
+            height: auto;
+            width: auto;
+            padding: rem(25px);
+            .meetings-list-scroll {
+                h1{
+                    font-size: rem(35px);
+                    font-weight: 100;
+                    position: sticky;
+                    color: #525252;
+                    text-align: right;
+                    top: 0;
+                    background: #f4f4f4;
+                    z-index: 3;
+                }
+                .meetings-list-section {
+                    display: grid;
+                    grid-column-gap: rem(32px);
+                    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                    grid-row-gap: rem(32px);
+                    margin-bottom: rem(60px);
+                }
+            }
+        }
+}

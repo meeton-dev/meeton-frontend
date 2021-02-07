@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Avatar } from '../../../Components/Common/avatar';
+import { Avatar } from '../../Common/avatar';
 import { Tooltip } from 'antd'
 import Moment from 'react-moment';
 import { DatePicker, Checkbox } from "antd";
@@ -7,7 +7,7 @@ import { Popover, Button } from 'antd';
 import {Link} from 'react-router-dom'
 
 
-class DashboardMeetingBox extends Component {
+class MeetingBox extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -18,14 +18,14 @@ class DashboardMeetingBox extends Component {
         const {type, users, date,date_extended, visible } = data;
         // console.log(data);
         return (
-            <div className={`meeting-box ${type}`}>
+            <div className={`box meeting-box ${type}`}>
                 <div className="top">
                     <div className={`typeOf ${type}`}>
                         <span />
                         {type}                        
                     </div>
                     <div>
-                        <i className="ico-star" />
+                        <span className="icon-star" />
                     </div>
                 </div>
                 <div className="mid">
@@ -84,4 +84,4 @@ class DashboardMeetingBox extends Component {
 }
 
 
-export default DashboardMeetingBox;
+export default MeetingBox;

@@ -1,9 +1,9 @@
 import React, { useRef, useEffect, useState } from "react";
-import DashboardFilter from "./DashboardFilter/DashboardFilter";
-import DashboardMeetingBox from "./DashboardMeetingBox/DashboardMeetingBox";
 import groupBy from 'lodash/groupBy'
 import Moment from 'react-moment';
 import moment from 'moment';
+import MeetingBox from "./MeetingBox";
+import MeetingsFilter from "./MeetingsFilter";
 
 const typeArr = ["Scheduled", "Ad-hoc", "Scheduled timed"];
 
@@ -32,37 +32,34 @@ const randomize = () => {
   return meetings;
 }
 
-const DashboardMain = () => {
+const MeetingsList = () => {
   const fakeMeetings = randomize();
   const test = groupBy(fakeMeetings, 'date');
 
-console.log(test);
+  console.log(test);
   return (
-    <div className="dashboard-main">
-      <DashboardFilter />
-      <div className="meetings-store-wrapper">
-        <div className="meetings-list-scroll">
-          {Object.entries(test).map((e, i) => {
-              return (
-                <div key={i} >
-                  {/* <h1>{e[0]}</h1> */}
-                  <div className="meetings-list-section">
-                    {e[1].map((x, i) => {
-                      return (
-                        <DashboardMeetingBox
-                          key={i}
-                          data={x}
-                        />
-                      );
-                    })}
-                  </div>
+    <div className="meetings-store-wrapper">
+      <div className="meetings-list-scroll">
+        {Object.entries(test).map((e, i) => {
+            return (
+              <div key={i} >
+                {/* <h1>{e[0]}</h1> */}
+                <div className="meetings-list-section">
+                  {fakeMeetings.map((x, i) => {
+                    return (
+                      <MeetingBox
+                        key={i}
+                        data={x}
+                      />
+                    );
+                  })}
                 </div>
-              )
-          })}
-        </div>
+              </div>
+            )
+        })}
       </div>
     </div>
   );
 };
 
-export default DashboardMain;
+export default MeetingsList;

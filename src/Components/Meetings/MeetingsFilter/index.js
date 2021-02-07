@@ -8,7 +8,7 @@ const options = [
   { label: "Ad-hoc", value: "3" },
 ];
 
-const DashboardFilter = () => {
+const MeetingsFilter = () => {
   return (
     <div className="dashboard-filters">
       <DatePicker />
@@ -21,4 +21,4 @@ const DashboardFilter = () => {
   );
 };
 
-export default DashboardFilter;
+export default MeetingsFilter;
