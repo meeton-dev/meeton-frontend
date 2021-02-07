@@ -19,9 +19,7 @@ class MeetonSignUp extends ForgotPassword {
     });
   }
 
-  handleSignUp(e) {
-    e.preventDefault();
-    console.log(e);
+  handleSignUp() {
     const userObj = {
       username: this.state.username,
       password: this.state.password,
@@ -56,7 +54,7 @@ class MeetonSignUp extends ForgotPassword {
               </button>
             </div>
             <h1>sign up</h1>
-            <form onSubmit={this.handleSignUp} autoComplete="off" >
+            <div className="form">
               <Input
                 id="name"
                 key="name"
@@ -94,11 +92,12 @@ class MeetonSignUp extends ForgotPassword {
                   type="primary" shape="round"
                   htmlType="submit"
                   className="btn"
+                  onClick={() => this.handleSignUp()}
                 >
                   Sign Up
                 </Button>
               </div>
-            </form>
+            </div>
           </div>
           <div className='auth-right'>
             <span className="logo-logo"></span>
