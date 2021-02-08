@@ -20,7 +20,7 @@ const AppNav = () => {
                     return item.id && (
                         <li key={item.id} className={isActive(item.path) ? 'active' : ''}>
                             <Link to={item.path}>
-                                <span className={`icon-${item.icon}`} />
+                                <span className={item.icon} />
                                 <span>{t(item.title)}</span>
                             </Link>
                         </li>
@@ -31,7 +31,16 @@ const AppNav = () => {
                 OPTIONS
             </h3>
             <ul>
-                {mtnOptionsRoutes.map((item) => item.id && <li key={item.id} className={isActive(item.path) ? 'active' : ''}><Link to={item.path}>{item.title}</Link></li>)}
+                {mtnOptionsRoutes.map((item) => 
+                     item.id && (
+                        <li key={item.id} className={isActive(item.path) ? 'active' : ''}>
+                            <Link to={item.path}>
+                                <span className={item.icon}></span>
+                                <span>{t(item.title)}</span>
+                            </Link>
+                        </li>
+                    )
+                )}
             </ul>
         </div>
     )

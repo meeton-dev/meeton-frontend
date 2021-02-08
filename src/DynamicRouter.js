@@ -18,56 +18,56 @@ import Lobby from "./Pages/Lobby/Lobby";
 export const mtnRoutes = [
   { 
     title:'Dashboard',
-    icon:'dashboard',
+    icon:'icon-dashboard',
     path: "/",
     id: 1,
     component: Dashboard
   },
   {
     title:'Meetings',
-    icon:'',
+    icon:'icon-comments',
     path: "/meetings",
     id: 2,
     component: Meetings
   },
   {
     title:'Calendar',
-    icon:'',
+    icon:'icon-ui-calendar',
     path: "/calendar",
     id: 3,
     component: Calendar
   },
   {
     title:'Latest',
-    icon:'',
+    icon:'icon-clock',
     path: "/latest",
     id: 4,
     component: Latest
   },
   {
     title:'Starred',
-    icon:'',
+    icon:'icon-star',
     path: "/starred",
     id: 5,
     component: Starred
   },
   {
     title:'Importants',
-    icon:'',
+    icon:'icon-exclamation',
     path: "/importants",
     id: 6,
     component: Importants
   },
   {
     title:'Notes',
-    icon:'',
+    icon:'icon-file',
     path: "/notes",
     id: 7,
     component: Notes
   },
   {
     title:'Files',
-    icon:'',
+    icon:'icon-files-stack',
     path: "/files",
     id: 8,
     component: Files
@@ -77,14 +77,14 @@ export const mtnRoutes = [
 export const mtnOptionsRoutes = [
   {
     title:'MyGroup',
-    icon:'',
+    icon:'icon-users',
     path: "/my-group",
     id: 9,
     component: MyGroup
   },
   {
     title:'Settings',
-    icon:'',
+    icon:'icon-support-faq',
     path: "/settings",
     id: 10,
     component: Settings

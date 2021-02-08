@@ -18,6 +18,7 @@
             width: 65px;
             align-items: center;
             justify-content: center;
+            color: rgb(61, 60, 60);
         }
         
     }
@@ -30,7 +31,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: red;
+            color: rgb(61, 60, 60);
             opacity: 0.3;
             cursor: pointer;
             font-size: rem(23px);
@@ -42,7 +43,7 @@
     // USER PANEL
     .userPanel{
         position: absolute;
-        left: 0;
+        left: 20px;
         bottom: -27.5px;
         display: flex;
         flex-direction: row;
