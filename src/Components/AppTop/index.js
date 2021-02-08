@@ -1,9 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Auth } from 'aws-amplify';
 import ThemeSwap from './ThemeSwap';
 import UserPanel from './UserPanel';
-
-const LS = window.localStorage;
 
 const AppTop = () => {
 

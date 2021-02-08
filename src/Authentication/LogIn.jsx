@@ -51,6 +51,7 @@ class MeetonLogIn extends SignIn {
       this.setState({ loading: false })
     })
   }
+
   showComponent() {
 
     return (
@@ -109,6 +110,18 @@ class MeetonLogIn extends SignIn {
                     type="button"
                   >
                     Sign up now.
+                  </button>
+                </div>
+                <div>
+                  <p>
+                    If need to Activate,
+                  </p>
+                  <button
+                    className="btn-as-link"
+                    onClick={() => super.changeState("confirmSignUp")}
+                    type="button"
+                  >
+                    click here
                   </button>
                 </div>
               </div>

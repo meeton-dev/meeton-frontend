@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class Camera extends React.Component {
+export default class Camera extends Component {
     constructor(props) {
       super(props);
       this.streamCamVideo= this.streamCamVideo.bind(this);

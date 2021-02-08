@@ -57,7 +57,7 @@ class ForgotPass extends ForgotPassword {
               </button>
             </div>
             <h1>{this.state.delivery || authData.username ?
-                  'reset password' : 'forgotten pasword'
+                  'reset password' : 'reset pasword'
                 }</h1>
             <form>
               {this.state.delivery || authData.username ?

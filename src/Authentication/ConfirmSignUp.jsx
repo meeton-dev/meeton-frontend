@@ -19,8 +19,39 @@ class MeetonConfirmSignUp extends ForgotPassword {
     });
   }
 
+  updateCode = (string) =>{
+    console.log('string code', string);
+    this.setState({
+      code: string
+    });
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.setState({ loading: true });
+    const { username, password } = this.state;
+    Auth.signIn(username, password).then((response) => {
+      console.log('response: ',response);
+      if(response.challengeName === 'NEW_PASSWORD_REQUIRED'){
+        this.changeState('requireNewPassword', response);
+      }else{
+        this.changeState('signedIn', response);
+        this.setState({ username: '', password: '', loading: false });
+      }
+    }).catch((error) => {
+      // if (error.message) {
+      //   message.warning(error.message)
+      // }
+      // else {
+      //   message.warning(error)
+      // }
+      // this.setState({ loading: false })
+    })
+  }
+
   showComponent() {
     // debugger;
+    console.log(this.props);
     const { authState, hide, authData = {} } = this.props;
     const userObj = {
       code: this.state.code,

@@ -1,12 +1,8 @@
-import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React from "react";
 // import LobbyMain from "../../Components/Lobby/LobbyMain";
-import LobbyNav from "../../Components/Lobby/LobbyNav";
 
 
 const Lobby = () => {
-  const { code } = useParams();
-
 
   return (
     <section className='Lobby'>

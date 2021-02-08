@@ -52,31 +52,33 @@ class MeetonFirstLogin extends RequireNewPassword {
       <div className="meetonAuth">
         <div className="auth-wrapper">
           <div className='auth-left'>
-            <div className="my-2 w-100">
-              <a href="/"
-                className="text-indigo cursor-pointer hover:text-indigo-darker"
-                onClick={() => { 
-                  super.changeState("signIn") 
-                }}
+            <div className="authBack">
+              <button 
+                className="btn-off"
+                onClick={() => { super.changeState("signIn") }}
+                type="button"
               >
-                <span className='icon icon_chevron' />Back to Login
-              </a>
+                <span className='icon icon_chevron' />Back
+              </button>
             </div>
+            <h1>change password</h1>
             <form>
-              <div>
-              <p className="mb-1 font-bold">Change Temporary Password</p>
               <Input
-                  className="my-1"
                   placeholder='New Password'
                   type="password"
                   key="password"
                   name="password"
                   onChange={this.handleInputChange}
               />
-              {/* <div className="my-1"> <a href='#' onClick={this.send} >Resend Code</a> </div> */}
-              <div className="my-1">
-                  <Button type="primary" shape="round" onClick={this.change} >Change</Button>
-              </div>
+              <Input
+                  placeholder='Confirm New Password'
+                  type="confirmPassword"
+                  key="confirmPassword"
+                  name="confirmPassword"
+                  onChange={this.handleInputChange}
+              />
+              <div className="mainAction">
+                <Button type="primary" shape="round" onClick={this.change} >Change</Button>
               </div>
             </form>
           </div>
