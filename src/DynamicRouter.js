@@ -17,56 +17,56 @@ import Lobby from "./Pages/Lobby/Lobby";
 
 export const mtnRoutes = [
   { 
-    title:'Dashboard',
+    title:'nav.dashboard',
     icon:'icon-dashboard',
     path: "/",
     id: 1,
     component: Dashboard
   },
   {
-    title:'Meetings',
+    title:'nav.meetings',
     icon:'icon-comments',
     path: "/meetings",
     id: 2,
     component: Meetings
   },
   {
-    title:'Calendar',
+    title:'nav.calendar',
     icon:'icon-ui-calendar',
     path: "/calendar",
     id: 3,
     component: Calendar
   },
   {
-    title:'Latest',
+    title:'nav.latest',
     icon:'icon-clock',
     path: "/latest",
     id: 4,
     component: Latest
   },
   {
-    title:'Starred',
+    title:'nav.starred',
     icon:'icon-star',
     path: "/starred",
     id: 5,
     component: Starred
   },
   {
-    title:'Importants',
+    title:'nav.important',
     icon:'icon-exclamation',
     path: "/importants",
     id: 6,
     component: Importants
   },
   {
-    title:'Notes',
+    title:'nav.notes',
     icon:'icon-file',
     path: "/notes",
     id: 7,
     component: Notes
   },
   {
-    title:'Files',
+    title:'nav.files',
     icon:'icon-files-stack',
     path: "/files",
     id: 8,
@@ -76,14 +76,14 @@ export const mtnRoutes = [
 
 export const mtnOptionsRoutes = [
   {
-    title:'MyGroup',
+    title:'nav.my_group',
     icon:'icon-users',
     path: "/my-group",
     id: 9,
     component: MyGroup
   },
   {
-    title:'Settings',
+    title:'nav.settings',
     icon:'icon-support-faq',
     path: "/settings",
     id: 10,

@@ -46,6 +46,15 @@ body.noScroll{
   border: 1px solid ;
   color: #8b8b8b;
   padding: 1rem;
+
+  &-top{
+    span{
+      padding: 0.5rem;
+      @include mtnTheme('background-color', 'main-7');
+      @include mtnTheme('color', 'main-3');
+      border-radius: 12px;
+    }
+  }
 }
 // .avatar {
 //   width: 40px;

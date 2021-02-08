@@ -1,3 +1,19 @@
 {
-    "test": "english"
+    "nav": {
+        "dashboard": "Dashboard",
+        "meetings": "Meetings",
+        "calendar": "Calendar",
+        "latest": "Latest",
+        "starred": "Starred",
+        "important": "Important",
+        "notes": "Notes",
+        "files": "Files",
+        "my_group": "My Group",
+        "settings": "Settings",
+        "my_stuff": "My Stuff",
+        "options": "Options"     
+    },
+    "dashboard": {
+        "welcome": "Welcome,"  
+    }
 }

@@ -1,3 +1,19 @@
 {
-    "test": "magyar"
+    "nav": {
+        "dashboard": "Irányítópult",
+        "meetings": "Megbeszélések",
+        "calendar": "Naptár",
+        "latest": "Előzmények",
+        "starred": "Kedvencek",
+        "important": "Fontos",
+        "notes": "Jegyzetek",
+        "files": "Dokumentumok",
+        "my_group": "Csoportom",
+        "settings": "Beállítások",
+        "my_stuff": "Dolgaim",
+        "options": "Opciók"     
+    },
+    "dashboard": {
+        "welcome": "Szia,"  
+    }
 }

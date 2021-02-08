@@ -13,7 +13,7 @@ const AppNav = () => {
     return (
         <div className="appNav">
             <h3>
-                MY STUFF
+                {t('nav.my_stuff')}
             </h3>
             <ul>
                 {mtnRoutes.map((item) => {
@@ -28,7 +28,7 @@ const AppNav = () => {
                 })}
             </ul>
             <h3>
-                OPTIONS
+                {t('nav.options')}
             </h3>
             <ul>
                 {mtnOptionsRoutes.map((item) => 

@@ -1,3 +1,19 @@
 {
-    "test": "german"
+    "nav": {
+        "dashboard": "de_Irányítópult",
+        "meetings": "de_Megbeszélések",
+        "calendar": "de_Naptár",
+        "latest": "de_Előzmények",
+        "starred": "de_Kedvencek",
+        "important": "de_Fontos",
+        "notes": "de_Jegyzetek",
+        "files": "de_Dokumentumok",
+        "my_group": "de_Csoportom",
+        "settings": "de_Beállítások",
+        "my_stuff": "de_Dolgaim",
+        "options": "de_Opciók"     
+    },
+    "dashboard": {
+        "welcome": "de_Szia,"  
+    }
 }

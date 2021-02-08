@@ -7,6 +7,7 @@ import DashboardPeoplesBox from '../../Components/Dashboard/DashboardPeoplesBox'
 import DashboardScheduleBox from '../../Components/Dashboard/DashboardScheduleBox';
 import DashboardSundriesBox from '../../Components/Dashboard/DashboardSundriesBox';
 import DashboardTimeSpentBox from '../../Components/Dashboard/DashboardTimeSpentBox';
+import DashboardGeneralBox from '../../Components/Dashboard/DashboardGeneralBox';
 
 const Dashboard = () => {
 // modalVisible
@@ -14,13 +15,34 @@ const Dashboard = () => {
         <section className='dashboard'>
             <DashboardTop />
             <div className="boxes">
-                <DashboardScheduleBox />
+                <DashboardGeneralBox
+                    icon='icon-clock'
+                    content={<DashboardScheduleBox />} />
+                <DashboardGeneralBox
+                    icon='icon-file'
+                    content={<DashboardFilesBox />} />
+                <DashboardGeneralBox
+                    icon='icon-phone'
+                    content={<DashboardCallStatsBox />} />
+                <DashboardGeneralBox
+                    icon='icon-star'
+                    content={<DashboardFavouritesBox />} />
+                <DashboardGeneralBox
+                    icon='icon-users'
+                    content={<DashboardPeoplesBox />} />
+                <DashboardGeneralBox
+                    icon='icon-clock'
+                    content={<DashboardTimeSpentBox />} />
+                <DashboardGeneralBox
+                    icon='icon-files-stack'
+                    content={<DashboardSundriesBox />} />
+                {/* <DashboardScheduleBox />
                 <DashboardFilesBox />
                 <DashboardCallStatsBox />
                 <DashboardFavouritesBox />
                 <DashboardPeoplesBox />
                 <DashboardSundriesBox />
-                <DashboardTimeSpentBox />
+                <DashboardTimeSpentBox /> */}
             </div>
         </section>
     );

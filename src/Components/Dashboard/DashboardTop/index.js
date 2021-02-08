@@ -16,7 +16,7 @@ const DashboardTop = () => {
   return (
     <div className="dashboardTop">
       <div className="welcomeUser">
-        <span style={{marginRight: '1rem'}}>Welcome, </span>
+        <span style={{marginRight: '1rem'}}>{t('dashboard.welcome')}</span>
         <span>{user.name}</span>
         <div style={{fontSize: '12px', margin: '0 1rem'}}>
           {!user.email_verified && 'Email not verified'}
