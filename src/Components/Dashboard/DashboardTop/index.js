@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import {useTranslation} from "react-i18next";
 import { useAppState } from "../../../context/context";
+import { Btn } from "../../Forms/Buttons";
 
 const DashboardTop = () => {
   const { user } = useAppState();
@@ -26,7 +27,12 @@ const DashboardTop = () => {
         <button onClick={() => switchLang('hu')}>hu</button>
       </div>
       <div className="dashboardAction">
-        Create+
+        <Btn
+          primary
+          label="create"
+          onClick={() => {console.log('Create new')}}
+          icon='icon-plus'
+            />
       </div>
     </div>
   );
