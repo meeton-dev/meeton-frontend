@@ -24,7 +24,6 @@ const devRoutes = [
         icon:'icon-star'
     },
 ]
-
 const AppNav = (props) => {
     const {toggleMenu} = props;
     const {t} = useTranslation('mtnApp');
