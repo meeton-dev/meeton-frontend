@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation } from "react-router-dom";
 import { mtnRoutes, mtnOptionsRoutes } from '../../DynamicRouter';
 import { Link } from 'react-router-dom';
 import {useTranslation} from "react-i18next";
+
 // Can be deleted later
 const devRoutes = [
     {
@@ -23,14 +24,17 @@ const devRoutes = [
         icon:'icon-star'
     },
 ]
-const AppNav = () => {
+
+const AppNav = (props) => {
+    const {toggleMenu} = props;
     const {t} = useTranslation('mtnApp');
 
     const location = useLocation();
     const isActive = (path) => location.pathname === path;
 
     return (
-        <div className="appNav">
+        <div className={`appNav`}>
+            <div className='toggleMenu' onClick={toggleMenu}/>
             <h3>
                 {t('nav.my_stuff')}
             </h3>

@@ -33,6 +33,9 @@ body.noScroll{
   .appMain{
     display: grid;
     grid-template-columns: 250px 1fr;
+    &.narrow{
+      grid-template-columns: 65px 1fr;
+    }
     .appContent{
       overflow: hidden scroll;
     }
