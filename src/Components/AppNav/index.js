@@ -3,7 +3,26 @@ import { useLocation } from "react-router-dom";
 import { mtnRoutes, mtnOptionsRoutes } from '../../DynamicRouter';
 import { Link } from 'react-router-dom';
 import {useTranslation} from "react-i18next";
-
+// Can be deleted later
+const devRoutes = [
+    {
+        id: 1,
+        path: "/lobby/testId123", 
+        title:'Lobby page',
+        icon:'icon-star'
+    },
+    { 
+        id: 2,
+        path: "/meeting/testId123", 
+        title:'Meeting call',
+        icon:'icon-star'},
+    { 
+        id: 3,
+        path: "/room/testRoomId123", 
+        title:'Meeting page',
+        icon:'icon-star'
+    },
+]
 const AppNav = () => {
     const {t} = useTranslation('mtnApp');
 
@@ -32,6 +51,21 @@ const AppNav = () => {
             </h3>
             <ul>
                 {mtnOptionsRoutes.map((item) => 
+                     item.id && (
+                        <li key={item.id} className={isActive(item.path) ? 'active' : ''}>
+                            <Link to={item.path}>
+                                <span className={item.icon}></span>
+                                <span>{t(item.title)}</span>
+                            </Link>
+                        </li>
+                    )
+                )}
+            </ul>
+            <h3>
+                Developer
+            </h3>
+            <ul>
+                {devRoutes.map((item) => 
                      item.id && (
                         <li key={item.id} className={isActive(item.path) ? 'active' : ''}>
                             <Link to={item.path}>
