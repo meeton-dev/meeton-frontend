@@ -48,12 +48,13 @@
     // USER PANEL
     .userPanel{
         position: absolute;
-        left: 20px;
+        left: 32px;
         bottom: -27.5px;
         display: flex;
         flex-direction: row;
         align-items: center;
-
+        z-index: 2;
+        
         &-avatar{
             margin: 0 1rem;
             display: flex;

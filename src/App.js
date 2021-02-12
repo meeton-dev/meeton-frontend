@@ -12,7 +12,7 @@ const App = (props) => {
   const [isMenuWide, setIsMenuWide] = useState(()=>{
     const menuSize = LS.getItem('menuSize');
     console.log(menuSize);
-    return menuSize === true ? true : false
+    return menuSize === 'true' ? true : false
   })
 
   const handleToggelMenu = () =>{
