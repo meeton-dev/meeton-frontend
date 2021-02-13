@@ -1,19 +1,19 @@
 {
     "nav": {
-        "dashboard": "de_Irányítópult",
-        "meetings": "de_Megbeszélések",
-        "calendar": "de_Naptár",
-        "latest": "de_Előzmények",
-        "starred": "de_Kedvencek",
-        "important": "de_Fontos",
-        "notes": "de_Jegyzetek",
-        "files": "de_Dokumentumok",
-        "my_group": "de_Csoportom",
-        "settings": "de_Beállítások",
-        "my_stuff": "de_Dolgaim",
-        "options": "de_Opciók"     
+        "dashboard": "Instrumententafel",
+        "meetings": "Treffen",
+        "calendar": "Kalender",
+        "latest": "Neueste",
+        "starred": "Markiert",
+        "important": "Wichtig",
+        "notes": "Anmerkungen",
+        "files": "Dateien",
+        "my_group": "Meine Gruppe",
+        "settings": "die Einstellungen",
+        "my_stuff": "Meine Sachen",
+        "options": "Optionen"     
     },
     "dashboard": {
-        "welcome": "de_Szia,"  
+        "welcome": "Willkommen,"  
     }
 }
