@@ -66,31 +66,31 @@ const CreateMeetingModal = (props) => {
             right
         >
             <div className="create-infos">
-            <div className="close-button" onClick={() => handleClose(dispatch)}>
-                <span >Close</span>
-            </div>
-            <div className="head">
-                <h2>It's time to create a new meeting!</h2>
-                <p>
-                Before you start don't forget some important thing, what could
-                help to specify each meetings you creating!
-                </p>
-            </div>
-            <div className="validations">
-                <h2>Please check if you have the followings:</h2>
-                <ul>
-                {validations.map(({validated, title}, _index) => {
-                    return(
-                    <li key={_index}>
-                        <span className={`icon ${validated ? 'ico-tick-mark true' : 'ico-exclamation-tringle false'}`}></span>
-                        <span className="title">{title}</span>
-                    </li>
-                    )
-                })}
-                </ul>
-            </div>
-            <div className="tips">
-                *Tip for you: Did you know that, Cian is a fucker? You can call him a fucker all the time!
+                <div className="close-button" onClick={() => handleClose(dispatch)}>
+                    <span >Close</span>
+                </div>
+                <div className="head">
+                    <h2>It's time to create a new meeting!</h2>
+                    <p>
+                    Before you start don't forget some important thing, what could
+                    help to specify each meetings you creating!
+                    </p>
+                </div>
+                <div className="validations">
+                    <h2>Please check if you have the followings:</h2>
+                    <ul>
+                    {validations.map(({validated, title}, _index) => {
+                        return(
+                        <li key={_index}>
+                            <span className={`icon ${validated ? 'ico-tick-mark true' : 'ico-exclamation-tringle false'}`}></span>
+                            <span className="title">{title}</span>
+                        </li>
+                        )
+                    })}
+                    </ul>
+                </div>
+                <div className="tips">
+                    *Tip for you: Did you know that, Cian is a fucker? You can call him a fucker all the time!
             </div>
             </div>
             <div className="create-content">
@@ -196,7 +196,7 @@ const CreateMeetingModal = (props) => {
                 <Button
                     type="primary"
                     size="small"
-                    onClick={() => handleClose()}
+                    onClick={() => handleClose(dispatch)}
                 >
                     Create meeting
                 </Button>
