@@ -16,7 +16,13 @@ const useAppDispatch = () => {
 };
 
 const MainContext = (props) => {
-    const [state, dispatch] = useReducer(appReducers, {user: props.setUser});
+    const [state, dispatch] = useReducer(appReducers, {
+        user: props.setUser,
+        modal: {
+            type: null,
+            mask: true,
+        }
+    });
     return (
         <AppContext.Provider value={state}>
             <AppDispatchContext.Provider value={dispatch}>

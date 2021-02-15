@@ -30,6 +30,9 @@ body.noScroll{
   display: grid;
   grid-template-rows: 65px 1fr;
   @include mtnTheme('background', 'main-0');
+  &.blur{
+    filter: blur(2px);
+  }
   .appMain{
     display: grid;
     grid-template-columns: auto 1fr;

@@ -94,6 +94,7 @@ export const mtnOptionsRoutes = [
   { path: "/room/:roomID", component: Meeting },
 ];
 
+
 class DynamicRouter extends Component {
   render() {
     // const { permissions } = this.props;
