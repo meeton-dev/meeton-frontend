@@ -2,7 +2,6 @@ $primary-color: #ffeebc;
 $primary-color: #ffeebc;
 
 
-
 $themes: (
     light: (
         main-0: #e4e4e4,
@@ -13,7 +12,10 @@ $themes: (
         main-5: #d6d6d6,
         main-6: #d6d6d6,
         main-7: #818181,
-        btn-primary: $primary-color
+        primary: #ac9550,
+        secondary: #593b75,
+        action: #4948ad,
+        generic: #222222,
     ),
     dark: (
         main-0: #222222,
@@ -24,7 +26,10 @@ $themes: (
         main-5: #313131,
         main-6: #313131,
         main-7: #707070,
-        btn-primary: $primary-color
+        primary: #ffeebc,
+        secondary:  #9534f0,
+        action: #318ffa,
+        generic: #ffffff,
     )
 );
 

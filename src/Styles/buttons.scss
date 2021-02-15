@@ -1,3 +1,60 @@
 .mtnBtn{
-    color:red;
+    position: relative;
+    @include mtnTheme('color', 'generic');
+    background-color: transparent;
+    border: 1px solid;
+    border-radius: 12px;
+    @include mtnTheme('border-color', 'generic');
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &-icn{
+        margin-right: 10px;
+    }
+
+    &:hover{
+        @include mtnTheme('background-color', 'generic');
+        @include mtnTheme('color', 'main-0');
+    }
+
+    &:active{
+        transform: scale(0.95);
+    }
+
+    &.primary{
+        @include mtnTheme('color', 'primary');
+        @include mtnTheme('border-color', 'primary');
+
+        &:hover{
+            @include mtnTheme('background-color', 'primary');
+            @include mtnTheme('color', 'main-0');      
+        }
+    }
+
+    &.secondary{
+        @include mtnTheme('color', 'secondary');
+        @include mtnTheme('border-color', 'secondary');
+
+        &:hover{
+            @include mtnTheme('background-color', 'secondary');
+            @include mtnTheme('color', 'main-0');      
+        }
+    }
+
+    &.action{
+        @include mtnTheme('color', 'action');
+        @include mtnTheme('border-color', 'action');
+
+        &:hover{
+            @include mtnTheme('background-color', 'action');
+            @include mtnTheme('color', 'main-0');      
+        }
+    }
 }
+
+//Primary
+
+//Secondary
+
+//Action

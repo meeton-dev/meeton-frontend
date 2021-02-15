@@ -16,8 +16,8 @@ export const Btn = (props) => {
 
     return (
         <button onClick={onClick ? onClick : () => console.log('no function assigned')} className={`mtnBtn ${generateClasses()}`}>
-            {icon && <span className={icon}></span>}
-            <span>{label}</span>
+            {icon && <span className={`mtnBtn-icn ${icon}`}></span>}
+            <span className="mtnBtn-lbl">{label}</span>
         </button>
     )
 }
