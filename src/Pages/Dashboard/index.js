@@ -36,13 +36,6 @@ const Dashboard = () => {
                 <DashboardGeneralBox
                     icon='icon-files-stack'
                     content={<DashboardSundriesBox />} />
-                {/* <DashboardScheduleBox />
-                <DashboardFilesBox />
-                <DashboardCallStatsBox />
-                <DashboardFavouritesBox />
-                <DashboardPeoplesBox />
-                <DashboardSundriesBox />
-                <DashboardTimeSpentBox /> */}
             </div>
         </section>
     );

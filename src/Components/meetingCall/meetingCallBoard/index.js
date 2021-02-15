@@ -85,7 +85,7 @@ class MeetingCallBoard extends Component {
     return (
       <div className="callBoard" ref={this.boardRef}>
         <div className="callBoard-header">
-        <span onClick={() => this.setState({drawingEnabled: drawingEnabled === false ? true : false})}>drawingEnabled: {drawingEnabled}</span>
+        <span onClick={() => this.setState({drawingEnabled: drawingEnabled === false ? true : false})}>Drawing: {drawingEnabled ? 'On': 'Off'}</span>
         </div>
         <div className="callBoard-table">
           <div className="toolbar">

@@ -1,49 +1,47 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
 import DynamicRouter from "./DynamicRouter";
-import UniModal from "./Modals";
 import { MainContext } from "./context/context";
 import AppTop from "./Components/AppTop";
 import AppNav from "./Components/AppNav";
+import UniModal from "./Components/Common/Modals";
 // import { Auth } from "aws-amplify";
+const LS = window.localStorage;
 
-class App extends React.Component {
-  constructor(props, context) {
-      super(props, context);
-      this.user = {};
-      // this.getUser();
+const App = (props) => {
+  const [isMenuWide, setIsMenuWide] = useState(()=>{
+    const menuSize = LS.getItem('menuSize');
+    return menuSize === 'true' ? true : false
+  })
+
+  const handleToggelMenu = () =>{
+    setIsMenuWide(prevState => {
+      LS.setItem('menuSize', !prevState);
+      return !prevState;
+    })
   }
 
-
-  // getUser = async () => {
-  //     if (this.props.authState === "signedIn" || this.props.authState === "loading") {
-  //         this.user = await Auth.currentAuthenticatedUser();
-  //         this.setState({ user: this.user });
-  //     }
-  // }
-
-  render() {
-      // console.log('authState in app: ', this.props);
-      if (this.props.authState === "signedIn" || this.props.authState === "verifyContact") {
-          return (
+  if (props.authState === "signedIn" || props.authState === "verifyContact") {
+      return (
+        <MainContext setUser={props.authData.attributes}>
+          <>
+            <UniModal />
             <div id="appWrapper">
-              <MainContext setUser={this.props.authData.attributes}>
                 <BrowserRouter>
                     <AppTop />
-                    <div className="appMain">
-                      <AppNav />
+                    <div className={`appMain ${isMenuWide ? 'wide' : 'narrow'}`}>
+                      <AppNav toggleMenu={() => handleToggelMenu()}/>
                       <div className="appContent">
                           <DynamicRouter />
-                          {/* <UniModal /> */}
                       </div>
                     </div>
                 </BrowserRouter>
-              </MainContext>
             </div>
-          );
-      } else {
-          return null;
-      }
+          </>
+        </MainContext>
+      );
+  } else {
+      return null;
   }
 }
 

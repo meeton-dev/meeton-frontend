@@ -11,7 +11,7 @@ import Notes from "./Pages/Notes";
 import Files from "./Pages/Files";
 import MyGroup from "./Pages/MyGroup";
 import Settings from "./Pages/Settings";
-import MeetingCall from "./Pages/meetingCall/meetingCall";
+import MeetingCall from "./Pages/meetingCall";
 import Meeting from "./Components/meetingCall/Meeting";
 import Lobby from "./Pages/Lobby/Lobby";
 
@@ -93,6 +93,7 @@ export const mtnOptionsRoutes = [
   { path: "/meeting/:code", component: MeetingCall },
   { path: "/room/:roomID", component: Meeting },
 ];
+
 
 class DynamicRouter extends Component {
   render() {

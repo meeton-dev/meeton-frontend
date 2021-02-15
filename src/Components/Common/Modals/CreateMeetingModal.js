@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import ModalWrapper from './ModalWrapper';
 import { Form, Input, Radio, Button } from 'antd';
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
+import { useAppDispatch } from "../../../context/context";
 
 const validations = [
     { 
@@ -37,11 +38,13 @@ const validations = [
     },
 ];
 
-const CreateMeetingModal = () => {
+const CreateMeetingModal = (props) => {
 
     const history = useHistory();
     const [form] = Form.useForm();
-    const [, forceUpdate] = useState();
+    const [forceUpdate] = useState();
+    const dispatch = useAppDispatch();
+    const {handleClose} = props;
     // const meetingCode = useSelector((state) => state.meeting?.code);
   
     // useEffect(() => {
@@ -63,7 +66,7 @@ const CreateMeetingModal = () => {
             right
         >
             <div className="create-infos">
-            <div className="close-button">
+            <div className="close-button" onClick={() => handleClose(dispatch)}>
                 <span >Close</span>
             </div>
             <div className="head">
@@ -190,13 +193,13 @@ const CreateMeetingModal = () => {
                     </Form.Item>
                 </Form>
                 
-                    {/* <Button
-                        type="primary"
-                        size="small"
-                        onClick={() => dispatch(meetingActions.createMeeting())}
-                    >
-                        Create meeting
-                    </Button> */}
+                <Button
+                    type="primary"
+                    size="small"
+                    onClick={() => handleClose()}
+                >
+                    Create meeting
+                </Button>
             </div>
         </ModalWrapper>
     );

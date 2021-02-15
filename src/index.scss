@@ -21,7 +21,7 @@
 @import "./Styles/ieBrowser";
 
 @import "./Pages/Dashboard/style";
-@import "./Pages/meetingCall/meetingCall";
+@import "./Pages/meetingCall/style";
 
 @import './Components/Meetings/style';
 @import './Components/Meetings/MeetingsFilter/style';
@@ -31,8 +31,8 @@
 @import './Components/AppNav/style';
 @import './Components/AppTop/style';
 @import './Components/Dashboard/style';
-@import "./Components/meetingCall/meetingCallUserList/meetingCallUserList";
-@import "./Components/meetingCall/meetingCallBoard/meetingCallBoard";
+@import "./Components/meetingCall/meetingCallUserList/style";
+@import "./Components/meetingCall/meetingCallBoard/style";
 @import "./Components/Chat/Chat";
 
 *:focus {

@@ -30,9 +30,18 @@ body.noScroll{
   display: grid;
   grid-template-rows: 65px 1fr;
   @include mtnTheme('background', 'main-0');
+  &.blur{
+    filter: blur(2px);
+  }
   .appMain{
     display: grid;
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: auto 1fr;
+    transition: linear 2s;
+    &.narrow{
+      transition: linear 2s;
+
+      grid-template-columns: auto 1fr;
+    }
     .appContent{
       overflow: hidden scroll;
     }

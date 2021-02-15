@@ -4,6 +4,7 @@ import { Avatar } from '../../Common/avatar';
 import { User } from './parts/user';
 import AudioAnalyser from './microphone/AudioAnalyser';
 import Camera from './camera/camera';
+import ThemeSwap from '../../AppTop/ThemeSwap';
 
 
 class MeetingCallUserList extends Component {
@@ -11,7 +12,8 @@ class MeetingCallUserList extends Component {
     super(props)
     this.state = {
       clients: [],
-      audio: null
+      audio: null,
+      fullscreen: true
     }
     this.toggleMicrophone = this.toggleMicrophone.bind(this);
   }
@@ -54,14 +56,37 @@ class MeetingCallUserList extends Component {
     let date = new Date()
     return (
       <div className="meetingBar">
-        {/* schedule part, infos etc. */}
-        <div className="timer">
-          00:13
-
-        </div>
+        <ThemeSwap />
         
         <div className={`in-call ${fullscreen ? 'fullscreen' : 'compact'}`}>
-          <button onClick={() => this.setState({fullscreen: fullscreen === false ? true : false})}>{fullscreen ? 'Go back to board' : 'Go fullscreen'}</button>
+          <button className="fullscreenBtn" onClick={() => this.setState({fullscreen: fullscreen === false ? true : false})}>{fullscreen ? 'small' : 'fullscreen'}</button>
+          <div className="user">
+            <Camera />
+          </div>
+          <div className="user">
+            <Camera />
+          </div>
+          <div className="user">
+            <Camera />
+          </div>
+          <div className="user">
+            <Camera />
+          </div>
+          <div className="user">
+            <Camera />
+          </div>
+          <div className="user">
+            <Camera />
+          </div>
+          <div className="user">
+            <Camera />
+          </div>
+          <div className="user">
+            <Camera />
+          </div>
+          <div className="user">
+            <Camera />
+          </div>
           <div className="user">
             <Camera />
           </div>
@@ -71,13 +96,13 @@ class MeetingCallUserList extends Component {
             </div>
           })} */}
         </div>
-        <div className="controls">
+        {/* <div className="controls">
           <button onClick={this.toggleMicrophone}>
             {this.state.audio ? 'Stop microphone' : 'Get microphone input'}
           </button>
-        </div>
+        </div> */}
 
-        {this.state.audio ? <AudioAnalyser audio={this.state.audio} /> : ''}
+        {/* {this.state.audio ? <AudioAnalyser audio={this.state.audio} /> : ''} */}
       </div>
   )}
 }

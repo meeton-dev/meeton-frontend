@@ -1,9 +1,10 @@
 const appReducers = (state, action) => {
-    const { type, obj } = action;
+    const { reducer, obj } = action;
 
-    switch (type) {
-    case 'SET_MODAL_VISIBLE': {
-        return { ...state, advancedSearch: obj };
+    switch (reducer) {
+    case 'SET_MODAL_VISIBILITY': {
+        return { ...state, modal: obj };
+
     }
     default: {
         return {};
