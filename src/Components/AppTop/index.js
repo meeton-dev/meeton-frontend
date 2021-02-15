@@ -12,7 +12,9 @@ const AppTop = () => {
             <UserPanel />
             <ThemeSwap />
             <div className="modaltest">
-                <button onClick={() => showModal(dispatch, 'CREATE_MEETING', true)}>modal test</button>
+                <button onClick={() => showModal(dispatch, 'CREATE_MEETING', true)}>modal test 1</button>
+                <button onClick={() => showModal(dispatch, 'QUICK_OPTIONS', true)}>modal test 2</button>
+                <button onClick={() => showModal(dispatch, 'SUPPORT', true)}>modal test 3</button>
             </div>
             <div className="logOut">
                 <button onClick={() => Auth.signOut()}><span className="icon-power" /></button>
