@@ -1,6 +1,5 @@
 import React from 'react';
 import { RequireNewPassword } from "aws-amplify-react";
-import { Input, Button } from 'antd';
 import { Auth } from 'aws-amplify';
 import { AuthFooter } from './AuthFooter';
 
@@ -63,14 +62,14 @@ class MeetonFirstLogin extends RequireNewPassword {
             </div>
             <h1>change password</h1>
             <form>
-              <Input
+              <input
                   placeholder='New Password'
                   type="password"
                   key="password"
                   name="password"
                   onChange={this.handleInputChange}
               />
-              <Input
+              <input
                   placeholder='Confirm New Password'
                   type="confirmPassword"
                   key="confirmPassword"
@@ -78,7 +77,7 @@ class MeetonFirstLogin extends RequireNewPassword {
                   onChange={this.handleInputChange}
               />
               <div className="mainAction">
-                <Button type="primary" shape="round" onClick={this.change} >Change</Button>
+                <button type="primary" shape="round" onClick={this.change} >Change</button>
               </div>
             </form>
           </div>

@@ -5,6 +5,7 @@ import { MainContext } from "./context/context";
 import AppTop from "./Components/AppTop";
 import AppNav from "./Components/AppNav";
 import UniModal from "./Components/Common/Modals";
+import { ErrorBoundary } from "./Components/ErrorBoundary";
 // import { Auth } from "aws-amplify";
 const LS = window.localStorage;
 
@@ -28,13 +29,16 @@ const App = (props) => {
             <UniModal />
             <div id="appWrapper">
                 <BrowserRouter>
-                    <AppTop />
-                    <div className={`appMain ${isMenuWide ? 'wide' : 'narrow'}`}>
-                      <AppNav toggleMenu={() => handleToggelMenu()}/>
-                      <div className="appContent">
-                          <DynamicRouter />
-                      </div>
+                  <AppTop />
+                  <div className={`appMain ${isMenuWide ? 'wide' : 'narrow'}`}>
+                    <AppNav toggleMenu={() => handleToggelMenu()}/>
+                    <div className="appContent">
+                      <ErrorBoundary>
+                        <DynamicRouter />
+                      </ErrorBoundary>
                     </div>
+                  </div>
+                  
                 </BrowserRouter>
             </div>
           </>

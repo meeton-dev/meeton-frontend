@@ -18,7 +18,7 @@ function randomTime(start, end) {
 
 const randomize = () => {
   let meetings = [];
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 15; i++) {
     const d = randomTime(new Date("08-10-2020 10:30"), new Date("08-15-2020 02:10"));
     const meeting = {
       type: typeArr[Math.floor(Math.random() * typeArr.length)],

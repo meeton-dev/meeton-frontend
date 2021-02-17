@@ -1,4 +1,11 @@
 {
+    "general": {
+        "appCrash": {
+            "lead": "Oh no! We crashed!", 
+            "description": "Something went wrong while displaying this page.",
+            "details": "See details"
+        }
+    },
     "nav": {
         "dashboard": "Dashboard",
         "meetings": "Meetings",

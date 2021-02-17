@@ -32,24 +32,24 @@ const DashboardTop = () => {
           label="create"
           onClick={() => {console.log('Create new')}}
           icon='icon-plus'
-            />
-            <Btn
+        />
+        {/* <Btn
           secondary
           label="Sec"
           onClick={() => {console.log('Create new')}}
           icon='icon-plus'
-            />
-            <Btn
+        />
+        <Btn
           action
           label="Action"
           onClick={() => {console.log('Create new')}}
           icon='icon-plus'
-            />
-            <Btn
+        />
+        <Btn
           label="Default"
           onClick={() => {console.log('Create new')}}
           icon='icon-plus'
-            />
+        /> */}
       </div>
     </div>
   );

@@ -1,6 +1,5 @@
 import React from 'react';
 import { ForgotPassword } from "aws-amplify-react";
-import { Input, Button, message } from 'antd';
 import queryString from 'query-string';
 import { Auth } from 'aws-amplify';
 import { AuthFooter } from './AuthFooter';
@@ -44,12 +43,7 @@ class ForgotPass extends ForgotPassword {
         this.changeState('signIn');
       })
       .catch(error => {
-        if (error.message) {
-          message.warning(error.message)
-        }
-        else {
-          message.warning(error)
-        }
+        console.log(error);
       })
   }
 
@@ -73,7 +67,7 @@ class ForgotPass extends ForgotPassword {
             <form onSubmit={this.forgotPasswordSubmit} action="" >
               <div>
                 <p className="mb-1 font-bold">Reset Your Password</p>
-                <Input
+                <input
                   className="my-1"
                   placeholder='New Password'
                   type="password"
@@ -83,7 +77,7 @@ class ForgotPass extends ForgotPassword {
                   onChange={this.handleInputPasswordChange}
                 />
                 <div className="my-1">
-                  <Button type="primary" shape="round" htmlType="submit" >Submit</Button>
+                  <button type="primary" shape="round" htmlType="submit" >Submit</button>
                 </div>
               </div>
             </form>

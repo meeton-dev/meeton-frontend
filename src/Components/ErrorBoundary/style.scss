@@ -1,0 +1,42 @@
+.crashHappened{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    @include mtnTheme('color', 'generic');
+    details > summary:first-of-type {
+        cursor: pointer;
+        @include mtnTheme('color', 'generic');
+    }
+    details{
+        white-space: pre-wrap;
+        border: 1px solid;
+        border-radius: 12px;
+        margin: 1rem;
+        position: absolute;
+        padding: .5rem;
+        top: 0;
+        right: 0;
+        left: 0;
+        font-size: 0.9rem;
+        line-height: 1.4rem;
+        max-height: 450px;
+        overflow: scroll;
+        @include mtnTheme('background-color', 'main-1');
+        @include mtnTheme('border-color', 'main-5');
+        @include mtnTheme('color', 'main-7');
+        &[open]{
+            box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+        }
+        div{
+            summary{
+                @include mtnTheme('color', 'primary');
+            }
+            &:nth-child(1){
+                @include mtnTheme('color', 'primary');
+            }
+        }
+    }
+}

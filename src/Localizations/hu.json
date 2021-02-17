@@ -1,4 +1,11 @@
-{
+{    
+    "general": {
+        "appCrash": {
+            "lead": "[HU]Oh no! We crashed!", 
+            "description": "[HU]Something went wrong while displaying this page.",
+            "details": "[HU]See details"
+        }
+    },
     "nav": {
         "dashboard": "Irányítópult",
         "meetings": "Megbeszélések",
