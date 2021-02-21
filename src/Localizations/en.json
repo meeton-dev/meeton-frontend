@@ -6,6 +6,16 @@
             "details": "See details"
         }
     },
+    "settings": {
+        "language": {
+            "changed": "Language successfully changed to: ",
+            "to": {
+                "en": "english",
+                "de": "german",
+                "hu": "hungarian"
+            }
+        }
+    },
     "nav": {
         "dashboard": "Dashboard",
         "meetings": "Meetings",

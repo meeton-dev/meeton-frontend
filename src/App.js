@@ -6,6 +6,7 @@ import AppTop from "./Components/AppTop";
 import AppNav from "./Components/AppNav";
 import UniModal from "./Components/Common/Modals";
 import { ErrorBoundary } from "./Components/ErrorBoundary";
+import Notifications from "./Components/Common/Notification";
 // import { Auth } from "aws-amplify";
 const LS = window.localStorage;
 
@@ -26,6 +27,7 @@ const App = (props) => {
       return (
         <MainContext setUser={props.authData.attributes}>
           <>
+            <Notifications />
             <UniModal />
             <div id="appWrapper">
                 <BrowserRouter>

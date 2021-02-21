@@ -63,7 +63,7 @@ class MeetingBox extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="bottom">
+                {/* <div className="bottom">
                         <div className="in-meeting">
                             {[...Array(users)].map((e,i) => {
                                 return (
@@ -73,7 +73,7 @@ class MeetingBox extends Component {
                                 )
                             })}
                         </div>
-                </div>
+                </div> */}
             </div>
     )}
 }
