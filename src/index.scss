@@ -23,11 +23,13 @@
 @import "./Pages/Dashboard/style";
 @import "./Pages/meetingCall/style";
 
+@import './Components/ErrorBoundary/style';
+
 @import './Components/Meetings/style';
 @import './Components/Meetings/MeetingsFilter/style';
 @import './Components/Meetings/MeetingBox/style';
 
-@import './Components/Common/SideNav';
+@import './Components/Common/Notification/style';
 @import './Components/AppNav/style';
 @import './Components/AppTop/style';
 @import './Components/Dashboard/style';

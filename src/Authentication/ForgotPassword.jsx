@@ -1,6 +1,5 @@
 import React from 'react';
 import { ForgotPassword } from "aws-amplify-react";
-import { Input, Button } from 'antd';
 // const queryString = require('query-string');
 import queryString from 'query-string';
 import { Auth } from 'aws-amplify';
@@ -17,7 +16,7 @@ class ForgotPass extends ForgotPassword {
     return (
       <div>
         <p>We've sent you a code to your email</p>
-        <Input
+        <input
          ref={this.code}
           className="my-1"
           placeholder='Code'
@@ -27,7 +26,7 @@ class ForgotPass extends ForgotPassword {
           id="code"
           onChange={this.handleInputChange}
         />
-        <Input
+        <input
           className="my-1"
           placeholder='New Password'
           type="password"
@@ -63,7 +62,7 @@ class ForgotPass extends ForgotPassword {
               {this.state.delivery || authData.username ?
                 this.submitNewCodeView()
                 :
-                <Input
+                <input
                   className="my-1"
                   id="username"
                   key="username"
@@ -80,8 +79,8 @@ class ForgotPass extends ForgotPassword {
               </div>
               <div className="mainAction">
                 {this.state.delivery || authData.username ?
-                  <Button type="primary" className="btn" onClick={ () => this.submit()} >Submit</Button> :
-                  <Button type="primary" className="btn" onClick={() => { this.send() }} >Send</Button>
+                  <button type="primary" className="btn" onClick={ () => this.submit()} >Submit</button> :
+                  <button type="primary" className="btn" onClick={() => { this.send() }} >Send</button>
                 }
               </div>
             </form>

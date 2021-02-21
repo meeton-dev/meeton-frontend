@@ -1,10 +1,13 @@
 import React, { useRef, useEffect, useState } from "react";
 import {useTranslation} from "react-i18next";
-import { useAppState } from "../../../context/context";
+import { useAppState, useAppDispatch } from "../../../context/context";
 import { Btn } from "../../Forms/Buttons";
+import { setNotification } from "../../Common/Notification";
+import { showModal } from '../../Common/Modals';
 
 const DashboardTop = () => {
   const { user } = useAppState();
+  const dispatch = useAppDispatch();
 
   const {t, i18n} = useTranslation('mtnApp');
   const LS = window.localStorage;
@@ -12,6 +15,8 @@ const DashboardTop = () => {
   const switchLang = (lng) =>{
     i18n.changeLanguage(lng);
     LS.setItem('localization', lng);
+    const text = `${t('settings.language.changed')} ${t(`settings.language.to.${lng}`)}`
+    setNotification(dispatch, {text, timestamp: new Date().getTime()})
   }
 
   return (
@@ -30,25 +35,25 @@ const DashboardTop = () => {
         <Btn
           primary
           label="create"
-          onClick={() => {console.log('Create new')}}
+          onClick={() => showModal(dispatch, 'CREATE_MEETING', true)}
           icon='icon-plus'
-            />
-            <Btn
+        />
+        {/* <Btn
           secondary
           onClick={() => {console.log('Create new')}}
           icon='icon-plus'
-            />
-            <Btn
+        />
+        <Btn
           action
           label="Action"
           onClick={() => {console.log('Create new')}}
           icon='icon-plus'
-            />
-            <Btn
+        />
+        <Btn
           label="Default"
           onClick={() => {console.log('Create new')}}
           icon='icon-plus'
-            />
+        /> */}
       </div>
     </div>
   );

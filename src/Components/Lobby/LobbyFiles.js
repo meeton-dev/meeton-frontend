@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { Upload, Button } from 'antd';
-import { UploadOutlined } from '@ant-design/icons';
 
 const fileList = [
     {
@@ -27,11 +25,7 @@ class LobbyFiles extends Component {
     render() {
         return (
             <div>
-                <Upload {...props}>
-                    <Button>
-                        <UploadOutlined /> Upload
-                    </Button>
-                </Upload>
+                upload
                 <br />
             </div>
     )}

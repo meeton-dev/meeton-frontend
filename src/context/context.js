@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import appReducers from '../reducers';
 
 const AppContext = createContext();
-const AppDispatchContext = createContext();
+
+export const AppDispatchContext = createContext();
 
 const useAppState = () => {
     const context = React.useContext(AppContext);

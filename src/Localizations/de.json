@@ -1,4 +1,21 @@
 {
+    "general": {
+        "appCrash": {
+            "lead": "[DE]Oh no! We crashed!", 
+            "description": "[DE]Something went wrong while displaying this page.",
+            "details": "[DE]See details"
+        }
+    },
+    "settings": {
+        "language": {
+            "changed": "Sprache erfolgreich geändert in: ",
+            "to": {
+                "en": "englisch",
+                "de": "deutsch",
+                "hu": "ungarisch"
+            }
+        }
+    },
     "nav": {
         "dashboard": "Instrumententafel",
         "meetings": "Treffen",

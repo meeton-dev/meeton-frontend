@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import ModalWrapper from './ModalWrapper';
-import { Form, Input, Radio, Button } from 'antd';
-import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 import { useAppDispatch } from "../../../context/context";
 
 const validations = [
@@ -41,7 +39,6 @@ const validations = [
 const CreateMeetingModal = (props) => {
 
     const history = useHistory();
-    const [form] = Form.useForm();
     const [forceUpdate] = useState();
     const dispatch = useAppDispatch();
     const {handleClose} = props;
@@ -94,112 +91,7 @@ const CreateMeetingModal = (props) => {
             </div>
             </div>
             <div className="create-content">
-                <Form 
-                    form={form} 
-                    name="create_meeting" 
-                    hideRequiredMark={true}
-                    onFinish={() => {}}>
-                    <Form.Item
-                        name="title"
-                        rules={[{ required: true, message: ' '  }]}
-                    >
-                        <div className="label">Title</div>
-                        <Input placeholder="Title" />
-                    </Form.Item>
-                    <Form.Item
-                        name="description"
-                        rules={[{ required: true, message: ' ' }]}
-                    >
-                        <div className="label">Description</div>
-                        <Input.TextArea
-                            placeholder="Description"
-                        />
-                    </Form.Item>
-                    <Form.Item
-                        rules={[{ required: true, message: ' ' }]}
-                    >
-                        <div className="label">Meeting type</div>
-                        <Radio.Group>
-                            <Radio.Button value="scheduled">Scheduled</Radio.Button>
-                            <Radio.Button value="scheduled-timed">Scheduled timed</Radio.Button>
-                            <Radio.Button value="ad-hoc">Ad-hoc</Radio.Button>
-                        </Radio.Group>
-                    </Form.Item>
-
-                    <Form.List name="names">
-                        {(fields, { add, remove }) => {
-                        return (
-                            <div>
-                                <div className="label">Topics / Goals</div>
-                                {fields.map((field, index) => (
-                                    <Form.Item
-                                        required={false}
-                                        key={field.key}
-                                    >
-                                    <Form.Item
-                                        {...field}
-                                        validateTrigger={['onChange', 'onBlur']}
-                                        rules={[
-                                        {
-                                            required: true,
-                                            whitespace: true,
-                                            message: "You have to add a title or delete this field.",
-                                        },
-                                        ]}
-                                        noStyle
-                                    >
-                                        <Input placeholder="Topic name" style={{ width: '60%' }} />
-                                    </Form.Item>
-                                        {fields.length > 0 ? (
-                                            <MinusCircleOutlined
-                                            className="dynamic-delete-button"
-                                            style={{ margin: '0 8px' }}
-                                            onClick={() => {
-                                                remove(field.name);
-                                            }}
-                                            />
-                                        ) : null}
-                                    </Form.Item>
-                                ))}
-                                <Form.Item>
-                                    <Button
-                                    type="dashed"
-                                    onClick={() => {
-                                        add();
-                                    }}
-                                    style={{ width: '60%' }}
-                                    >
-                                    <PlusOutlined /> Add new topic
-                                    </Button>
-                                </Form.Item>
-                            </div>
-                        );
-                        }}
-                    </Form.List>
-
-                    <Form.Item shouldUpdate={true}>
-                        {() => (
-                        <Button
-                            type="primary"
-                            htmlType="submit"
-                            disabled={
-                            !form.isFieldsTouched(true) ||
-                            form.getFieldsError().filter(({ errors }) => errors.length).length
-                            }
-                        >
-                            Create meeting
-                        </Button>
-                        )}
-                    </Form.Item>
-                </Form>
-                
-                <Button
-                    type="primary"
-                    size="small"
-                    onClick={() => handleClose(dispatch)}
-                >
-                    Create meeting
-                </Button>
+                content here
             </div>
         </ModalWrapper>
     );

@@ -1,8 +1,6 @@
 import React from 'react';
 import { SignIn } from "aws-amplify-react";
 import { Auth } from 'aws-amplify';
-import { message, Spin } from 'antd';
-import { Input, Button } from 'antd';
 import { AuthFooter } from './AuthFooter';
 
 class MeetonLogIn extends SignIn {
@@ -42,12 +40,6 @@ class MeetonLogIn extends SignIn {
         this.setState({ username: '', password: '', loading: false });
       }
     }).catch((error) => {
-      if (error.message) {
-        message.warning(error.message)
-      }
-      else {
-        message.warning(error)
-      }
       this.setState({ loading: false })
     })
   }
@@ -60,7 +52,7 @@ class MeetonLogIn extends SignIn {
           <div className='auth-left'>
             <h1>sign in</h1>
             <form onSubmit={this.handleSubmit} autoComplete="off" >
-              <Input
+              <input
                 id="username"
                 key="username"
                 name="username"
@@ -68,7 +60,7 @@ class MeetonLogIn extends SignIn {
                 type="text"
                 placeholder="Type email"
               />
-              <Input
+              <input
                 id="password"
                 key="password"
                 name="password"
@@ -78,14 +70,13 @@ class MeetonLogIn extends SignIn {
               />
 
               <div className="mainAction">
-                <Button
+                <button
                   type="primary" shape="round"
                   htmlType="submit"
                   className="btn"
                 >
                   Sign In
-                </Button>
-                <Spin spinning={this.state.loading} />
+                </button>
               </div>
               <div className="actions">
                 <div>

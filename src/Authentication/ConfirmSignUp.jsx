@@ -1,6 +1,5 @@
 import React from 'react';
 import { ForgotPassword } from "aws-amplify-react";
-import { Input, Button } from 'antd';
 // const queryString = require('query-string');
 import ReactInputVerificationCode from 'react-input-verification-code';
 import { Auth } from 'aws-amplify';
@@ -65,13 +64,13 @@ class MeetonConfirmSignUp extends ForgotPassword {
               <div className="meetonActivationKey">
                 <ReactInputVerificationCode placeholder="" length={6} onChange={console.log} />
               </div>
-              <Button
+              <button
                   type="primary" shape="round"
                   htmlType="submit"
                   className="btn"
                 >
                   Activate
-              </Button>
+              </button>
             </form>
           </div>
           <div className='auth-right'>

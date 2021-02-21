@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import LobbyFiles from './LobbyFiles';
-import { Button } from 'antd';
 import { Link } from 'react-router-dom'
 import setupSocketHandlers, { socket } from "../../services/socketHandlers";
 
@@ -16,11 +15,11 @@ class LobbyMain extends Component {
         console.log(this.props.match.params);
         return (
             <div className="lobby-main">
-                <Button type="primary" size='small'>
+                <button type="primary" size='small'>
                     <Link to={`/meeting/${code}`}>
                         Enter meeting 
                     </Link>
-                </Button>
+                </button>
                 {/* <LobbyFiles /> */}
             </div>
     )}

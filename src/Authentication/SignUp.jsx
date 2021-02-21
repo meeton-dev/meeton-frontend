@@ -1,6 +1,5 @@
 import React from 'react';
 import { ForgotPassword } from "aws-amplify-react";
-import { Input, Button } from 'antd';
 // const queryString = require('query-string');
 import queryString from 'query-string';
 import { Auth } from 'aws-amplify';
@@ -55,7 +54,7 @@ class MeetonSignUp extends ForgotPassword {
             </div>
             <h1>sign up</h1>
             <div className="form">
-              <Input
+              <input
                 id="name"
                 key="name"
                 name="name"
@@ -63,7 +62,7 @@ class MeetonSignUp extends ForgotPassword {
                 type="text"
                 placeholder="Type name"
               />
-              <Input
+              <input
                 id="username"
                 key="username"
                 name="username"
@@ -71,7 +70,7 @@ class MeetonSignUp extends ForgotPassword {
                 type="text"
                 placeholder="Type email"
               />
-              <Input
+              <input
                 id="password"
                 key="password"
                 name="password"
@@ -79,7 +78,7 @@ class MeetonSignUp extends ForgotPassword {
                 type="password"
                 placeholder="Password"
               />
-              <Input
+              <input
                 id="confirmPassword"
                 key="confirmPassword"
                 name="confirmPassword"
@@ -88,14 +87,14 @@ class MeetonSignUp extends ForgotPassword {
                 placeholder="Confirm Password"
               />
               <div className="mainAction">
-                <Button
+                <button
                   type="primary" shape="round"
                   htmlType="submit"
                   className="btn"
                   onClick={() => this.handleSignUp()}
                 >
                   Sign Up
-                </Button>
+                </button>
               </div>
             </div>
           </div>

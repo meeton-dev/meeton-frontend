@@ -1,7 +1,6 @@
 import React, { /* useRef, useEffect, useState  */} from "react";
 // import { Link, useHistory } from "react-router-dom";
 import ModalWrapper from './ModalWrapper';
-// import { Button } from "antd";
 
 // const validations = [
 //     { title: "Add a title", validated: false },

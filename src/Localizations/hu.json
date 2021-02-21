@@ -1,4 +1,21 @@
-{
+{    
+    "general": {
+        "appCrash": {
+            "lead": "[HU]Oh no! We crashed!", 
+            "description": "[HU]Something went wrong while displaying this page.",
+            "details": "[HU]See details"
+        }
+    },
+    "settings": {
+        "language": {
+            "changed": "A nyel sikeresen beállítva: ",
+            "to": {
+                "en": "angol",
+                "de": "német",
+                "hu": "magyar"
+            }
+        }
+    },
     "nav": {
         "dashboard": "Irányítópult",
         "meetings": "Megbeszélések",

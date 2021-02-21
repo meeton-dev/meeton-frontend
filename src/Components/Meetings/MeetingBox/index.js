@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { Avatar } from '../../Common/avatar';
-import { Tooltip } from 'antd'
 import Moment from 'react-moment';
-import { DatePicker, Checkbox } from "antd";
-import { Popover, Button } from 'antd';
 import {Link} from 'react-router-dom'
 
 
@@ -39,12 +36,12 @@ class MeetingBox extends Component {
                     </div>
                     {visible === 1 &&
                         <div className="actions">
-                            <Button type="primary" size='small' to={'/lobby'}>
+                            <button type="primary" size='small' to={'/lobby'}>
                                 <Link to='/lobby'>
 
                                 Go to Lobby
                                 </Link>
-                            </Button>
+                            </button>
                         </div>
                     }
                     <div className="extra-info">
@@ -66,8 +63,7 @@ class MeetingBox extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="bottom">
-                    <Popover placement="top" title={'Users in meeting'} content={'user list'} trigger="hover">
+                {/* <div className="bottom">
                         <div className="in-meeting">
                             {[...Array(users)].map((e,i) => {
                                 return (
@@ -77,8 +73,7 @@ class MeetingBox extends Component {
                                 )
                             })}
                         </div>
-                    </Popover>
-                </div>
+                </div> */}
             </div>
     )}
 }
