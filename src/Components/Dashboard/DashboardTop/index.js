@@ -35,7 +35,6 @@ const DashboardTop = () => {
             />
             <Btn
           secondary
-          label="Sec"
           onClick={() => {console.log('Create new')}}
           icon='icon-plus'
             />
