@@ -24,6 +24,10 @@
                     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
                     grid-row-gap: rem(32px);
                     margin-bottom: rem(60px);
+                    &.listView{
+                        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+                        grid-row-gap: rem(16px);
+                    }
                 }
             }
         }

@@ -36,7 +36,6 @@ const MeetingsList = () => {
   const fakeMeetings = randomize();
   const test = groupBy(fakeMeetings, 'date');
 
-  console.log(test);
   return (
     <div className="meetings-store-wrapper">
       <div className="meetings-list-scroll">
@@ -44,7 +43,7 @@ const MeetingsList = () => {
             return (
               <div key={i} >
                 {/* <h1>{e[0]}</h1> */}
-                <div className="meetings-list-section">
+                <div className="meetings-list-section listView">
                   {fakeMeetings.map((x, i) => {
                     return (
                       <MeetingBox

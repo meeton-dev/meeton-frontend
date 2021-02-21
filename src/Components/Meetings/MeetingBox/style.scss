@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     font-size: rem(12px);
-    height: rem(300px);
+    height: rem(200px);
     animation: bubblyOff .4s 1 ease-out;
     transform: scale(1);
     overflow: hidden;
@@ -184,6 +184,44 @@
                 border-radius: 50%;
                 overflow:hidden;
             }
+        }
+    }
+}
+
+
+// ifListView
+.meetings .meetings-store-wrapper .meetings-list-scroll .meetings-list-section.listView .meeting-box{
+    height: rem(35px);
+    animation: unset;
+    align-items: center;
+    flex-direction: row;
+    animation: unset;
+    justify-content: space-between;
+    &:before{
+        border-radius: 16px;
+        height: 150px;
+        width: 120%;
+        bottom:0;
+        opacity: 0;
+    }
+    &:hover{
+        animation: unset;
+        transform: scale(1);
+        &:before {
+            opacity: 1;
+        }
+    }
+
+    .mid{
+        width: 100%;
+        flex-direction: row;
+    }
+    .top{
+        position: unset;
+        width: 170px;
+        & > div:nth-child(2){
+            position: absolute;
+            right: 1rem;
         }
     }
 }
