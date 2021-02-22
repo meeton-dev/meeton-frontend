@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 
 import MeetingCallBoard from '../../Components/meetingCall/meetingCallBoard';
 import MeetingCallUserList from '../../Components/meetingCall/meetingCallUserList';
-// import ChatComponent from '../../Components/Chat/ChatComponent';
+import ChatComponent from '../../Components/Chat/ChatComponent';
 
 class MeetingCall extends Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class MeetingCall extends Component {
               <MeetingCallUserList />
             </div>
 
-          {/* <ChatComponent /> */}
+          <ChatComponent />
         </section>
     )}
 }

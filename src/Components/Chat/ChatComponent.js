@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import ChatInput from './ChatInput'
 import ChatMessage from './ChatMessage'
 
-const SOCKET_SERVER = 'ws://localhost:8888'
+const SOCKET_SERVER = 'wss://127.0.0.1:3009'
 
 class ChatComponent extends Component {
     ws = new WebSocket(SOCKET_SERVER)
@@ -14,7 +14,7 @@ class ChatComponent extends Component {
     componentDidMount() {
         this.ws.onopen = () => {
             // on connecting, do nothing but log it to the console
-            console.log('connected to socket server - localhost:8888');
+            console.log('connected to socket server - 127.0.0.1:3009');
         }
 
         this.ws.onmessage = evt => {
