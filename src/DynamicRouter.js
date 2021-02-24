@@ -12,8 +12,12 @@ import Files from "./Pages/Files";
 import MyGroup from "./Pages/MyGroup";
 import Settings from "./Pages/Settings";
 import MeetingCall from "./Pages/meetingCall";
-import Meeting from "./Components/meetingCall/Meeting";
-import Lobby from "./Pages/Lobby/Lobby";
+// import Meeting from "./Components/meetingCall/Meeting";
+// import Lobby from "./Pages/Lobby/Lobby";
+
+// test
+import Room from "./Components/VideoCall";
+import Lobby from "./Components/VideoCall/Lobby";
 
 export const mtnRoutes = [
   { 
@@ -89,9 +93,10 @@ export const mtnOptionsRoutes = [
     id: 10,
     component: Settings
   },
-  { path: "/lobby/:code", component: Lobby },
   { path: "/meeting/:code", component: MeetingCall },
-  { path: "/room/:roomID", component: Meeting },
+  // { path: "/room/:roomID", component: Meeting },
+  { path: "/lobby/:id", component: Lobby },
+  { path: "/room/:id", component: Room },
 ];
 
 

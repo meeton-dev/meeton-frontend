@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import io from "socket.io-client";
 import Peer from "simple-peer";
-import "./meeting.scss";
 
 const Video = (props) => {
   const ref = useRef();
@@ -20,15 +19,22 @@ const videoConstraints = {
   width: 480,
 };
 
+const iceServers = {
+  iceServers: [
+    { urls: 'turn:34.255.118.162:3478' },
+  ],
+}
+
 const Room = (props) => {
   const [peers, setPeers] = useState([]);
+  const [isRoomCreator, setIsRoomCreator] = useState(false);
   const socketRef = useRef();
   const userVideo = useRef();
   const peersRef = useRef([]);
   const roomID = props.match.params.roomID;
-
+  const rtcPeerConnection = '';
   useEffect(() => {
-    socketRef.current = io.connect("http://localhost:3001");
+    socketRef.current = io.connect("http://localhost:3009");
     navigator.mediaDevices
       .getUserMedia({ video: videoConstraints, audio: true })
       .then((stream) => {
@@ -36,7 +42,7 @@ const Room = (props) => {
         userVideo.current.srcObject = stream;
 
         // Join to room by ID
-        socketRef.current.emit("join room", roomID);
+        socketRef.current.emit("join", roomID);
 
         // Get all users
         socketRef.current.on("all users", (users) => {
@@ -53,21 +59,67 @@ const Room = (props) => {
             peers.push(peer);
           });
           setPeers(peers);
-        });
 
-        socketRef.current.on("user joined", (payload) => {
-          const peer = addPeer(payload.signal, payload.callerID, stream);
-          peersRef.current.push({
-            peerID: payload.callerID,
-            peer,
-          });
+    
 
-          setPeers((users) => [...users, peer]);
-        });
 
-        socketRef.current.on("receiving returned signal", (payload) => {
-          const item = peersRef.current.find((p) => p.peerID === payload.id);
-          item.peer.signal(payload.signal);
+
+        //   socketRef.current.on('start_call', async () => {
+        //     console.log('Socket event callback: start_call')
+          
+        //     if (isRoomCreator) {
+        //       rtcPeerConnection = new RTCPeerConnection(iceServers)
+        //       addLocalTracks(rtcPeerConnection)
+        //       rtcPeerConnection.ontrack = setRemoteStream
+        //       rtcPeerConnection.onicecandidate = sendIceCandidate
+        //       await createOffer(rtcPeerConnection)
+        //     }
+        //   })
+          
+        //   socketRef.current.on('webrtc_offer', async (event) => {
+        //     console.log('Socket event callback: webrtc_offer')
+          
+        //     if (!isRoomCreator) {
+        //       rtcPeerConnection = new RTCPeerConnection(iceServers)
+        //       addLocalTracks(rtcPeerConnection)
+        //       rtcPeerConnection.ontrack = setRemoteStream
+        //       rtcPeerConnection.onicecandidate = sendIceCandidate
+        //       rtcPeerConnection.setRemoteDescription(new RTCSessionDescription(event))
+        //       await createAnswer(rtcPeerConnection)
+        //     }
+        //   })
+          
+        //   socketRef.current.on('webrtc_answer', (event) => {
+        //     console.log('Socket event callback: webrtc_answer')
+          
+        //     rtcPeerConnection.setRemoteDescription(new RTCSessionDescription(event))
+        //   })
+          
+        //   socketRef.current.on('webrtc_ice_candidate', (event) => {
+        //     console.log('Socket event callback: webrtc_ice_candidate')
+          
+        //     // ICE candidate configuration.
+        //     var candidate = new RTCIceCandidate({
+        //       sdpMLineIndex: event.label,
+        //       candidate: event.candidate,
+        //     })
+        //     rtcPeerConnection.addIceCandidate(candidate)
+        //   })
+        // });
+
+        // socketRef.current.on("user joined", (payload) => {
+        //   const peer = addPeer(payload.signal, payload.callerID, stream);
+        //   peersRef.current.push({
+        //     peerID: payload.callerID,
+        //     peer,
+        //   });
+
+        //   setPeers((users) => [...users, peer]);
+        // });
+
+        // socketRef.current.on("receiving returned signal", (payload) => {
+        //   const item = peersRef.current.find((p) => p.peerID === payload.id);
+        //   item.peer.signal(payload.signal);
         });
       });
   }, [roomID]);
@@ -108,6 +160,10 @@ const Room = (props) => {
 
   return (
     <div className="container">
+      <div id="room-selection-container" className="centered">
+        <label>Enter the number of the room you want to connect</label>
+        <button id="connect-button">CONNECT</button>
+      </div>
       <video className="video" muted ref={userVideo} autoPlay playsInline />
       {peers.map((peer, index) => {
         return <Video key={index} peer={peer} />;
