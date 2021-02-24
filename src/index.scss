@@ -23,6 +23,11 @@
 @import "./Pages/Dashboard/style";
 @import "./Pages/meetingCall/style";
 
+@import './Components/VideoCall/BottomBar/style';
+@import './Components/VideoCall/Chat/style';
+@import './Components/VideoCall/Lobby/style';
+@import './Components/VideoCall/Room/style';
+
 @import './Components/ErrorBoundary/style';
 
 @import './Components/Meetings/style';
