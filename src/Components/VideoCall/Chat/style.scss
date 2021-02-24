@@ -1,11 +1,13 @@
 .chatContainer{
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 420px;
     height: 100%;
-    background-color: white;
     transition: all 0.5s ease;
     overflow: hidden;
+    border-left: 1px solid;
+    @include mtnTheme('border-color', 'main-4');
+    @include mtnTheme('background', 'main-0');
     .input{
         bottom: 0;
         width: 100%;
@@ -21,8 +23,7 @@
     }
     .chatArea{
         width: 100%;
-        height: 83%;
-        max-height: 83%;
+        height: 100%;
         overflow-x: hidden;
         overflow-y: auto;
         .msgList{
@@ -30,7 +31,7 @@
             width: 100%;
             flex-direction: column;
             padding: 15px;
-            color: #454552;
+            @include mtnTheme('color', 'main-7');
             .msg{
                 width: 100%;
                 display: flex;
@@ -41,19 +42,21 @@
                 margin-left: 15px;
                 text-align: left;
               
-                > strong {
+                & > strong {
                   margin-left: 3px;
+                  font-size: 12px;
+
                 }
               
-                > p {
+                & > p {
                   max-width: 65%;
                   width: auto;
                   padding: 9px;
                   margin-top: 3px;
-                  border: 1px solid rgba(78, 161, 211, 0.3);
-                  border-radius: 15px;
-                  box-shadow: 0px 0px 3px #4ea1d3;
-                  font-size: 14px;
+                  border-radius: 6px;
+                  font-size: 12px;
+                  @include mtnTheme('background', 'main-5');
+
                 }
             }
             .usrMsg{
@@ -65,21 +68,21 @@
                 margin-top: 15px;
                 text-align: right;
               
-                > strong {
-                  margin-right: 35px;
+                & > strong {
+                  margin-right: 1rem;
+                  font-size: 12px;
                 }
               
-                > p {
+                & > p {
                   max-width: 65%;
                   width: auto;
                   padding: 9px;
                   margin-top: 3px;
-                  margin-right: 30px;
-                  border: 1px solid rgba(78, 161, 211, 0.3);
-                  border-radius: 15px;
-                  background-color: #4ea1d3;
-                  color: white;
-                  font-size: 14px;
+                  margin-right: 1rem;
+                  border-radius: 6px;
+                  @include mtnTheme('color', 'main-0');
+                  @include mtnTheme('background', 'primary');
+                  font-size: 12px;
                   text-align: left;
                 }
             }

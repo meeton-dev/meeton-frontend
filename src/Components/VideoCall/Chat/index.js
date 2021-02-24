@@ -4,11 +4,11 @@ import socket from '../../../Services/socket';
 const Chat = ({ display, roomId }) => {
   const currentUser = sessionStorage.getItem('user');
   const [msg, setMsg] = useState([]);
-  const divsEndRef = useRef(null);
+  const messagesEndRef = useRef(null);
   const inputRef = useRef();
   
   useEffect(() => {
-    socket.on('FE-receive-div', ({ msg, sender }) => {
+    socket.on('FE-receive-message', ({ msg, sender }) => {
       setMsg((msgs) => [...msgs, { sender, msg }]);
     });
   }, []);
@@ -17,15 +17,16 @@ const Chat = ({ display, roomId }) => {
   useEffect(() => {scrollToBottom()}, [msg])
 
   const scrollToBottom = () => {
-    divsEndRef.current.scrollIntoView({ behavior: 'smooth'});
+    messagesEndRef.current.scrollIntoView({ behavior: 'smooth'});
   }
 
-  const senddiv = (e) => {
+  const sendMessage = (e) => {
     if (e.key === 'Enter') {
       const msg = e.target.value;
 
       if (msg) {
-        socket.emit('BE-send-div', { roomId, msg, sender: currentUser });
+        console.log('msg', msg);
+        socket.emit('BE-send-message', { roomId, msg, sender: currentUser });
         inputRef.current.value = '';
       }
     }
@@ -53,12 +54,12 @@ const Chat = ({ display, roomId }) => {
                 );
               }
             })}
-            <div style={{float:'left', clear: 'both'}} ref={divsEndRef} />
+            <div style={{float:'left', clear: 'both'}} ref={messagesEndRef} />
         </div>
       </div>
       <input
         ref={inputRef}
-        onKeyUp={senddiv}
+        onKeyUp={sendMessage}
         placeholder="Enter your msg"
       />
     </div>

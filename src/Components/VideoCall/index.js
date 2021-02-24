@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Peer from 'simple-peer';
-import socket from '../../../Services/socket';
-import VideoCard from '../Video';
-import BottomBar from '../BottomBar';
-import Chat from '../Chat';
+import socket from '../../Services/socket';
+import VideoCard from './Video';
+import BottomBar from './BottomBar';
+import Chat from './Chat';
 
-const Room = (props) => {
+const VideoCall = (props) => {
   const currentUser = sessionStorage.getItem('user');
   const [peers, setPeers] = useState([]);
   const [userVideoAudio, setUserVideoAudio] = useState({
@@ -353,4 +353,4 @@ const Room = (props) => {
   );
 };
 
-export default Room;
+export default VideoCall;

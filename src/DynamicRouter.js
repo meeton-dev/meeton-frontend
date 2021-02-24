@@ -16,8 +16,8 @@ import MeetingCall from "./Pages/meetingCall";
 // import Lobby from "./Pages/Lobby/Lobby";
 
 // test
+import Room from "./Components/VideoCall";
 import Lobby from "./Components/VideoCall/Lobby";
-import Room from "./Components/VideoCall/Room";
 
 export const mtnRoutes = [
   { 

@@ -3,12 +3,10 @@ import socket from '../../../Services/socket';
 import { useParams } from 'react-router-dom';
 
 const Lobby = (props) => {
-  const roomRef = useRef();
   const userRef = useRef();
   const [err, setErr] = useState(false);
   const [errMsg, setErrMsg] = useState('');
   const { id } = useParams();
-  console.log(id)
 
   useEffect(() => {
     socket.on('FE-error-user-exist', ({ error }) => {
