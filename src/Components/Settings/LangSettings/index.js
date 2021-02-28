@@ -63,8 +63,8 @@ const LangSettings = () => {
 
 // modalVisible
     return (
-        <div className='LangSettings'>
-Language            <RadioBtnGroup data={languages} onChange={handleLanguageChange}/>
+        <div className='LangSettings'> 
+            <RadioBtnGroup data={languages} onChange={handleLanguageChange}/>
         </div>
     );
 };

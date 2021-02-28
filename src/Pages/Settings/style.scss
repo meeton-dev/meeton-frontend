@@ -1,0 +1,24 @@
+.settings{
+    color: chartreuse;
+    &-tabs{
+        display: flex;
+        border-bottom: 1px solid red;
+        &>div{
+            display:inline-flex;
+            width:100%;
+            padding: 1rem;
+            border-right: 1px solid red;
+            cursor: pointer;
+            justify-content: center;
+            &.active{
+                background-color: yellow;
+            }
+            &:hover{
+                color:red;
+            }
+            &:last-child(){
+                border:none;
+            }
+        }
+    }
+}
