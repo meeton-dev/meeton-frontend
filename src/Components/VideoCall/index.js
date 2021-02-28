@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Peer from 'simple-peer';
 import socket from '../../Services/socket';
 import VideoCard from './Video';
-import BottomBar from './BottomBar';
+import CallBar from './CallBar';
 import Chat from './Chat';
 
 const VideoCall = (props) => {
@@ -192,7 +192,7 @@ const VideoCall = (props) => {
   function createUserVideo(peer, index, arr) {
     return (
       <div
-        className={`width-peer${peers.length > 8 ? '' : peers.length}`}
+        className={`videoBox`}
         onClick={expandScreen}
         key={index}
       >
@@ -313,16 +313,30 @@ const VideoCall = (props) => {
       elem.msRequestFullscreen();
     }
   };
-
+  const testVideoBox = (name) => (
+    <div className={`videoBox`} onClick={expandScreen} >
+          {name ? name : 'test user'}
+          <video
+            playsInline
+            autoPlay
+          />
+        </div>
+  )
   return (
     <div className="callContainer">
       <div className="videoCallContainer">
         <div className="videoAndBarContainer">
+        <CallBar
+            clickScreenSharing={clickScreenSharing}
+            clickChat={clickChat}
+            goToBack={goToBack}
+            toggleCameraAudio={toggleCameraAudio}
+            userVideoAudio={userVideoAudio['localUser']}
+            screenShare={screenShare}
+          />
           <div className="videoContainer">
             {/* Current User Video */}
-            <div
-              className={`videoBox width-peer${peers.length > 8 ? '' : peers.length}`}
-            >
+            <div className={`videoBox`} >
               {userVideoAudio['localUser'].video ? null : (
                 <div className="userName">{currentUser}</div>
               )}
@@ -334,18 +348,21 @@ const VideoCall = (props) => {
                 playinline="true"
               ></video>
             </div>
-            {/* Joined User Vidoe */}
-            {peers &&
-              peers.map((peer, index, arr) => createUserVideo(peer, index, arr))}
+            {/* Joined User Video */}
+            {peers && peers.map((peer, index, arr) => createUserVideo(peer, index, arr))}
+             {/* {testVideoBox('user 1')}
+             {testVideoBox('user 2')}
+             {testVideoBox('user 3')}
+             {testVideoBox('user 4')}
+             {testVideoBox('user 5')}
+             {testVideoBox('user 6')}
+             {testVideoBox('user 7')}
+             {testVideoBox('user 8')}
+             {testVideoBox('user 9')}
+             {testVideoBox('user 10')}
+             {testVideoBox('user 11')} */}
           </div>
-          <BottomBar
-            clickScreenSharing={clickScreenSharing}
-            clickChat={clickChat}
-            goToBack={goToBack}
-            toggleCameraAudio={toggleCameraAudio}
-            userVideoAudio={userVideoAudio['localUser']}
-            screenShare={screenShare}
-          />
+
         </div>
         <Chat display={displayChat} roomId={roomId} />
       </div>

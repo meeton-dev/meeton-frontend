@@ -1,17 +1,23 @@
 import React, { useRef, useState, useEffect } from 'react';
 import socket from '../../../Services/socket';
 import { useParams } from 'react-router-dom';
+import { useAppState } from '../../../context/context';
 
 const Lobby = (props) => {
   const userRef = useRef();
   const [err, setErr] = useState(false);
   const [errMsg, setErrMsg] = useState('');
   const { id } = useParams();
+  const { user } = useAppState();
 
   useEffect(() => {
     socket.on('FE-error-user-exist', ({ error }) => {
       if (!error) {
-        const userName = userRef.current.value;
+        console.log(user);
+        let userName = user.name ? user.name : user.email;
+        if(userRef.current.value){
+          userName = userRef.current.value;
+        }
 
         sessionStorage.setItem('user', userName);
         props.history.push(`/room/${id}`);
@@ -20,10 +26,13 @@ const Lobby = (props) => {
         setErrMsg('User name already exist');
       }
     });
-  }, [props.history, id]);
+  }, [props.history, id, user]);
 
   const clickJoin = () => {
-    const userName = userRef.current.value;
+    let userName = user.name ? user.name : user.email;
+    if(userRef.current.value){
+      userName = userRef.current.value;
+    }
     console.log(id)
     if (!id || !userName) {
       setErr(true);

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BottomBar = ({
+const CallBar = ({
   clickChat,
   goToBack,
   toggleCameraAudio,
@@ -33,4 +33,4 @@ const BottomBar = ({
   );
 };
 
-export default BottomBar;
+export default CallBar;
