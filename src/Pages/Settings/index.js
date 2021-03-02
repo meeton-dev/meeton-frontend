@@ -29,44 +29,9 @@ const Settings = () => {
             {tabValues.map((tab) => <div className={activeTab === tab.value ? 'active' : '' } key={tab.key} onClick={() => setActiveTab(tab.value) }>{tab.label}</div> )}
             </div>
             {activeTab === 1 && (
-                <>
                 <BoxWrapper label={'Language page 1'}>
                     <LangSettings/>
-                </BoxWrapper>
-                <BoxWrapper label={'Language page 1'}>
-                    <LangSettings/>
-                </BoxWrapper>
-                <BoxWrapper label={'Language page 1'}>
-                    <LangSettings/>
-                </BoxWrapper>
-                <BoxWrapper label={'Language page 1'}>
-                    <LangSettings/>
-                </BoxWrapper>
-                <BoxWrapper label={'Language page 1'}>
-                    <LangSettings/>
-                </BoxWrapper>
-                <BoxWrapper label={'Language page 1'}>
-                    <LangSettings/>
-                </BoxWrapper>
-                <BoxWrapper label={'Language page 1'}>
-                    <LangSettings/>
-                </BoxWrapper>
-                <BoxWrapper label={'Language page 1'}>
-                    <LangSettings/>
-                </BoxWrapper>
-                <BoxWrapper label={'Language page 1'}>
-                    <LangSettings/>
-                </BoxWrapper>
-                <BoxWrapper label={'Language page 1'}>
-                    <LangSettings/>
-                </BoxWrapper>
-                <BoxWrapper label={'Language page 1'}>
-                    <LangSettings/>
-                </BoxWrapper>
-                <BoxWrapper label={'Language page 1'}>
-                    <LangSettings/>
-                </BoxWrapper>
-                </>
+                </BoxWrapper>   
             )}
             {activeTab === 2 && (
                 <BoxWrapper label={'Language page 2'}>
