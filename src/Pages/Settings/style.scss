@@ -1,23 +1,31 @@
 .settings{
-    color: chartreuse;
+    color: #afafaf;
+    margin: 0 auto;
+    max-width:700px;
     &-tabs{
         display: flex;
-        border-bottom: 1px solid red;
+        padding: 3rem;
+        
         &>div{
             display:inline-flex;
             width:100%;
             padding: 1rem;
-            border-right: 1px solid red;
             cursor: pointer;
             justify-content: center;
             &.active{
-                background-color: yellow;
+                
+                @include mtnTheme('background-color', 'primary');
+                
+                
             }
             &:hover{
-                color:red;
-            }
+                @include mtnTheme('background-color', 'main-7');
+                @include mtnTheme('color', 'main-0');
+                transition: all 0.2s ease-in-out;
+            }   
             &:last-child(){
                 border:none;
+                
             }
         }
     }
