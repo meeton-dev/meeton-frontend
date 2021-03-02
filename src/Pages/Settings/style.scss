@@ -22,3 +22,28 @@
         }
     }
 }
+
+.custombox{
+    padding: 1rem;
+    &-top{
+        display: flex;
+        flex-direction: row;
+        &-label{
+            padding: 0.5rem;
+            color:white;
+        }
+        &-icon{
+            padding: 0.5rem;
+            max-width: 20px;
+            color:purple;
+            width:100%;
+
+        }
+    }
+    &-content{
+        display:none;
+        &.visible{
+            display: block;
+        }
+    }
+}

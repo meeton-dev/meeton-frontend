@@ -1,46 +1,23 @@
 import React, { useState } from 'react';
 import LangSettings from '../../Components/Settings/LangSettings';
 import { Btn } from "../../Components/Forms/Buttons/index";
+import tabValues from './helper';
 
 const BoxWrapper = (props) => {
     const {label, children} = props;
+    const [visible,  setVisible] = useState(true);
     return (
         <div className='custombox'>
-            <div>{label}</div>
-            {children}
+            <div className='custombox-top'>
+                <div className='custombox-top-label'>{label}</div>
+                <div onClick={() => setVisible(!visible)} className='custombox-top-icon'>
+                    <span className={visible ? "icon-minus" : "icon-plus"} />
+                </div>
+            </div>
+            <div className={`custombox-content ${visible ? "visible" : ''}`}>{children}</div>
         </div>
     );
 }
-
-const tabValues = [
-    {
-        key: 1,
-        value: 1,
-        label: "Tab 1"
-    },
-
-    {
-        key: 2,
-        value: 2,
-        label: "Tab 2"
-    },
-    {
-        key: 3,
-        value: 3,
-        label: "Tab 3"
-    },
-    {
-        key: 4,
-        value: 4,
-        label: "Tab 4"
-    },
-    {
-        key: 5,
-        value: 5,
-        label: "Tab 5"
-    }
-]
-
 
 const Settings = () => {
     const [activeTab,  setActiveTab] = useState(1); 
@@ -52,9 +29,44 @@ const Settings = () => {
             {tabValues.map((tab) => <div className={activeTab === tab.value ? 'active' : '' } key={tab.key} onClick={() => setActiveTab(tab.value) }>{tab.label}</div> )}
             </div>
             {activeTab === 1 && (
+                <>
                 <BoxWrapper label={'Language page 1'}>
                     <LangSettings/>
                 </BoxWrapper>
+                <BoxWrapper label={'Language page 1'}>
+                    <LangSettings/>
+                </BoxWrapper>
+                <BoxWrapper label={'Language page 1'}>
+                    <LangSettings/>
+                </BoxWrapper>
+                <BoxWrapper label={'Language page 1'}>
+                    <LangSettings/>
+                </BoxWrapper>
+                <BoxWrapper label={'Language page 1'}>
+                    <LangSettings/>
+                </BoxWrapper>
+                <BoxWrapper label={'Language page 1'}>
+                    <LangSettings/>
+                </BoxWrapper>
+                <BoxWrapper label={'Language page 1'}>
+                    <LangSettings/>
+                </BoxWrapper>
+                <BoxWrapper label={'Language page 1'}>
+                    <LangSettings/>
+                </BoxWrapper>
+                <BoxWrapper label={'Language page 1'}>
+                    <LangSettings/>
+                </BoxWrapper>
+                <BoxWrapper label={'Language page 1'}>
+                    <LangSettings/>
+                </BoxWrapper>
+                <BoxWrapper label={'Language page 1'}>
+                    <LangSettings/>
+                </BoxWrapper>
+                <BoxWrapper label={'Language page 1'}>
+                    <LangSettings/>
+                </BoxWrapper>
+                </>
             )}
             {activeTab === 2 && (
                 <BoxWrapper label={'Language page 2'}>
