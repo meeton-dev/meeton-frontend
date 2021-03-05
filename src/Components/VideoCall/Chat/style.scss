@@ -1,25 +1,40 @@
 .chatContainer{
     display: flex;
     flex-direction: column;
-    width: 420px;
     height: 100%;
     transition: all 0.5s ease;
     overflow: hidden;
-    border-left: 1px solid;
-    @include mtnTheme('border-color', 'main-4');
     @include mtnTheme('background', 'main-0');
-    .input{
-        bottom: 0;
-        width: 100%;
-        height: 8%;
-        padding: 15px;
-        border-top: 1px solid rgba(69, 69, 82, 0.25);
-        box-sizing: border-box;
-        opacity: 0.7;
-      
-        &:focus {
-          outline: none;
-        }
+    &.visible{
+      width: 420px;
+    }
+    &.hidden{
+      width: 0;
+      opacity: 0.3;
+    }
+    textarea{
+      font-family: 'Arial';
+      resize: none;
+      bottom: 0;
+      height: 8%;
+      padding: 15px;
+      box-sizing: border-box;
+      opacity: 0.7;
+      margin: 1rem;
+      border: 1px solid;
+      padding: .5rem;
+      @include mtnTheme('border-color', 'main-4');
+      @include mtnTheme('background', 'main-1');
+      @include mtnTheme('color', 'primary');
+      box-shadow: 0 10px 15px -10px transparent;
+      border-radius: 9px;
+      transition: ease-in-out all .2s;
+      &:focus {
+        transition: ease-in-out all .2s;
+        outline: none;
+        @include mtnTheme('border-bottom-color', 'primary');
+        box-shadow: 0 10px 15px -10px #ffeebc;
+      }
     }
     .chatArea{
         width: 100%;

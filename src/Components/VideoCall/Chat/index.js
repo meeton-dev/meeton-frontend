@@ -33,7 +33,7 @@ const Chat = ({ display, roomId }) => {
   };
 
   return (
-    <div className={`chatContainer ${display ? '' : 'width0'}`}>
+    <div className={`chatContainer ${display ? 'visible' : 'hidden'}`}>
       <div className="chatArea">
         <div className="msgList">
           {msg &&
@@ -57,7 +57,7 @@ const Chat = ({ display, roomId }) => {
             <div style={{float:'left', clear: 'both'}} ref={messagesEndRef} />
         </div>
       </div>
-      <input
+      <textarea
         ref={inputRef}
         onKeyUp={sendMessage}
         placeholder="Enter your msg"

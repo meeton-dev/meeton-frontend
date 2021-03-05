@@ -24,7 +24,7 @@
             width: 100%;
             height: 100vh;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: stretch;
             .userName{
                 position: absolute;
@@ -39,20 +39,77 @@
                 grid-row-gap: 2rem;
                 padding: 1.5rem;
                 height: 100%;
+                width: 100%;
 
-                .videoBox{
-                    position: relative;
+                &.in-call-1{
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 1fr;
+                    .videoBox{
+                        max-width: 300px;
+                        max-height: 300px;
+                    }
+                }
+                &.in-call-2{
+                    max-width: 750px;
+                    margin: auto;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: 1fr;
+                    .videoBox{
+                        max-width: 400px;
+                        max-height: 400px;
+                    }
+                }
+                &.in-call-3{
+                    grid-template-columns: 1fr 1fr 1fr;
+                    grid-template-rows: 1fr;
+                    .videoBox{
+                        max-width: 350px;
+                        max-height: 350px;
+                    }
+                }
+                &.in-call-4{
+                    max-width: 750px;
+                    margin: auto;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: 1fr 1fr;
+                    .videoBox{
+                        max-width: 350px;
+                        max-height: 350px;
+                    }
+                }
+                @for $person from 5 through 15 {
+                    &.in-call-#{$person} {
+                        grid-template-columns: repeat(auto-fill, minmax(calc((100% - 420px) / (#{$person} / 3)), 1fr));
+                        grid-template-rows: repeat(auto-fill, minmax(calc(100% / (#{$person} / 2)), 1fr));
+                        .videoBox{
+                            max-width: 350px;
+                            max-height: 350px;
+                        }
+                    }
+                }
+                .videoBoxWrapper{
                     display: flex;
-                    justify-content: center;
                     align-items: center;
-                    border-radius: 1rem;
-                    overflow: hidden;
-                    border: .5rem solid rgba(200,200,200,0.1);
-                    & > video {
-                      top: 0;
-                      left: 0;
-                      width: 100%;
-                      height: 100%;
+                    justify-items: center;
+                    .videoBox{
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 1rem;
+                        overflow: hidden;
+                        border: .5rem solid rgba(200,200,200,0.1);
+                        width: 100%;
+                        height: 100%;
+                        margin: auto;
+                        & > video {
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            object-fit: cover;
+                            height: 100%;
+                            object-position: center;
+                        }
                     }
                 }
             }
