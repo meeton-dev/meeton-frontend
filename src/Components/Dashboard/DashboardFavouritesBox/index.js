@@ -1,11 +1,9 @@
-import React, { useRef, useEffect, useState } from "react";
+import React from 'react';
 
-const DashboardFavouritesBox = () => {
-  return (
-    <>
-      DashboardFavouritesBox
-    </>
-  );
-};
+const DashboardFavouritesBox = () => (
+  <>
+    DashboardFavouritesBox
+  </>
+);
 
 export default DashboardFavouritesBox;

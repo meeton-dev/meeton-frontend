@@ -1,25 +1,23 @@
 import React from 'react';
-import { ForgotPassword } from "aws-amplify-react";
+import { ForgotPassword } from 'aws-amplify-react';
 // const queryString = require('query-string');
-import queryString from 'query-string';
-import { Auth } from 'aws-amplify';
-import { Link } from 'react-router-dom';
-import { AuthFooter } from './AuthFooter';
-
+import AuthFooter from './AuthFooter';
 
 class ForgotPass extends ForgotPassword {
   constructor(props) {
     super(props);
-    this._validAuthStates = ["forgotPassword"];
+    // eslint-disable-next-line no-underscore-dangle
+    this._validAuthStates = ['forgotPassword'];
   }
+
   submitNewCodeView() {
     return (
       <div>
-        <p>We've sent you a code to your email</p>
+        <p>We&apos;ve sent you a code to your email</p>
         <input
-         ref={this.code}
+          ref={this.code}
           className="my-1"
-          placeholder='Code'
+          placeholder="Code"
           key="code"
           name="code"
           autoComplete="off"
@@ -28,7 +26,7 @@ class ForgotPass extends ForgotPassword {
         />
         <input
           className="my-1"
-          placeholder='New Password'
+          placeholder="New Password"
           type="password"
           key="password"
           name="password"
@@ -40,54 +38,55 @@ class ForgotPass extends ForgotPassword {
 
   showComponent() {
     // debugger;
-    const { authState, hide, authData = {} } = this.props;
+    const { authData = {} } = this.props;
 
     return (
       <div className="meetonAuth">
         <div className="auth-wrapper">
-          <div className='auth-left'>
+          <div className="auth-left">
             <div className="authBack">
-              <button 
+              <button
                 className="btn-off"
-                onClick={() => { super.changeState("signIn") }}
+                onClick={() => { super.changeState('signIn'); }}
                 type="button"
               >
-                <span className='icon icon_chevron' />Back
+                <span className="icon icon_chevron" />
+                Back
               </button>
             </div>
-            <h1>{this.state.delivery || authData.username ?
-                  'reset password' : 'reset pasword'
-                }</h1>
+            <h1>
+              {this.state.delivery || authData.username
+                ? 'reset password' : 'reset pasword'}
+
+            </h1>
             <form>
-              {this.state.delivery || authData.username ?
-                this.submitNewCodeView()
-                :
-                <input
-                  className="my-1"
-                  id="username"
-                  key="username"
-                  name="username"
-                  onChange={this.handleInputChange}
-                  type="text"
-                  placeholder="Type email"
-                />
-              }
+              {this.state.delivery || authData.username
+                ? this.submitNewCodeView()
+                : (
+                  <input
+                    className="my-1"
+                    id="username"
+                    key="username"
+                    name="username"
+                    onChange={this.handleInputChange}
+                    type="text"
+                    placeholder="Type email"
+                  />
+                )}
               <div>
-                {this.state.delivery || authData.username ?
-                  <a href='#' onClick={this.send} >Resend Code</a> : ''
-                }
+                {this.state.delivery || authData.username
+                  ? <a href="#" onClick={this.send}>Resend Code</a> : ''}
               </div>
               <div className="mainAction">
-                {this.state.delivery || authData.username ?
-                  <button type="primary" className="btn" onClick={ () => this.submit()} >Submit</button> :
-                  <button type="primary" className="btn" onClick={() => { this.send() }} >Send</button>
-                }
+                {this.state.delivery || authData.username
+                  ? <button type="button" className="btn" onClick={() => this.submit()}>Submit</button>
+                  : <button type="button" className="btn" onClick={() => { this.send(); }}>Send</button>}
               </div>
             </form>
           </div>
-          <div className='auth-right'>
-            <span className="logo-logo"></span>
-            <span className="logo-logo-text"></span>
+          <div className="auth-right">
+            <span className="logo-logo" />
+            <span className="logo-logo-text" />
           </div>
         </div>
         <AuthFooter />

@@ -1,29 +1,30 @@
 import React from 'react';
-import { SignIn } from "aws-amplify-react";
+import { SignIn } from 'aws-amplify-react';
 import { Auth } from 'aws-amplify';
-import { AuthFooter } from './AuthFooter';
+import AuthFooter from './AuthFooter';
 
 class MeetonLogIn extends SignIn {
   constructor(props) {
     super(props);
-    this._validAuthStates = ["signIn", "signedOut", "signedUp"];
+    // eslint-disable-next-line no-underscore-dangle
+    this._validAuthStates = ['signIn', 'signedOut', 'signedUp'];
     this.state = {
       username: '',
       password: '',
-      loading: false
-    }
+      loading: false,
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidUpdate(prevState, prevProps) {
+  componentDidUpdate() {
     if (window.location.pathname === '/change-password') {
-      this.changeState("forgotPassword")
+      this.changeState('forgotPassword');
     }
   }
 
   updateState = ({ target }) => {
     this.setState({
-      [target.name]: target.value
+      [target.name]: target.value,
     });
   }
 
@@ -32,26 +33,25 @@ class MeetonLogIn extends SignIn {
     this.setState({ loading: true });
     const { username, password } = this.state;
     Auth.signIn(username, password).then((response) => {
-      console.log('response: ',response);
-      if(response.challengeName === 'NEW_PASSWORD_REQUIRED'){
+      console.log('response: ', response);
+      if (response.challengeName === 'NEW_PASSWORD_REQUIRED') {
         this.changeState('requireNewPassword', response);
-      }else{
+      } else {
         this.changeState('signedIn', response);
         this.setState({ username: '', password: '', loading: false });
       }
-    }).catch((error) => {
-      this.setState({ loading: false })
-    })
+    }).catch(() => {
+      this.setState({ loading: false });
+    });
   }
 
   showComponent() {
-
     return (
       <div className="meetonAuth">
         <div className="auth-wrapper">
-          <div className='auth-left'>
+          <div className="auth-left">
             <h1>sign in</h1>
-            <form onSubmit={this.handleSubmit} autoComplete="off" >
+            <form onSubmit={this.handleSubmit} autoComplete="off">
               <input
                 id="username"
                 key="username"
@@ -71,7 +71,8 @@ class MeetonLogIn extends SignIn {
 
               <div className="mainAction">
                 <button
-                  type="primary" shape="round"
+                  type="button"
+                  shape="round"
                   htmlType="submit"
                   className="btn"
                 >
@@ -85,7 +86,7 @@ class MeetonLogIn extends SignIn {
                   </p>
                   <button
                     className="btn-as-link"
-                    onClick={() => super.changeState("forgotPassword")}
+                    onClick={() => super.changeState('forgotPassword')}
                     type="button"
                   >
                     Reset now!
@@ -93,11 +94,11 @@ class MeetonLogIn extends SignIn {
                 </div>
                 <div>
                   <p>
-                    Don't have an account?
+                    Dont have an account?
                   </p>
                   <button
                     className="btn-as-link"
-                    onClick={() => super.changeState("signUp")}
+                    onClick={() => super.changeState('signUp')}
                     type="button"
                   >
                     Sign up now.
@@ -109,7 +110,7 @@ class MeetonLogIn extends SignIn {
                   </p>
                   <button
                     className="btn-as-link"
-                    onClick={() => super.changeState("confirmSignUp")}
+                    onClick={() => super.changeState('confirmSignUp')}
                     type="button"
                   >
                     click here
@@ -118,9 +119,9 @@ class MeetonLogIn extends SignIn {
               </div>
             </form>
           </div>
-          <div className='auth-right'>
-            <span className="logo-logo"></span>
-            <span className="logo-logo-text"></span>
+          <div className="auth-right">
+            <span className="logo-logo" />
+            <span className="logo-logo-text" />
           </div>
         </div>
         <AuthFooter />
@@ -131,4 +132,3 @@ class MeetonLogIn extends SignIn {
 }
 
 export default MeetonLogIn;
-

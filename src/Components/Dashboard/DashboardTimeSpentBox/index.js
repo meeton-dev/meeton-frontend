@@ -1,11 +1,9 @@
-import React, { useRef, useEffect, useState } from "react";
+import React from 'react';
 
-const DashboardTimeSpentBox = () => {
-  return (
-    <>
-      DashboardTimeSpentBox
-    </>
-  );
-};
+const DashboardTimeSpentBox = () => (
+  <>
+    DashboardTimeSpentBox
+  </>
+);
 
 export default DashboardTimeSpentBox;

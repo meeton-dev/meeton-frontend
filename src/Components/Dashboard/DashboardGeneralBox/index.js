@@ -1,13 +1,14 @@
-import React, { useRef, useEffect, useState } from "react";
+import React from 'react';
 
 const DashboardGeneralBox = (props) => {
-  const {icon, content} = props;
+  // eslint-disable-next-line react/prop-types
+  const { icon, content } = props;
   return (
     <div className="box">
       <div className="box-top">
-        <span className={icon ? icon : "icon-exclamation-tringle"} />
+        <span className={icon || 'icon-exclamation-tringle'} />
       </div>
-      <div>{content ? content : 'empty'}</div>
+      <div>{content || 'empty'}</div>
     </div>
   );
 };

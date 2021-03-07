@@ -1,11 +1,9 @@
-import React, { useRef, useEffect, useState } from "react";
+import React from 'react';
 
-const DashboardFilesBox = () => {
-  return (
-    <>
-      DashboardFilesBox
-    </>
-  );
-};
+const DashboardFilesBox = () => (
+  <>
+    DashboardFilesBox
+  </>
+);
 
 export default DashboardFilesBox;

@@ -1,11 +1,9 @@
-import React, { useRef, useEffect, useState } from "react";
+import React from 'react';
 
-const DashboardSundriesBox = () => {
-  return (
-    <>
-      DashboardSundriesBox
-    </>
-  );
-};
+const DashboardSundriesBox = () => (
+  <>
+    DashboardSundriesBox
+  </>
+);
 
 export default DashboardSundriesBox;

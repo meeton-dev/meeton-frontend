@@ -18,6 +18,8 @@
     "moment": "^2.29.1",
     "node-sass": "^5.0.0",
     "pdf-to-base64": "^1.0.3",
+    "prop-types": "^15.7.2",
+    "query-string": "^6.14.1",
     "react": "^17.0.1",
     "react-big-calendar": "^0.33.1",
     "react-dom": "^17.0.1",
@@ -33,7 +35,7 @@
     "react-scripts": "^4.0.3",
     "reduce-reducers": "^1.0.4",
     "simple-peer": "^9.9.3",
-    "socket.io-client": "^3.1.2",
+    "socket.io-client": "^2.3.0",
     "style-loader": "^2.0.0"
   },
   "scripts": {

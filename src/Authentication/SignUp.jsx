@@ -1,20 +1,19 @@
 import React from 'react';
-import { ForgotPassword } from "aws-amplify-react";
+import { ForgotPassword } from 'aws-amplify-react';
 // const queryString = require('query-string');
-import queryString from 'query-string';
 import { Auth } from 'aws-amplify';
-import { Link } from 'react-router-dom';
-import { AuthFooter } from './AuthFooter';
-
+import AuthFooter from './AuthFooter';
 
 class MeetonSignUp extends ForgotPassword {
   constructor(props) {
     super(props);
-    this._validAuthStates = ["signUp"];
+    // eslint-disable-next-line no-underscore-dangle
+    this._validAuthStates = ['signUp'];
   }
+
   updateState = ({ target }) => {
     this.setState({
-      [target.name]: target.value
+      [target.name]: target.value,
     });
   }
 
@@ -23,33 +22,31 @@ class MeetonSignUp extends ForgotPassword {
       username: this.state.username,
       password: this.state.password,
       attributes: {
-        name: this.state.name
-      }
-    }
+        name: this.state.name,
+      },
+    };
     Auth.signUp(userObj, [], null, {})
-      .then(res => {
-          console.log('res', res);
-          this.changeState('confirmSignUp', userObj);
-      }).catch(err => this.error(err));
-
+      .then((res) => {
+        console.log('res', res);
+        this.changeState('confirmSignUp', userObj);
+      }).catch((err) => this.error(err));
   }
 
   showComponent() {
     // debugger;
-    const { authState, hide, authData = {} } = this.props;
 
-    console.log(this.props.authState);
     return (
       <div className="meetonAuth">
         <div className="auth-wrapper">
-          <div className='auth-left'>
+          <div className="auth-left">
             <div className="authBack">
-              <button 
+              <button
                 className="btn-off"
-                onClick={() => { super.changeState("signIn") }}
+                onClick={() => { super.changeState('signIn'); }}
                 type="button"
               >
-                <span className='icon icon_chevron' />Back
+                <span className="icon icon_chevron" />
+                Back
               </button>
             </div>
             <h1>sign up</h1>
@@ -88,7 +85,8 @@ class MeetonSignUp extends ForgotPassword {
               />
               <div className="mainAction">
                 <button
-                  type="primary" shape="round"
+                  type="button"
+                  shape="round"
                   htmlType="submit"
                   className="btn"
                   onClick={() => this.handleSignUp()}
@@ -98,9 +96,9 @@ class MeetonSignUp extends ForgotPassword {
               </div>
             </div>
           </div>
-          <div className='auth-right'>
-            <span className="logo-logo"></span>
-            <span className="logo-logo-text"></span>
+          <div className="auth-right">
+            <span className="logo-logo" />
+            <span className="logo-logo-text" />
           </div>
         </div>
         <AuthFooter />

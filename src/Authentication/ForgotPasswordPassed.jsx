@@ -1,22 +1,22 @@
 import React from 'react';
-import { ForgotPassword } from "aws-amplify-react";
+import { ForgotPassword } from 'aws-amplify-react';
 import queryString from 'query-string';
 import { Auth } from 'aws-amplify';
-import { AuthFooter } from './AuthFooter';
+import AuthFooter from './AuthFooter';
 
 class ForgotPass extends ForgotPassword {
   constructor(props) {
     super(props);
-    this._validAuthStates = ["forgotPassword"];
+    // eslint-disable-next-line no-underscore-dangle
+    this._validAuthStates = ['forgotPassword'];
     this.code = React.createRef();
     this.state = {
       username: '',
       code: '',
-      password: ''
-    }
+      password: '',
+    };
     this.forgotPasswordSubmit = this.forgotPasswordSubmit.bind(this);
   }
-
 
   componentDidMount() {
     if (window.location.pathname === '/change-password') {
@@ -24,14 +24,15 @@ class ForgotPass extends ForgotPassword {
       const code = parsedQuery.verification_code ? parsedQuery.verification_code : '';
       const username = parsedQuery.username ? parsedQuery.username.split(' ').join('+') : '';
       console.log(username);
-      this.setState({ code, username })
+      this.setState({ code, username });
     }
   }
 
-  handleInputCodeChange = (e) => { this.setState({ code: e.target.value }) }
-  handleInputPasswordChange = (e) => { this.setState({ password: e.target.value }) }
-  handleInputUsernameChange = (e) => { this.setState({ username: e.target.value }) }
+  handleInputCodeChange = (e) => { this.setState({ code: e.target.value }); }
 
+  handleInputPasswordChange = (e) => { this.setState({ password: e.target.value }); }
+
+  handleInputUsernameChange = (e) => { this.setState({ username: e.target.value }); }
 
   forgotPasswordSubmit = (event) => {
     event.preventDefault();
@@ -42,34 +43,34 @@ class ForgotPass extends ForgotPassword {
         // console.log(data)
         this.changeState('signIn');
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
-      })
+      });
   }
 
-
-
   showComponent() {
-    const { username, code, password, authData = {} } = this.state;
+    const { password } = this.state;
 
     return (
       <div className="meetonAuth">
         <div className="auth-wrapper">
-          <div className='auth-left'>
+          <div className="auth-left">
             <div className="my-2 w-100">
-            <a href="/"
+              <a
+                href="/"
                 className="text-indigo cursor-pointer hover:text-indigo-darker"
-                onClick={() => { super.changeState("signIn") }}
+                onClick={() => { super.changeState('signIn'); }}
               >
-                <span className='icon icon_chevron' />Back to Login
+                <span className="icon icon_chevron" />
+                Back to Login
               </a>
             </div>
-            <form onSubmit={this.forgotPasswordSubmit} action="" >
+            <form onSubmit={this.forgotPasswordSubmit} action="">
               <div>
                 <p className="mb-1 font-bold">Reset Your Password</p>
                 <input
                   className="my-1"
-                  placeholder='New Password'
+                  placeholder="New Password"
                   type="password"
                   key="password"
                   name="password"
@@ -77,7 +78,7 @@ class ForgotPass extends ForgotPassword {
                   onChange={this.handleInputPasswordChange}
                 />
                 <div className="my-1">
-                  <button type="primary" shape="round" htmlType="submit" >Submit</button>
+                  <button type="button" shape="round" htmlType="submit">Submit</button>
                 </div>
               </div>
             </form>
@@ -85,9 +86,9 @@ class ForgotPass extends ForgotPassword {
               <p className="mb-2 font-bold">Download our app</p>
             </div>
           </div>
-          <div className='auth-right'>
-            <span className="logo-logo"></span>
-            <span className="logo-logo-text"></span>
+          <div className="auth-right">
+            <span className="logo-logo" />
+            <span className="logo-logo-text" />
           </div>
         </div>
         <AuthFooter />

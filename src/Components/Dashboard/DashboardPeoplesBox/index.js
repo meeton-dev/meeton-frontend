@@ -1,11 +1,9 @@
-import React, { useRef, useEffect, useState } from "react";
+import React from 'react';
 
-const DashboardPeoplesBox = () => {
-  return (
-    <>
-      DashboardPeoplesBox
-    </>
-  );
-};
+const DashboardPeoplesBox = () => (
+  <>
+    DashboardPeoplesBox
+  </>
+);
 
 export default DashboardPeoplesBox;

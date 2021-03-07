@@ -1,24 +1,32 @@
 import React from 'react';
 
-export const Btn = (props) => {
-    const {primary, secondary, action, label, icon, onClick}= props;
+const Btn = (props) => {
+  const {
+    // eslint-disable-next-line react/prop-types
+    primary, secondary, action, label, icon, onClick,
+  } = props;
 
-    const generateClasses = () => {
-        let cls = '';
+  const generateClasses = () => {
+    let cls = '';
 
-        if (primary) cls += 'primary';
-        else if (secondary) cls += 'secondary';
-        else if (action) cls += 'action';
-        else cls += 'generic';
+    if (primary) cls += 'primary';
+    else if (secondary) cls += 'secondary';
+    else if (action) cls += 'action';
+    else cls += 'generic';
 
-        return cls;
-    }
+    return cls;
+  };
 
-    return (
-        <button onClick={onClick ? onClick : () => console.log('no function assigned')} className={`mtnBtn ${generateClasses()}`}>
-            {icon && <span className={`mtnBtn-icn ${icon}`}></span>}
-            <span className="mtnBtn-lbl">{label}</span>
-        </button>
-    )
-}
+  return (
+    <button
+      type="button"
+      onClick={onClick || (() => console.log('no function assigned'))}
+      className={`mtnBtn ${generateClasses()}`}
+    >
+      {icon && <span className={`mtnBtn-icn ${icon}`} />}
+      <span className="mtnBtn-lbl">{label}</span>
+    </button>
+  );
+};
 
+export default Btn;
